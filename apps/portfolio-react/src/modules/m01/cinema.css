@@ -34,21 +34,18 @@
 @keyframes cinema-film-breath{from{opacity:.025}to{opacity:.052}}
 .cinema-track-dot{opacity:0;fill:#fff;stroke:none;pointer-events:none;
   r:3px;filter:drop-shadow(0 0 2px #ffffffaa)}
-/* Sub-pixel perspective on independent collage scraps, never on large title art.
+/* Unified left artwork motion: mountain and title are visually one layer.
    All offsets are zero at rest; no static poster geometry is modified. */
 @media(min-width:901px) and (pointer:fine){
-  .m01-root.cinematic-motion .poster-mountain{
-    transform:translate3d(calc(var(--px) * -5px),calc(var(--py) * -3px),0);
+  /* The entire left editorial collage must translate as ONE layer.
+     The mountain/architectural fragment is part of the left title artwork:
+     mismatched -5px versus -9px motion previously made it look detached. */
+  .m01-root.cinematic-motion .poster-mountain,
+  .m01-root.cinematic-motion .master-word {
+    transform:translate3d(calc(var(--px) * -8px),calc(var(--py) * -5px),0);
   }
-  .m01-root.cinematic-motion .poster-tape-left{
-    transform:translate3d(calc(var(--px) * 3px),calc(var(--py) * 2px),0);
-  }
-  .m01-root.cinematic-motion .poster-tape-right{
-    transform:rotate(-10deg) translate3d(calc(var(--px) * 2px),calc(var(--py) * 2px),0);
-  }
-  .m01-root.cinematic-motion .master-orbits{
-    transform:translate3d(calc(var(--px) * 1.5px),calc(var(--py) * 1px),0);
-  }
+  /* Tape and orbital engravings no longer drift independently across the
+     photographic fragment. Their resting geometries stay unchanged. */
 }
 @media(max-width:900px){
   .cinema-stage{transform-origin:70% 46%}
@@ -64,21 +61,6 @@
 .static-preview .cinema-film-grain,
 .static-preview .cinema-track-dot{display:none!important}
 
-/* Pointer-responsive editorial depth. Word groups travel together, so the
-   previously repaired gap between 向外 and 探寻世界 never collapses. The
-   static version has no transforms, and the visual baseline remains exact. */
-@media (min-width:901px) and (pointer:fine) {
-  .m01-root.cinematic-motion .master-word.word-into,
-  .m01-root.cinematic-motion .master-word.word-out {
-    transform:translate3d(calc(var(--px) * -9px),calc(var(--py) * -6px),0);
-  }
-  .m01-root.cinematic-motion .master-word.word-find,
-  .m01-root.cinematic-motion .master-word.word-center,
-  .m01-root.cinematic-motion .master-word.word-explore,
-  .m01-root.cinematic-motion .master-word.word-world {
-    transform:translate3d(calc(var(--px) * -7px),calc(var(--py) * -5px),0);
-  }
-}
 
 /* Clip interactive lighting to the approved photographic silhouette: no
    bright overlay may leak into the paper or typography along the left seam. */

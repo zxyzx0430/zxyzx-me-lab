@@ -60,8 +60,8 @@ export function usePageNavigation(ids: readonly string[]) {
         // photographic highlight travel across the photo. At rest, no grading
         // or overlay is retained; the original portrait stays untouched.
         if (photoLight) tl.fromTo(photoLight,
-          { opacity: .06, x: -48, y: -12 },
-          { opacity: .58, x: 35, y: 18, duration: .58, ease: 'power2.inOut' }, .21)
+          { opacity: .035, x: -48, y: -12 },
+          { opacity: .32, x: 35, y: 18, duration: .58, ease: 'power2.inOut' }, .21)
           .to(photoLight, { opacity: 0, duration: .17, ease: 'power2.in' }, .76);
         tl.to(stage, { scale: 1.12, x: -w * .025, y: -h * .01, duration: .29, ease: 'power2.inOut' }, 0)
           .to(stage, { scale: 2.65, x: -w * .20, y: -h * .055, duration: .66, ease: 'power3.in' }, .25)
@@ -72,8 +72,8 @@ export function usePageNavigation(ids: readonly string[]) {
         // Reverse travel restores the same brief photographic flash.
         if (photoLight) tl.fromTo(photoLight,
           { opacity: 0, x: 35, y: 18 },
-          { opacity: .35, x: -22, y: -9, duration: .55, ease: 'power2.out' }, .49)
-          .to(photoLight, { opacity: .06, duration: .18, ease: 'power2.out' }, 1.02);
+          { opacity: .20, x: -22, y: -9, duration: .55, ease: 'power2.out' }, .49)
+          .to(photoLight, { opacity: .035, duration: .18, ease: 'power2.out' }, 1.02);
         tl.to(black, { autoAlpha: 1, duration: .17, ease: 'power2.in' }, 0)
           .call(() => {
             gsap.set(stage, { scale: 2.65, x: -w * .20, y: -h * .055 });

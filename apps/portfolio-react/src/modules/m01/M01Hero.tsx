@@ -148,7 +148,7 @@ export function M01Hero() {
           event.clientY >= frame.top && event.clientY <= frame.bottom;
         gsap.to(light, {
           '--light-x': lx + '%', '--light-y': ly + '%',
-          opacity: inside ? .94 : x > .05 ? .28 : .035,
+          opacity: inside ? .52 : x > .05 ? .15 : .035,
           duration: .52, ease: 'power2.out', overwrite: true,
         });
       }
