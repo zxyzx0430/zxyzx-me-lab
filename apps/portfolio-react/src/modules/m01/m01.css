@@ -375,3 +375,8 @@
    mask-mode:alpha;
  }
 }
+
+/* On tablet aspect ratios, keep the small quote below the photo silhouette. */
+@media(min-width:600px) and (max-width:900px){
+ .m01-root .poster-thought{top:86%}
+}
