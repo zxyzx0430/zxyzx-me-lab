@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090b10">
+<meta name="description" content="忠心于中心｜向内寻找中心，向外探寻世界。zxyzx.me 个人首页 M01 独立电影式首屏设计原型。">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:,">
+<title>忠心于中心 · 向内寻找中心，向外探寻世界｜M01 V1</title>
+<style>
+@font-face{font-family:"LocalChinese";src:local("Noto Sans CJK SC"),local("Microsoft YaHei");font-display:swap}
+:root{color-scheme:dark;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-width:320px;background:#090b10;color:#f2eee7;font-family:"LocalChinese","PingFang SC","Microsoft YaHei",Inter,system-ui,sans-serif}
+a{color:inherit}
+.skip{position:absolute;top:-90px;left:16px;padding:11px 14px;background:#fff;color:#111;z-index:99}
+.skip:focus{top:15px}
+.site-nav{position:absolute;z-index:20;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px clamp(20px,4.8vw,82px);background:linear-gradient(180deg,#080b11a8,transparent)}
+.brand{display:flex;align-items:flex-start;gap:14px;text-decoration:none;white-space:nowrap}
+.brand-glyph{width:41px;height:41px;flex:0 0 41px;border:1px solid #f2eee7a8;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;line-height:1}
+.brand-text{display:flex;flex-direction:column;gap:1px}
+.brand-cn{font-size:20px;line-height:1.2;font-weight:750;letter-spacing:.075em}
+.brand-en{font:9px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.28em;color:#babcc1;margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:clamp(17px,3.3vw,54px);font:11px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.20em;color:#e3e2e1}
+.nav-links a{text-decoration:none;position:relative;padding:12px 1px}
+.nav-links a:after{content:"";position:absolute;bottom:7px;left:0;width:0;height:1px;background:currentColor;transition:width .2s}
+.nav-links a:hover:after,.nav-links a:focus-visible:after{width:100%}
+.nav-mark{border:1px solid #d6d5d14d;padding:10px 12px;letter-spacing:.14em;font-size:9px;color:#c7ccd3}
+.controls{position:fixed;bottom:20px;right:20px;z-index:30;display:flex;gap:7px;align-items:center;transition:opacity .25s}
+.controls button{border:1px solid #eef0f377;color:#f4f4f5;background:#10151bde;backdrop-filter:blur(8px);padding:10px 12px;font:10px ui-monospace,monospace;letter-spacing:.10em;cursor:pointer}
+.controls button:hover{background:#263143}
+.controls button:focus-visible,a:focus-visible{outline:2px solid #a9c5fc;outline-offset:4px}
+.transition-screen{position:relative;z-index:1;background:#e9e5dc;color:#181a1d;min-height:83vh;padding:clamp(50px,9vw,140px) clamp(22px,6vw,110px);overflow:hidden;scroll-margin-top:0}
+.transition-screen:before{content:"";position:absolute;top:-15%;right:-20%;width:70vw;height:70vw;border:1px solid #2d374e28;border-radius:50%;pointer-events:none}
+.transition-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,5vw,80px);max-width:1300px;margin:auto;position:relative}
+.transition-meta{display:flex;align-items:center;gap:20px;font:11px/1.5 ui-monospace,monospace;letter-spacing:.18em;color:#68615c}
+.transition-meta:after{content:"";height:1px;width:50px;background:#8a8780}
+.transition-screen h2{font-size:clamp(58px,10vw,170px);line-height:1.04;letter-spacing:-.08em;margin:32px 0 30px;font-weight:800}
+.transition-screen h2 span{display:block}
+.transition-side{border-left:1px solid #3333;align-self:center;padding-left:clamp(20px,4vw,65px);display:flex;flex-direction:column;gap:22px}
+.transition-side p{font-size:clamp(15px,1.4vw,20px);line-height:1.85;max-width:28em;margin:0}
+.transition-side small{font:11px/1.9 ui-monospace,monospace;letter-spacing:.09em;color:#555}
+.boundary-note{margin-top:40px;border-top:1px solid #2c2c2a77;padding-top:18px;font:11px/1.8 ui-monospace,monospace;color:#68635b;max-width:1300px;margin-inline:auto}
+.about-demo{background:#11141c;color:#eaeae6;padding:68px clamp(22px,6vw,110px) 90px;display:grid;grid-template-columns:1fr 2fr;gap:40px}
+.about-demo h3{font-size:13px;text-transform:uppercase;letter-spacing:.19em;margin:0;color:#bec1cc;font-weight:500}
+.about-demo p{font-size:clamp(17px,2vw,26px);line-height:1.7;max-width:780px;margin:0}
+.about-demo a{font-size:12px}
+.demo-footer{background:#11141c;color:#989eaa;border-top:1px solid #2e3542;padding:20px clamp(22px,6vw,110px);display:flex;justify-content:space-between;gap:15px;font:10px/1.7 ui-monospace,monospace;letter-spacing:.1em}
+@media (max-width:640px){
+ .site-nav{padding:21px 21px;align-items:flex-start}
+ .brand{gap:8px}
+ .brand-glyph{width:34px;height:34px;font-size:20px;flex-basis:34px}
+ .brand-cn{font-size:16px}
+ .brand-en{font-size:8px;letter-spacing:.16em;margin-top:3px}
+ .nav-links{gap:16px;font-size:9px;letter-spacing:.09em;margin-top:3px}
+ .nav-links a{padding:10px 0}
+ .nav-mark{display:none}
+ .controls{right:10px;bottom:10px}
+ .controls button{padding:9px;font-size:9px}
+ .transition-screen{min-height:77vh}
+ .transition-grid{grid-template-columns:1fr;gap:15px}
+ .transition-screen h2{margin-top:35px;margin-bottom:12px;font-size:clamp(65px,16vw,108px)}
+ .transition-side{border-left:0;border-top:1px solid #777;padding:25px 0 0;gap:10px}
+ .about-demo{grid-template-columns:1fr;gap:20px}
+ .demo-footer{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){:root{scroll-behavior:auto}.controls{display:none}}
+</style>
+<script type="module" src="./module.js"></script>
+</head>
+<body>
+<a class="skip" href="#m01-exit">跳过开场，查看后续内容</a>
+<header class="site-nav">
+  <a class="brand" href="#top" aria-label="忠心于中心，返回页面顶部">
+    <span class="brand-glyph" aria-hidden="true">忠</span>
+    <span class="brand-text"><strong class="brand-cn">忠心于中心</strong><span class="brand-en">ZXYZX.ME</span></span>
+  </a>
+  <nav class="nav-links" aria-label="预览导航">
+    <a href="#m01-exit">WORK</a>
+    <a href="#about-preview">ABOUT</a>
+    <a href="#preview-end">INFO</a>
+    <span class="nav-mark" aria-label="当前预览版本">M01 / V1</span>
+  </nav>
+</header>
+<main id="top">
+  <zxyzx-home-hero id="hero"></zxyzx-home-hero>
+  <section class="transition-screen" id="m01-exit" aria-label="M01 退场和下一模块接口演示">
+    <div class="transition-grid">
+      <div>
+        <div class="transition-meta">M01 → NEXT CHAPTER / 002</div>
+        <h2><span>然后，</span><span>去创造。</span></h2>
+      </div>
+      <div class="transition-side">
+        <p>从内在的中心出发，走向真实的世界。</p>
+        <p>这一幕是 M01 的<strong>滚动退场接口演示</strong>。这里未来将接入独立的作品入口模块 M02，而不是现在提前把其他模块做进去。</p>
+        <small>01 — THINK<br>02 — EXPLORE<br>03 — BUILD</small>
+      </div>
+    </div>
+    <div class="boundary-note">BOUNDARY DEMONSTRATION ONLY · M02 HAS NOT BEEN DESIGNED OR INTEGRATED · THE APPROVED KNOWLEDGE NETWORK V5 REMAINS UNCHANGED.</div>
+  </section>
+  <section id="about-preview" class="about-demo" aria-label="独立预览说明">
+    <h3>DESIGN REVIEW / 001</h3>
+    <div>
+      <p>这不是完整的个人网站，而是「忠心于中心」个人首页的第一幕。人物、文字、光影、入场与滚动离场均作为独立层实现，以后可以只替换 M01，而不影响其它作品。</p>
+      <p style="margin-top:20px;font-size:14px;color:#a7b0be">肖像采用本人照片作为参考的艺术化视觉素材；当前字标为 V1 临时排版，独立标志仍在 G01 设计阶段。</p>
+    </div>
+  </section>
+</main>
+<div class="controls" role="group" aria-label="预览控制">
+  <button id="replay" type="button" title="重新播放入场镜头">↺ REPLAY</button>
+  <button id="motion" type="button" aria-pressed="true" title="启用或停用视差与滚动动效">MOTION ON</button>
+</div>
+<footer id="preview-end" class="demo-footer">
+  <span>忠心于中心 · HOME HERO / MODULE M01 / V1 DRAFT</span>
+  <span><a href="../../index.html">DEVELOPMENT LAB</a>　/　<a href="./README.md">DESIGN SPEC</a></span>
+</footer>
+<script type="module">
+  const hero=document.getElementById("hero");
+  const replay=document.getElementById("replay");
+  const motion=document.getElementById("motion");
+  replay.addEventListener("click",()=>{
+    document.getElementById("top").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
+    hero.replay();
+  });
+  motion.addEventListener("click",()=>{
+    hero.setMotion(!hero.motionEnabled);
+    motion.textContent=hero.motionEnabled?"MOTION ON":"MOTION OFF";
+    motion.setAttribute("aria-pressed",String(hero.motionEnabled));
+  });
+  hero.addEventListener("home-hero:motion",e=>{
+    motion.textContent=e.detail.motionEnabled?"MOTION ON":"MOTION OFF";
+    motion.setAttribute("aria-pressed",String(e.detail.motionEnabled));
+  });
+</script>
+</body>
+</html>

@@ -25,5 +25,9 @@ jobs:
         run: node scripts/validate-modules.mjs
       - name: Verify approved knowledge network
         run: node --test modules/knowledge-network/tests/*.test.mjs
+      - name: Check M01 Home Hero V1 draft
+        run: node --test modules/home-hero/tests/*.test.mjs
       - name: Check public script syntax
-        run: node --check modules/knowledge-network/module.js
+        run: |
+          node --check modules/knowledge-network/module.js
+          node --check modules/home-hero/module.js

@@ -12,6 +12,16 @@
       "approvedTag": "knowledge-network-v5-approved",
       "owner": "Personal AI System project module",
       "entry": "modules/knowledge-network/module.js"
+    },
+    {
+      "id": "home-hero",
+      "path": "modules/home-hero",
+      "status": "draft",
+      "version": "0.1.0",
+      "preview": "modules/home-hero/index.html",
+      "approvedTag": null,
+      "owner": "M01 identity hero",
+      "entry": "modules/home-hero/module.js"
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "home-hero",
+  "displayName": "M01 · 忠心于中心 · Home Hero",
+  "version": "0.1.0",
+  "status": "draft",
+  "approvedTag": null,
+  "scope": "Personal identity opening scene only; M02 and project modules excluded.",
+  "entry": "module.js",
+  "style": "module.css",
+  "preview": "index.html",
+  "assets": {
+    "portrait": "assets/portrait-cinematic-enhanced.webp",
+    "photoSource": "Artistic portrait based on owner's supplied reference photographs",
+    "note": "Artistic concept derivative; not a documentary photograph"
+  },
+  "publicApi": {
+    "attributes": [],
+    "methods": [
+      "replay()",
+      "setMotion(allow)",
+      "motionEnabled"
+    ],
+    "events": [
+      "home-hero:ready",
+      "home-hero:enter",
+      "home-hero:exit",
+      "home-hero:motion",
+      "home-hero:explore",
+      "home-hero:error"
+    ]
+  },
+  "runtimeDependencies": [],
+  "mobileBreakpoints": [
+    640,
+    900
+  ],
+  "reducedMotion": true,
+  "visualApproval": "pending user review"
+}
