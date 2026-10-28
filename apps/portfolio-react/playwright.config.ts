@@ -10,7 +10,7 @@ export default defineConfig({
         ? { executablePath: process.env.CHROMIUM_PATH, args:['--no-sandbox'] }
         : { args:['--no-sandbox'] } }
   }],
-  webServer: { command: 'pnpm run preview -- --port 4180',
+  webServer: { command: 'pnpm exec vite preview --host 127.0.0.1 --port 4180 --strictPort',
     url:'http://127.0.0.1:4180/zxyzx-me-lab/preview/m01-react/',
     reuseExistingServer: !process.env.CI,timeout:60_000 }
 });
