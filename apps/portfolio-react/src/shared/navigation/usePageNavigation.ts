@@ -16,6 +16,7 @@ export function usePageNavigation(ids: readonly string[]) {
     const hero = document.getElementById('top');
     const stage = hero?.querySelector<HTMLElement>('.cinema-stage');
     const black = document.querySelector<HTMLElement>('.cinema-blackout');
+    const photoLight = hero?.querySelector<HTMLElement>('.cinema-photo-light');
     let active: gsap.core.Timeline | null = null;
     let lockUntil = 0, wheelAccum = 0, lastWheel = 0;
     let touchStart: { x: number; y: number } | null = null;
@@ -25,6 +26,8 @@ export function usePageNavigation(ids: readonly string[]) {
     const finish = () => {
       if (stage) gsap.set(stage, { clearProps: 'transform' });
       if (black) gsap.set(black, { clearProps: 'opacity,visibility' });
+      if (photoLight) gsap.set(photoLight, { clearProps: 'opacity,transform' });
+      if (hero) delete hero.dataset.transitioning;
       active = null;
       lockUntil = performance.now() + 260;
     };
@@ -49,14 +52,28 @@ export function usePageNavigation(ids: readonly string[]) {
       const w = window.innerWidth, h = window.innerHeight;
       const tl = gsap.timeline({ onComplete: finish });
       active = tl;
+      if (hero) hero.dataset.transitioning = 'true';
+      if (photoLight) gsap.killTweensOf(photoLight);
       lockUntil = performance.now() + 1600;
       if (forward) {
+        // During the orbit-to-portrait crossing only, let a clear diagonal
+        // photographic highlight travel across the photo. At rest, no grading
+        // or overlay is retained; the original portrait stays untouched.
+        if (photoLight) tl.fromTo(photoLight,
+          { opacity: .06, x: -48, y: -12 },
+          { opacity: .58, x: 35, y: 18, duration: .58, ease: 'power2.inOut' }, .21)
+          .to(photoLight, { opacity: 0, duration: .17, ease: 'power2.in' }, .76);
         tl.to(stage, { scale: 1.12, x: -w * .025, y: -h * .01, duration: .29, ease: 'power2.inOut' }, 0)
           .to(stage, { scale: 2.65, x: -w * .20, y: -h * .055, duration: .66, ease: 'power3.in' }, .25)
           .to(black, { autoAlpha: 1, duration: .16, ease: 'power2.in' }, .78)
           .call(() => { scrollExact(target); gsap.set(stage, { clearProps: 'transform' }); }, [], .97)
           .to(black, { autoAlpha: 0, duration: .25, ease: 'power2.out' }, 1.24);
       } else {
+        // Reverse travel restores the same brief photographic flash.
+        if (photoLight) tl.fromTo(photoLight,
+          { opacity: 0, x: 35, y: 18 },
+          { opacity: .35, x: -22, y: -9, duration: .55, ease: 'power2.out' }, .49)
+          .to(photoLight, { opacity: .06, duration: .18, ease: 'power2.out' }, 1.02);
         tl.to(black, { autoAlpha: 1, duration: .17, ease: 'power2.in' }, 0)
           .call(() => {
             gsap.set(stage, { scale: 2.65, x: -w * .20, y: -h * .055 });

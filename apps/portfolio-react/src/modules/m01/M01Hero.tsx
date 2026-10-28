@@ -126,6 +126,7 @@ export function M01Hero() {
       matchMedia('(pointer: coarse)').matches) return;
     const light = el.querySelector<HTMLElement>('.cinema-photo-light');
     const move = (event: PointerEvent) => {
+      if (el.dataset.transitioning === 'true') return;
       const bounds = el.getBoundingClientRect();
       const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
       const y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
