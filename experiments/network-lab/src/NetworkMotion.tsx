@@ -38,8 +38,19 @@ function makeB():{nodes:Node[];edges:Edge[]}{
 function makeC():{nodes:Node[];edges:Edge[]}{
  const nodes:Node[]=[];const edges:Edge[]=[];const c=[{x:.22,y:.3},{x:.7,y:.37},{x:.48,y:.73}];
  for(let i=0;i<67;i++){const cluster=i%3,cc=c[cluster],a=rand(i,17)*Math.PI*2,r=(.04+rand(i,56)*.22);nodes.push({id:"g"+i,cluster,x:Math.max(.03,Math.min(.97,cc.x+Math.cos(a)*r)),y:Math.max(.06,Math.min(.94,cc.y+Math.sin(a)*r))})}
- for(let i=3;i<67;i++){edges.push({from:"g"+i,to:"g"+((i+3)%3),shape:"straight"});if(i%3===0)edges.push({from:"g"+i,to:"g"+(i-3),shape:"straight"})}
- for(let i=0;i<27;i++){edges.push({from:"g"+(i*2),to:"g"+((i*13+15)%67),shape:"straight"})}
+ // Obsidian-style adjacency: connect nearby concepts within each cluster first,
+ // then add a sparse set of inter-cluster bridges; avoid radial "spider" rays.
+ for(let i=0;i<nodes.length;i++){
+   const a=nodes[i];
+   const near=nodes.map((b,j)=>({j,d:(a.x-b.x)**2+(a.y-b.y)**2}))
+    .filter(v=>v.j!==i && nodes[v.j].cluster===a.cluster && v.j<i)
+    .sort((u,v)=>u.d-v.d).slice(0,2);
+   near.forEach(v=>edges.push({from:a.id,to:nodes[v.j].id,shape:"straight"}));
+ }
+ // Cross-topic bridges appear after local relationships have accumulated.
+ for(const [a,b] of [[9,22],[15,28],[30,37],[42,50],[7,46],[18,59],[27,62],[38,51],[11,55]]){
+   edges.push({from:"g"+a,to:"g"+b,shape:"curve",bow:.035});
+ }
  return {nodes,edges};
 }
 const graphs={A:makeA(),B:makeB(),C:makeC()};
