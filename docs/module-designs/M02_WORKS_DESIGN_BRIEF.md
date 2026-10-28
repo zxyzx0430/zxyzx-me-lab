@@ -15,9 +15,9 @@
 
 | 项目世界 | 作为 M02 对外沟通的核心内容 | 待确认素材 | 页面入口（规划中，非已上线） |
 |---|---|---|---|
-| Personal AI System（与「在学中扩展」教育探索相关） | 从碎片化学习走向可积累的个人学习/成长系统；AI 如何支持学习者 | 真实作品截图、流程片段、视频、项目文字 | \`/work/personal-ai/\` |
-| Open Margin / 清衡 | 让个人更清楚地掌握自己财务信息、节奏与决策 | 真实 UI 或脱敏数据可视化；**不得泄露财务隐私** | \`/work/open-margin/\` |
-| Hardware RAG Agent | 将知识检索与真实硬件/工程问题结合，把信息变成可操作的帮助 | 设备、结构、界面或实验照片；未验证功能不得夸大 | \`/work/hardware-agent/\` |
+| Personal AI System（与「在学中扩展」教育探索相关） | 从碎片化学习走向可积累的个人学习/成长系统；AI 如何支持学习者 | 真实作品截图、流程片段、视频、项目文字 | `/work/personal-ai/` |
+| Open Margin / 清衡 | 让个人更清楚地掌握自己财务信息、节奏与决策 | 真实 UI 或脱敏数据可视化；**不得泄露财务隐私** | `/work/open-margin/` |
+| Hardware RAG Agent | 将知识检索与真实硬件/工程问题结合，把信息变成可操作的帮助 | 设备、结构、界面或实验照片；未验证功能不得夸大 | `/work/hardware-agent/` |
 
 以上是**方向候选，不代表每个项目的文字、功能、开发进度已经被本轮复核**。M02 不应展示没有验证的客户效果或项目运行指标。
 
@@ -66,7 +66,7 @@ M01 的暖白、巨大黑字、黑白人物摄影已经很强。M02 可以在视
 
 ## 5. 我倾向的首版信息结构（仍待用户选择）
 
-\`\`\`text
+```text
 M01 FINAL FRAME
   → Transition: 思想，进入现实（过渡命题，尚未确认文案）
   → M02 / SELECTED WORLDS
@@ -75,30 +75,30 @@ M01 FINAL FRAME
       03 Hardware RAG Agent── 视觉预告 + 1句真实定位 + ENTER WORLD
   → M03/M04/M05 独立项目页（未来）
   → 再回到个人叙事 / M06 ...
-\`\`\`
+```
 
 不是普通三卡组件，也不需要在一个屏幕内展示全部信息。可以探索一屏一部作品、局部重叠的片段与动态索引，但**一滑一页**应作为跨模块核心体验约束；不能延续过去“滚 170svh 才换一幕”的问题。
 
 ## 6. 技术边界与未来接口
 
-- 未来独立模块建议 ID：\`selected-works\`（未创建/未注册），页面用于容纳多项目入口；数据集中管理标题、项目 slug、媒体来源和路线，而不在动画里硬编码大量字符串。
+- 未来独立模块建议 ID：`selected-works`（未创建/未注册），页面用于容纳多项目入口；数据集中管理标题、项目 slug、媒体来源和路线，而不在动画里硬编码大量字符串。
 - 可独立运行，可被组合层接到 M01 后，不读取或修改 M01 Shadow DOM，不影响已批准 V5。
-- 真实链接如 \`/work/personal-ai/\` 等是**规划路径**，正式路由未上线之前，预览中明确标识 TBD，不使用伪装的可点击死链接。
+- 真实链接如 `/work/personal-ai/` 等是**规划路径**，正式路由未上线之前，预览中明确标识 TBD，不使用伪装的可点击死链接。
 - 视口切换与动画要避免强制滚轮拦截冲突：整站组合层决定全局翻页，M02 只提供单模块内容与进出状态接口。
-- 正式开发要使用 \`templates/module/\` 规范和模块验收流程，单独保存视频、图、字体或截帧素材来源。
+- 正式开发要使用 `templates/module/` 规范和模块验收流程，单独保存视频、图、字体或截帧素材来源。
 
 ## 7. 本阶段如何定义“完成”
 
 当前只建立 M02 设计启动思路，没有批准视觉，没有原型。完成 M02 需：
 - 拿到用户对主视觉方向、内容结构与素材的认同；
 - 制作真正可看的独立 M02 首版，视觉与 M01 具有对照但非互相覆盖；
-- 按 \`docs/MODULE_ACCEPTANCE_AND_HANDOFF.md\` 验收、截图站、锁定 tag、交接；
-- 不提前合并至正式 \`zxyzx.me\`。
+- 按 `docs/MODULE_ACCEPTANCE_AND_HANDOFF.md` 验收、截图站、锁定 tag、交接；
+- 不提前合并至正式 `zxyzx.me`。
 
 ## 8. 供后续线程参考
 
-- GitHub 设计总入口：\`AGENTS.md\` + \`docs/MODULE_STANDARD.md\` + \`docs/MODULE_ACCEPTANCE_AND_HANDOFF.md\`
-- M01 视觉批准母稿：\`docs/module-designs/M01_HOME_APPROVED.md\`
+- GitHub 设计总入口：`AGENTS.md` + `docs/MODULE_STANDARD.md` + `docs/MODULE_ACCEPTANCE_AND_HANDOFF.md`
+- M01 视觉批准母稿：`docs/module-designs/M01_HOME_APPROVED.md`
 - M01 真实预览：https://zxyzx0430.github.io/zxyzx-me-lab/experiments/m01-v3-art-motion/
 - M01 1920×1080 固定截图：https://zxyzx0430.github.io/zxyzx-me-lab/review/m01/
 - 用户最近方向偏好：保留 V3 的完整艺术构图，不走模板卡片式开发，不重复单调入场动效；先关注真实的视觉完成度再谈技术效果。

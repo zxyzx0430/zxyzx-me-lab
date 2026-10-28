@@ -16,7 +16,7 @@
 
 ## 2. 每个模块必须保存的设计母稿
 
-在 \`docs/module-designs/<MODULE>_<TOPIC>_*.md\` 保存以下真实信息（没有的标 \`TBD\` 而不是编造）：
+在 `docs/module-designs/<MODULE>_<TOPIC>_*.md` 保存以下真实信息（没有的标 `TBD` 而不是编造）：
 
 1. **ID / 唯一职责 / 位置**：模块为何存在、给访客的信息是什么、明确不负责什么。
 2. **思想与叙事**：核心隐喻、用户想表达的观点、与上一幕及下一幕怎样接。
@@ -34,13 +34,13 @@
 ## 3. 每次设计完成的冻结清单（可复制执行）
 
 - [ ] 用户已看过真实网页或可检验视觉，明确认可具体模块版本。
-- [ ] 设计母稿已写入 \`docs/module-designs/\`，文案、版式、动效和前后模块接口可复现。
+- [ ] 设计母稿已写入 `docs/module-designs/`，文案、版式、动效和前后模块接口可复现。
 - [ ] 独立预览能打开，资源加载正常，不指向未授权的私人素材。
 - [ ] **固定截图验收入口**与该版本截图存在；移动端可打开；中文字体、文字和人像检查无异常。
 - [ ] 截图分辨率遵从模块约定。**M01 固定为 1920×1080；用户明确不需要 1440×900。**
 - [ ] 用实际设备/浏览器看桌面及手机，记录真实测到的宽度和问题；自动化测试不是用户审美批准。
-- [ ] Git 变更只涉及本模块、对应设计文档/公共配置，\`git diff --name-only\` 审查通过。
-- [ ] \`node scripts/validate-modules.mjs\`、模块自己的测试、浏览器冒烟测试完成；失败要注明。
+- [ ] Git 变更只涉及本模块、对应设计文档/公共配置，`git diff --name-only` 审查通过。
+- [ ] `node scripts/validate-modules.mjs`、模块自己的测试、浏览器冒烟测试完成；失败要注明。
 - [ ] 在认可后的提交上打**不可覆盖的视觉基准 Git tag**，并注明批准范围。
 - [ ] 给出给下一线程的路径、链接、冻结点、当前范围、未来工作与明确不许动的模块。
 - [ ] 新模块开始前，先确认原模块不会被意外修改。
@@ -49,7 +49,7 @@
 
 ## 4. 实施改版与风险处理
 
-- **新版本新分支**，例如 \`feat/m02-work-portal-v1\`；保留已认可 Git tag / 历史素材。
+- **新版本新分支**，例如 `feat/m02-work-portal-v1`；保留已认可 Git tag / 历史素材。
 - 静态视觉已经确定时，技术架构重构只做无差别迁移；严禁趁机“顺手重新设计”。
 - 网站组合层只管全局导航、路由、页面衔接、响应式容器；不能跨模块修改隔离组件内部。
 - 模块内部可改变自己的状态和动画；**跨模块转场的最终控制权由组合层承担**，不得让一个模块接管其他模块滚动/样式。
@@ -62,8 +62,8 @@
 优先顺序：用户最新明确选择 > 已批准设计母稿和 tag > 已验收的实际预览 > 最新工程草稿 > Agent 建议。
 
 新线程第一次工作要执行：
-1. 读 \`AGENTS.md\` / \`docs/MODULE_STANDARD.md\` / 本协议。
-2. 读 \`docs/module-designs/<ID>...md\` / 对应模块 README / 注册表。
+1. 读 `AGENTS.md` / `docs/MODULE_STANDARD.md` / 本协议。
+2. 读 `docs/module-designs/<ID>...md` / 对应模块 README / 注册表。
 3. 看当前批准预览和截图站；读批准 tag；不要误用旧草稿。
 4. 报告自己理解的模块职责、已冻结点、未冻结点、待做任务。
 5. 仅对用户明确要求的范围动手。
@@ -86,13 +86,13 @@
 
 ## 7. M01 案例
 
-- 母稿：\`docs/module-designs/M01_HOME_APPROVED.md\`
-- 视觉基准标签：\`m01-v3-visual-approved\`
-- 实际认可代码：\`experiments/m01-v3-art-motion/index.html\`
+- 母稿：`docs/module-designs/M01_HOME_APPROVED.md`
+- 视觉基准标签：`m01-v3-visual-approved`
+- 实际认可代码：`experiments/m01-v3-art-motion/index.html`
 - 固定截图站：https://zxyzx0430.github.io/zxyzx-me-lab/review/m01/
-- 旧 V1 代码 \`modules/home-hero/\` **不是**已认可的 V3。
+- 旧 V1 代码 `modules/home-hero/` **不是**已认可的 V3。
 - 已批准 **M01 视觉**，尚未完成独立生产封装 / 站点组合层集成。
 
 ## 8. 新模块模板
 
-可复制本协议的第 2 节建立新设计母稿，后续将 \`templates/module/README.md\` 作为工程模块结构参考。先设计并让用户认可，再实现，最后才做工程集成。下一步 M02 设计参见 \`docs/module-designs/M02_WORKS_DESIGN_BRIEF.md\`。
+可复制本协议的第 2 节建立新设计母稿，后续将 `templates/module/README.md` 作为工程模块结构参考。先设计并让用户认可，再实现，最后才做工程集成。下一步 M02 设计参见 `docs/module-designs/M02_WORKS_DESIGN_BRIEF.md`。
