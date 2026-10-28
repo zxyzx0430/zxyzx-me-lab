@@ -332,3 +332,30 @@
 @media(max-width:900px){
   .m01-root .photo-frame .portrait-hd{object-position:center 33%;transform:scale(calc(1.01 + var(--p)*.04))}
 }
+
+/* Bilingual corner motto: retain its original poster placement and
+   leave the AI × IDEAS × REAL WORLD microtype untouched. */
+.m01-root .poster-thought{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+}
+.m01-root .poster-thought-cn{display:block}
+.m01-root .poster-thought-en{
+  display:block;
+  font:10px/1.45 ui-monospace,Consolas,monospace;
+  letter-spacing:.014em;
+  color:#514e4b;
+  white-space:nowrap;
+  max-width:680px;
+}
+@media(max-width:900px){
+  .m01-root .poster-thought{width:88%;gap:4px}
+  .m01-root .poster-thought-en{
+    font-size:clamp(8px,2.15vw,10px);
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:normal;
+  }
+}
