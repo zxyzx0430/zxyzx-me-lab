@@ -230,7 +230,8 @@
   .m01-root .photo-frame{inset:0;background:transparent;box-shadow:none;clip-path:none;overflow:visible}
   .m01-root .photo-frame .portrait-hd{display:none!important}
   .m01-root .photo-frame .portrait-master{display:block;position:absolute;inset:0;width:800px;height:871px;object-fit:fill;opacity:1;filter:none!important;transform:none!important;animation:none!important;z-index:2}
-  .m01-root .poster-mountain{left:20px;top:421px;width:194px;height:91px;clip-path:none;background:url("./assets/master-mountain.png") 0 0/100% 100% no-repeat;opacity:1}
+  /* Localized collage extension: preserve the photo fragment, other poster layers unchanged. */
+  .m01-root .poster-mountain{left:16px;top:409px;width:322px;height:137px;clip-path:none;background:url("./assets/master-mountain.png") 0 0/100% 100% no-repeat;opacity:1}
   .m01-root .poster-thought{left:72px;top:731px;font-size:19px;line-height:1.5;font-weight:700}
   .m01-root .poster-meta{left:72px;top:825px;gap:8px;font-size:10px}
   .m01-root .poster-meta>span:first-child{display:none}
