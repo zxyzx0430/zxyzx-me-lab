@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "m01-react",
+  "displayName": "M01 Poster React Candidate",
+  "version": "0.1.0",
+  "status": "draft",
+  "entry": "src/modules/m01/M01Hero.tsx",
+  "preview": "preview/m01-react/index.html",
+  "assets": [
+    "src/modules/m01/assets/ink-erosion.png",
+    "src/modules/m01/assets/portrait-gaze-hd.webp"
+  ],
+  "publicApi": [
+    "M01Hero",
+    "artboardScale"
+  ],
+  "approvedTag": null
+}
