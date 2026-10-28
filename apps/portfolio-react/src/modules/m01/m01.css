@@ -301,3 +301,15 @@
   .m01-root .poster-vertical{display:none}
   .m01-root .enter{display:none}
 }
+
+
+/* Only the paper-to-photo seam beside 「寻」. Under ink, under the original
+   portrait, above plain paper. No global photo filter or title adjustment. */
+.poster-wall-seam{display:none}
+@media(min-width:901px){
+  .m01-root .poster-wall-seam{
+    display:block;position:absolute;z-index:2;left:798px;top:505px;
+    width:104px;height:210px;pointer-events:none;
+    background:url("./assets/master-wall-seam.png") center/100% 100% no-repeat;
+  }
+}

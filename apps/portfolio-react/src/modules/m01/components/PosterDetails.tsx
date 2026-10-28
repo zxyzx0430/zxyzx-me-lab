@@ -1,6 +1,6 @@
 export function PosterDetails() {
   return <>
-    <div className="poster-rule"/><div className="poster-mountain"/>
+    <div className="poster-rule"/><div className="poster-mountain"/><div className="poster-wall-seam" aria-hidden="true"/>
     <div className="poster-loop"/><div className="poster-loop loop-2"/>
     <div className="poster-cross"/><div className="poster-decor"/>
     <div className="poster-tape-left"/><div className="poster-tape-right"/>
