@@ -6,6 +6,13 @@
   },
   "versions": [
     {
+      "sha": "6e7f831",
+      "date": "2026-10-28T17:44:47+08:00",
+      "capturedAt": "2026-10-28T09:45:19.086Z",
+      "file": "versions/6e7f831.jpg",
+      "message": "fix(m01): keep exploration headline in title column"
+    },
+    {
       "sha": "0282b3c",
       "date": "2026-10-28T14:02:38+08:00",
       "capturedAt": "2026-10-28T06:25:29.618Z",
