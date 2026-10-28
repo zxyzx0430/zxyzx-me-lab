@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "versions": [
+    {
+      "sha": "0282b3c",
+      "date": "2026-10-28T14:02:38+08:00",
+      "file": "versions/0282b3c.jpg",
+      "message": "fix(m01): refine V3 editorial headline hierarchy and ink contrast"
+    }
+  ]
+}

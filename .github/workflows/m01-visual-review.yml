@@ -1,0 +1,78 @@
+name: M01 fixed desktop screenshot review
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/m01-v3-art-motion/index.html"
+      - ".github/workflows/m01-visual-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: m01-desktop-review
+  cancel-in-progress: false
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Find Chromium and install screenshot dependency
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then
+            echo "No installed Chrome: installing Chrome for Testing via Puppeteer"
+            mkdir -p "$RUNNER_TEMP/m01-chrome"
+            npm install --prefix "$RUNNER_TEMP/m01-chrome" --no-save --no-package-lock puppeteer@24.32.1
+            CHROME="$(find "$HOME/.cache/puppeteer/chrome" -type f -path '*/chrome-linux64/chrome' | head -1)"
+          fi
+          test -n "$CHROME"
+          echo "CHROME_BIN=$CHROME" >> "$GITHUB_ENV"
+          npm install --prefix "$RUNNER_TEMP/m01-deps" --no-save --no-package-lock --ignore-scripts puppeteer-core@24.32.1
+          echo "NODE_PATH=$RUNNER_TEMP/m01-deps/node_modules" >> "$GITHUB_ENV"
+      - name: Start local site and capture 1920x1080 desktop
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/m01-http.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/m01-server.pid"
+          node scripts/review/capture-m01.cjs
+      - name: Commit screenshot and append version history
+        id: store
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "m01-visual-review[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add review/m01/latest.jpg review/m01/history.json review/m01/versions/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Screenshot already up to date."
+          else
+            git commit -m "docs(m01): capture latest desktop screenshot [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Request GitHub Pages rebuild for generated screenshots
+        if: steps.store.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || {
+            echo "::warning::Screenshot committed, but Pages rebuild request was not accepted."
+          }
