@@ -125,22 +125,36 @@ export function M01Hero() {
     if (!el || staticPreview || matchMedia('(prefers-reduced-motion: reduce)').matches ||
       matchMedia('(pointer: coarse)').matches) return;
     const light = el.querySelector<HTMLElement>('.cinema-photo-light');
+    const portrait = el.querySelector<HTMLElement>('.portrait-plane');
+    const clamp = (value: number, low: number, high: number) =>
+      Math.max(low, Math.min(high, value));
     const move = (event: PointerEvent) => {
       if (el.dataset.transitioning === 'true') return;
       const bounds = el.getBoundingClientRect();
-      const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
-      const y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
-      // Normalized coordinates already range [-1,1]; a former .24 factor
-      // reduced the entire collage response to less than one screen pixel.
-      gsap.to(el, { '--px': x, '--py': y, duration: 1.05, ease: 'power2.out', overwrite: true });
-      if (light) gsap.to(light, {
-        x: x * 22, y: y * 13, opacity: x > .05 ? .18 : .085,
-        duration: 1.15, ease: 'power2.out', overwrite: true,
-      });
+      const x = clamp((event.clientX - bounds.left) / bounds.width * 2 - 1, -1, 1);
+      const y = clamp((event.clientY - bounds.top) / bounds.height * 2 - 1, -1, 1);
+      // Typography, paper and orbit respond together, without changing any
+      // resting position or recreating the original lettering as live fonts.
+      gsap.to(el, { '--px': x, '--py': y, duration: .72, ease: 'power2.out', overwrite: true });
+      if (light && portrait) {
+        const frame = portrait.getBoundingClientRect();
+        const lx = clamp((event.clientX - frame.left) / frame.width * 100, 27, 55);
+        const ly = clamp((event.clientY - frame.top) / frame.height * 100, 16, 78);
+        const inside = event.clientX >= frame.left && event.clientX <= frame.right &&
+          event.clientY >= frame.top && event.clientY <= frame.bottom;
+        gsap.to(light, {
+          '--light-x': lx + '%', '--light-y': ly + '%',
+          opacity: inside ? .52 : x > .05 ? .21 : .055,
+          duration: .72, ease: 'power2.out', overwrite: true,
+        });
+      }
     };
     const leave = () => {
       gsap.to(el, { '--px': 0, '--py': 0, duration: 1, ease: 'power2.out', overwrite: true });
-      if (light) gsap.to(light, { x: 0, y: 0, opacity: .055, duration: 1.2, overwrite: true });
+      if (light) gsap.to(light, {
+        '--light-x': '71%', '--light-y': '28%', opacity: .055,
+        duration: 1, ease: 'power2.out', overwrite: true,
+      });
     };
     el.addEventListener('pointermove', move, { passive: true });
     el.addEventListener('pointerleave', leave, { passive: true });

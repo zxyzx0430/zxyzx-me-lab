@@ -15,7 +15,9 @@
 .m01-root.cinematic-motion .cinema-photo-scrim{background:linear-gradient(135deg,#05050798,#05050720 65%,transparent);opacity:0}
 .m01-root.cinematic-motion .cinema-photo-light{
   z-index:211;opacity:.055;mix-blend-mode:screen;
-  background:radial-gradient(ellipse 52% 65% at 71% 25%,#eee9dfaf,transparent 75%)
+  --light-x:71%;--light-y:28%;
+  background:radial-gradient(ellipse 35% 48% at var(--light-x) var(--light-y),
+    rgba(250,248,238,.86) 0%,rgba(234,228,211,.47) 36%,transparent 76%)
 }
 .m01-root.cinematic-motion .cinema-film-grain{
   z-index:212;opacity:.025;mix-blend-mode:soft-light;
@@ -55,6 +57,22 @@
 .static-preview .cinema-photo-scrim,
 .static-preview .cinema-film-grain,
 .static-preview .cinema-track-dot{display:none!important}
+
+/* Pointer-responsive editorial depth. Word groups travel together, so the
+   previously repaired gap between 向外 and 探寻世界 never collapses. The
+   static version has no transforms, and the visual baseline remains exact. */
+@media (min-width:901px) and (pointer:fine) {
+  .m01-root.cinematic-motion .master-word.word-into,
+  .m01-root.cinematic-motion .master-word.word-out {
+    transform:translate3d(calc(var(--px) * -9px),calc(var(--py) * -6px),0);
+  }
+  .m01-root.cinematic-motion .master-word.word-find,
+  .m01-root.cinematic-motion .master-word.word-center,
+  .m01-root.cinematic-motion .master-word.word-explore,
+  .m01-root.cinematic-motion .master-word.word-world {
+    transform:translate3d(calc(var(--px) * -7px),calc(var(--py) * -5px),0);
+  }
+}
 
 /* Clip interactive lighting to the approved photographic silhouette: no
    bright overlay may leak into the paper or typography along the left seam. */
