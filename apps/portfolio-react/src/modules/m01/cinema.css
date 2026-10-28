@@ -1,0 +1,38 @@
+/* M01 Beyond the Frame: isolated motion layer; master poster geometry unchanged. */
+.cinema-stage{position:absolute;inset:0;pointer-events:none;transform-origin:72% 48%;will-change:transform}
+.cinema-blackout{position:fixed;inset:0;z-index:50;background:#0b0b0d;opacity:0;visibility:hidden;pointer-events:none}
+.m01-root.cinematic-motion .poster-title .t,
+.m01-root.cinematic-motion .photo-frame img{animation:none!important}
+.m01-root.cinematic-motion .poster-title .master-word{animation:none!important}
+.cinema-photo-scrim,.cinema-photo-light,.cinema-film-grain{display:none}
+.m01-root.cinematic-motion .cinema-photo-scrim,
+.m01-root.cinematic-motion .cinema-photo-light,
+.m01-root.cinematic-motion .cinema-film-grain{
+  position:absolute;inset:0;display:block;pointer-events:none;z-index:210
+}
+.m01-root.cinematic-motion .cinema-photo-scrim{background:linear-gradient(135deg,#05050798,#05050720 65%,transparent);opacity:0}
+.m01-root.cinematic-motion .cinema-photo-light{
+  z-index:211;opacity:.035;mix-blend-mode:screen;
+  background:radial-gradient(ellipse 52% 65% at 71% 25%,#eee9dfaf,transparent 75%)
+}
+.m01-root.cinematic-motion .cinema-film-grain{
+  z-index:212;opacity:.025;mix-blend-mode:soft-light;
+  background-size:108px 108px;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 108 108' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  animation:cinema-film-breath 9s ease-in-out infinite alternate
+}
+@keyframes cinema-film-breath{from{opacity:.018}to{opacity:.035}}
+.cinema-track-dot{opacity:0;fill:#fff;stroke:none;pointer-events:none}
+@media(max-width:900px){
+  .cinema-stage{transform-origin:70% 46%}
+  .m01-root.cinematic-motion .cinema-photo-light{opacity:.015}
+}
+@media(prefers-reduced-motion:reduce){
+  .cinema-stage{will-change:auto}
+  .cinema-photo-light,.cinema-photo-scrim,.cinema-film-grain,.cinema-track-dot{display:none!important}
+  .cinema-blackout{display:none!important}
+}
+.static-preview .cinema-photo-light,
+.static-preview .cinema-photo-scrim,
+.static-preview .cinema-film-grain,
+.static-preview .cinema-track-dot{display:none!important}

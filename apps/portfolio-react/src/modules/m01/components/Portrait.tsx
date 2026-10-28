@@ -7,6 +7,9 @@ export function Portrait() {
       <img className="portrait-hd" src={portrait} alt="" fetchPriority="high" decoding="async" />
       <img className="portrait-master" src={exactPortrait} alt="" fetchPriority="high" decoding="async" />
       <div className="photo-vignette"/>
+      <div className="cinema-photo-scrim"/>
+      <div className="cinema-photo-light"/>
+      <div className="cinema-film-grain"/>
     </div>
   </div>;
 }
