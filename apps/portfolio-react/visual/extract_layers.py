@@ -52,6 +52,31 @@ poly=[(x-rect[0],y-rect[1]) for x,y in poly]
 mask=Image.new('L',cut.size,0)
 ImageDraw.Draw(mask).polygon(poly,fill=255)
 cut.putalpha(mask)
+# Repair ONLY the beige paper-colored scrap along the wall immediately right
+# of 「寻」. The wall is photographic: use adjacent source wall pixels, not a
+# flat CSS rectangle. Do not alter transparency, face, upper light beam or any
+# portion of the portrait beyond this tiny band.
+rgba=np.asarray(cut).copy()
+rgb=rgba[:,:,:3].astype('float32')
+Y,X=np.mgrid[65:936,804:1604]
+paper_scrap=np.zeros(rgba.shape[:2],np.uint8)
+points=np.array([(867,518),(907,515),(900,554),(896,579),
+                 (885,613),(869,610),(864,573)],np.int32)
+points-=np.array([804,65])
+cv2.fillPoly(paper_scrap,[points],255)
+soft=cv2.GaussianBlur(paper_scrap.astype('float32')/255,(0,0),3.1)
+bright=.2126*rgb[:,:,0]+.7152*rgb[:,:,1]+.0722*rgb[:,:,2]
+# Avoid touching dark printed ink or scratches; repaint only the pale region.
+repaint=soft*np.clip((bright-85)/105,0,1)*.96*(rgba[:,:,3].astype('float32')/255)
+repaint[:448,:]=0
+repaint[549:,:]=0
+source_x=np.minimum(X+56,1603)-804
+wall=rgb[np.arange(rgb.shape[0])[:,None],source_x]
+rgba[:,:,:3]=np.uint8(np.clip(rgb*(1-repaint[:,:,None])+wall*repaint[:,:,None],0,255))
+assert np.array_equal(rgba[:,:,3],np.asarray(cut)[:,:,3]),'alpha may not change'
+assert np.array_equal(rgba[:448],np.asarray(cut)[:448]),'top must not change'
+assert np.array_equal(rgba[549:],np.asarray(cut)[549:]),'bottom must not change'
+cut=Image.fromarray(rgba,'RGBA')
 cut.save(out/'master-portrait.png',optimize=True)
 # Exact mountain photo fragment is separate; outside of the strip remains transparent.
 rect=(20,421,214,512)
