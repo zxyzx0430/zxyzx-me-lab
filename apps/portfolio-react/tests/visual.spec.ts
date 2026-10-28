@@ -22,7 +22,12 @@ for(const vp of viewports){
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
     expect(overflow).toBe(false);
     const photo=await page.locator('.portrait-hd').evaluate((img:HTMLImageElement)=>[img.naturalWidth,img.naturalHeight]);
-    expect(photo[0]).toBeGreaterThan(1000);
+    expect(photo).toEqual([1152,1536]);
+    expect(await page.locator('.portrait-hd').getAttribute('src')).toContain('portrait-user-20261028');
+    expect(await page.locator('.portrait-master').count()).toBe(0);
+    await expect(page.locator('.poster-thought-cn')).toHaveText('目之所及，非世界之尽。');
+    await expect(page.locator('.poster-thought-en')).toHaveText('The limits of my sight are not the limits of the world.');
+    await expect(page.locator('.poster-vertical')).toHaveText('FAITHFUL TO THE CENTER');
     expect(await page.locator('section.scene').evaluate((s)=>Math.abs(s.getBoundingClientRect().height-innerHeight))).toBeLessThan(3);
     if(vp.width===1672)expect(await page.locator('.poster-artboard').evaluate(e=>Math.round(e.getBoundingClientRect().width))).toBe(1672);
   });
