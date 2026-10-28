@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#eeeae1">
+<meta name="description" content="忠心于中心：向内寻找中心，向外探寻世界。电影式编辑海报首页 Poster Composition V2。">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>忠心于中心 · Poster Composition V2 · 首页实验</title>
+<style>
+:root{scroll-behavior:smooth;color-scheme:light}
+*,:before,:after{box-sizing:border-box}
+body{margin:0;min-width:320px;background:#111319;color:#171719;font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid #3158ff;outline-offset:5px}
+.skip{position:absolute;top:-100px;left:12px;z-index:30;padding:11px 16px;background:#fff;box-shadow:0 5px 30px #0004}.skip:focus{top:14px}
+.nav{pointer-events:none;z-index:20;position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px clamp(20px,4.2vw,76px);color:#161717}.nav>*{pointer-events:auto}
+.brand{display:flex;flex-direction:column;gap:5px;min-width:max-content}.brand-name{font-size:clamp(18px,1.9vw,28px);font-weight:900;letter-spacing:-.07em;line-height:1}.brand-small{font:9px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.24em;color:#767570}
+.navitems{display:flex;align-items:center;gap:clamp(10px,2.5vw,40px);font:10px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.14em}.navitems a{padding:8px 0;border-bottom:1px solid transparent}.navitems a:hover{border-color:currentColor}.nav-note{color:#77756e}
+.next{position:relative;z-index:2;background:#181a20;color:#f3eee7;min-height:100svh;padding:clamp(68px,9vw,140px) clamp(24px,6.2vw,110px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:center;gap:6vw}
+.next .index{font:11px ui-monospace,Consolas,monospace;letter-spacing:.19em;color:#b7afa8}.next h2{font-weight:900;font-size:clamp(62px,10.4vw,168px);letter-spacing:-.085em;line-height:1.03;margin:29px 0}.next .description{font-size:clamp(18px,1.7vw,25px);font-weight:600;line-height:1.7}.next .description+p{font-size:14px;color:#c8c6c5;line-height:2;max-width:32em}.next .project-hint{border-top:1px solid #71737b65;margin-top:35px;padding-top:22px;display:grid;gap:16px;font:12px ui-monospace,Consolas,monospace;letter-spacing:.06em}.next .project-hint span{display:flex;justify-content:space-between;gap:15px}.next .project-hint i{font-style:normal;color:#9ba5b1}
+.review-note{color:#9c9aa5;font:10px/1.9 ui-monospace,Consolas,monospace;letter-spacing:.07em;margin-top:28px}
+.page-footer{background:#181a20;color:#a8adb7;border-top:1px solid #48495155;display:flex;justify-content:space-between;gap:24px;padding:20px clamp(24px,6.2vw,110px);font:10px/1.7 ui-monospace,Consolas,monospace;letter-spacing:.11em}
+@media(max-width:700px){.nav{padding:19px 20px}.brand-name{font-size:19px}.navitems{font-size:9px;gap:15px;letter-spacing:.04em}.nav-note{display:none}.next{min-height:100svh;grid-template-columns:1fr;gap:20px}.next h2{font-size:17vw;margin:22px 0}.page-footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}}
+</style>
+
+</head>
+<body>
+<a class="skip" href="#world">跳过首页开场</a>
+<header class="nav">
+<a href="#top" class="brand" aria-label="忠心于中心，返回开场"><span class="brand-name">忠心于中心</span><span class="brand-small">ZXYZX.ME</span></a>
+<nav class="navitems" aria-label="个人站导航"><span class="nav-note">PERSONAL DIGITAL SPACE / 2026</span><a href="#world">WORK</a><a href="#world-details">ABOUT</a></nav>
+</header>
+<main id="top">
+<zxyzx-home-hero-v3art></zxyzx-home-hero-v3art>
+<section class="next" id="world" aria-label="作品世界过渡示意">
+<div><span class="index">01 / EXPLORE THE WORLD</span><h2>让思想，<br>发生。</h2></div>
+<div id="world-details"><p class="description">向内理解自己，向外走进问题。</p><p>我关心学习、经济、技术和真实生活，也尝试把研究变成可以实践的系统。</p><div class="project-hint" aria-label="未来的独立项目模块入口"><span>01　PERSONAL AI SYSTEM <i>学习与认知</i></span><span>02　OPEN MARGIN <i>经济与财务</i></span><span>03　HARDWARE RAG AGENT <i>技术与实践</i></span></div><div class="review-note">M01 ONLY / THESE ARE CONTENT TEASERS, NOT THE M02 PROJECT MODULE.<br>本页为个人主页首屏设计草稿，不会替换正式网站或知识网络 V5。</div></div>
+</section>
+</main>
+<footer class="page-footer"><span>忠心于中心 / THE PERSON BEHIND THE SYSTEM</span><span>V3 ART MOTION · EXPERIMENT / DRAFT</span></footer>
+<script>/** V3 Art Motion: isolated visual experiment, not approved M01. */
+const INLINE_STYLE = ":host{--p:0;--px:0;--py:0;display:block;height:100svh;min-height:0;font-family:\"Noto Sans CJK SC\",\"PingFang SC\",\"Microsoft YaHei\",system-ui,sans-serif;color:#19191b}\n*,:before,:after{box-sizing:border-box}\n.scene{position:relative;isolation:isolate;width:100%;height:100svh;min-height:0;overflow:hidden;background:radial-gradient(ellipse 75% 55% at 66% 34%,#f9f7f2 1%,#ece9e0 65%,#e2dcd1 140%)}\n.ambient{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}\n.orbit{position:absolute;display:block;border:1px solid rgba(12,12,15,.15);border-radius:50%;will-change:transform}\n.orbit-1{width:61vw;height:61vw;min-width:700px;min-height:700px;left:35%;top:-43%;transform:rotate(calc(-9deg + var(--p) * 27deg)) translate3d(calc(var(--px) * 5px),calc(var(--py) * 4px),0)}\n.orbit-2{width:45vw;height:45vw;min-width:520px;min-height:520px;left:42%;top:-33%;border-color:#3434370d;transform:rotate(calc(var(--p) * -35deg))}\n.glint{position:absolute;width:65%;height:80%;left:45%;top:-40%;opacity:.2;background:radial-gradient(ellipse,#fff,#eae7df00 70%);pointer-events:none}\n.bottom-glyph{position:absolute;z-index:0;bottom:-8vw;left:-2vw;font-size:clamp(270px,37vw,680px);color:transparent;-webkit-text-stroke:1px #1717191e;font-weight:950;line-height:1;letter-spacing:-.16em;transform:translateY(calc(var(--p) * -95px));user-select:none;pointer-events:none}\n.portrait-plane{position:absolute;z-index:2;left:47%;top:11%;width:42%;height:90%;transform:translate3d(calc(var(--px) * 8px + var(--p) * 13vw),calc(var(--py) * 6px - var(--p) * 18px),0) rotate(calc(-4deg + var(--p)*-2deg)) scale(calc(1 + var(--p) * .1));transform-origin:50% 65%;will-change:transform;pointer-events:none}\n.portrait-shadow{position:absolute;inset:5% -5% -3% 6%;background:#0d0e13;filter:blur(42px);opacity:.29;transform:translate(11px,16px)}\n.photo-frame{position:absolute;inset:0;overflow:hidden;background:#15151a;clip-path:polygon(3% 0,98% 0,100% 100%,0 96%);box-shadow:0 26px 60px #25252555}\n.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:contrast(1.07) brightness(.94);transform:scale(calc(1.035 + var(--p) * .055));transform-origin:50% 35%;animation:photo-enter 1.4s cubic-bezier(.22,.68,.22,1) both}\n.photo-vignette{position:absolute;inset:0;background:linear-gradient(105deg,transparent 38%,#08090b11 80%),linear-gradient(0deg,#07080b85 0%,transparent 30%),linear-gradient(185deg,#f5e1c511 0%,transparent 34%);pointer-events:none}\n.headline{position:absolute;z-index:4;left:5.6%;top:24%;width:94%;pointer-events:none;font-weight:950;letter-spacing:-.085em}\n.headline-inner,.headline-outer{display:flex;align-items:baseline;white-space:nowrap;line-height:1.05;transform-origin:left center;will-change:transform,opacity}\n.headline-inner{color:#151517;transform:translate3d(calc(var(--px) * -8px - var(--p) * 14vw),calc(var(--py) * -3px - var(--p)*80px),0);opacity:calc(1 - var(--p)*.75);animation:headline-wipe-in .95s cubic-bezier(.2,.72,.15,1) both}\n.headline-outer{color:#f6f5f1;mix-blend-mode:difference;margin-top:-.005em;transform:translate3d(calc(var(--px) * -4px + var(--p)*15vw),calc(var(--py) * -2px + var(--p)*42px),0);opacity:calc(1 - var(--p)*.78);animation:headline-wipe-in 1.15s .14s cubic-bezier(.2,.72,.15,1) both}\n.headline-major{font-size:clamp(85px,11.4vw,200px);letter-spacing:-.095em;line-height:1.1;display:inline-block}\n.headline-minor{font-size:clamp(48px,6.5vw,115px);letter-spacing:-.075em;display:inline-block;margin-left:-.04em}\n.sr-only{position:absolute;overflow:hidden;clip-path:inset(50%);width:1px;height:1px;white-space:nowrap}\n.thought{position:absolute;z-index:4;top:65%;left:25%;color:#1b1b1e;letter-spacing:-.035em;font-size:clamp(17px,1.75vw,27px);font-weight:700;line-height:1.42;transform:translate3d(0,calc(var(--p)*17px),0);opacity:calc(1 - var(--p) * .9)}\n.photo-label{position:absolute;z-index:5;top:28%;right:13%;writing-mode:vertical-rl;color:#f0ece8d9;font:10px/1.3 ui-monospace,Consolas,monospace;letter-spacing:.23em;text-shadow:0 1px 8px #000a;pointer-events:none;opacity:calc(1 - var(--p))}\n.meta{position:absolute;left:6%;bottom:10%;z-index:5;display:flex;flex-direction:column;gap:5px;font-size:11px;line-height:1.6;letter-spacing:.045em;color:#232327;opacity:calc(1 - var(--p)*.9)}\n.meta-number{font:10px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.18em;color:#73726f;padding-bottom:17px}\n.meta strong{font-size:12px;letter-spacing:.06em}\n.scene-count{position:absolute;z-index:6;right:4.5%;top:43%;display:flex;flex-direction:column;gap:9px}\n.scene-count i{display:block;width:5px;height:5px;border-radius:5px;border:1px solid #9d9e9e}\n.scene-count i:first-child{width:5px;height:27px;background:#252525;border-color:#252525}\n.enter{position:absolute;z-index:7;right:6%;bottom:9%;display:flex;align-items:center;gap:20px;text-decoration:none;font:10px/1.3 ui-monospace,Consolas,monospace;letter-spacing:.17em;color:#1a1a1c;opacity:calc(1 - var(--p)*.95)}\n.enter:hover{text-decoration:underline;text-underline-offset:6px}\n.enter:focus-visible{outline:2px solid #3158ff;outline-offset:8px}\n.arrow{font:40px/1 sans-serif;font-weight:200;transition:transform .25s}\n.enter:hover .arrow{transform:translate(-5px,5px)}\n.grain{position:absolute;inset:0;z-index:8;pointer-events:none;opacity:.10;mix-blend-mode:multiply;background-image:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.63' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.26'/%3E%3C/svg%3E\")}\n@keyframes headline-wipe-in{from{clip-path:inset(0 0 0 100%);filter:blur(3px)}to{clip-path:inset(0 0 0 0);filter:blur(0)}}\n@keyframes photo-enter{from{opacity:.35;filter:contrast(1.15) blur(9px);scale:1.035}to{opacity:1;filter:contrast(1.07) brightness(.94);scale:1}}\n@media(min-width:1500px){.headline{top:22.5%}.portrait-plane{left:48%;width:42%}.thought{top:63%}}\n@media(max-width:1000px){\n :host{height:100svh;min-height:0}.scene{min-height:0}\n .portrait-plane{left:39%;width:56%;height:82%;top:11%}\n .headline{top:28%;left:5%}.headline-major{font-size:11vw}.headline-minor{font-size:6.5vw}\n .thought{left:26%;top:64%;font-size:clamp(17px,2.3vw,23px)}\n .photo-label{right:11%}.meta{bottom:8%}.enter{bottom:7%}\n}\n@media(max-width:650px){\n :host{height:100svh;min-height:0}.scene{min-height:0;background:radial-gradient(ellipse 70% 60% at 55% 29%,#fcfaf4 0%,#ebe7dd 66%,#ded7cb 180%)}\n .orbit-1{min-width:550px;min-height:550px;width:140vw;height:140vw;left:22%;top:-24%}.orbit-2{min-width:450px;min-height:450px;left:20%;top:-20%}\n .portrait-plane{left:24%;top:16%;width:79%;height:75%;transform:translate3d(calc(var(--px) * 3px + var(--p)*26vw),calc(var(--py)*2px - var(--p)*12px),0) rotate(calc(-3deg - var(--p)*3deg)) scale(calc(1 + var(--p)*.06))}\n .photo-frame img{object-position:center 34%}\n .headline{left:4.3%;top:29%;width:99%}\n .headline-inner{transform:translate3d(calc(var(--p)*-21vw),calc(var(--p)*-55px),0)}\n .headline-outer{margin-top:5px;transform:translate3d(calc(var(--p)*17vw),calc(var(--p)*25px),0)}\n .headline-major{font-size:clamp(47px,12.4vw,78px);letter-spacing:-.10em}\n .headline-minor{font-size:clamp(28px,7vw,49px);letter-spacing:-.08em}\n .thought{left:5%;top:65%;font-size:clamp(14px,3.8vw,20px);line-height:1.5;color:#f5f3ee;filter:drop-shadow(0 1px 5px #000a)}\n .photo-label{right:6%;top:21%;font-size:8px}\n .meta{left:5%;bottom:7%;font-size:9px;gap:3px}\n .meta strong{font-size:10px}.meta-number{padding-bottom:11px;font-size:8px}\n .scene-count{right:2%;top:49%}.enter{right:6%;bottom:6%;font-size:8px;gap:10px}\n .arrow{font-size:29px}.bottom-glyph{font-size:70vw;bottom:-8%}\n}\n@media(max-width:360px){.headline{top:29%}.headline-major{font-size:12vw}.headline-minor{font-size:6.7vw}.thought{top:65%}.meta{bottom:5%}.enter{bottom:5%}.photo-label{right:6%}}\n@media(prefers-reduced-motion:reduce){\n :host{height:100svh;min-height:0}.scene{min-height:0}\n .portrait-plane,.bottom-glyph,.orbit,.headline-inner,.headline-outer,.thought{transform:none!important}\n .headline-inner,.headline-outer,.photo-frame img{animation:none!important;opacity:1!important;filter:none!important}\n .enter .arrow{transition:none!important}\n}\n\n\n\n/* Poster V2, based on second A+B selected visual. Live DOM text + imagery. */\n:host{display:block;width:100%;height:100svh;min-height:0;--art-scale:1}\n.scene{height:100svh;min-height:0;background:radial-gradient(ellipse at 45% 38%,#fcfaf3 0%,#f1eee6 68%,#e5dfd4 100%)}\n.bottom-glyph{display:none}\n.orbit-1{left:37%;top:-53%;border-color:#2425291e}\n.orbit-2{left:42%;top:-50%;border-color:#24252912}\n.poster-artboard{position:absolute;z-index:2;left:50%;top:50%;width:1672px;height:941px;transform:translate(-50%,-50%) scale(var(--art-scale));transform-origin:center center;pointer-events:none}\n.poster-artboard *{box-sizing:border-box}\n.poster-rule{position:absolute;inset:0;z-index:4;pointer-events:none}\n.poster-rule:before{content:\"\";position:absolute;left:-8%;top:67%;width:59%;height:1px;background:#20212575;transform:rotate(-31deg);transform-origin:left center}\n.poster-rule:after{content:\"\";position:absolute;left:24%;top:28%;width:42%;height:1px;background:#33343b55;transform:rotate(-19deg)}\n.poster-loop{position:absolute;z-index:4;border:1px solid #1111147a;width:390px;height:98px;border-radius:50%;transform:rotate(-25deg);left:285px;top:280px}\n.poster-loop.loop-2{width:280px;height:70px;left:490px;top:653px;transform:rotate(18deg);border-color:#17181952}\n.poster-mountain{position:absolute;z-index:1;width:260px;height:72px;left:20px;top:425px;clip-path:polygon(0 59%,18% 42%,31% 50%,47% 31%,62% 53%,78% 19%,100% 50%,100% 100%,0 100%);background:repeating-linear-gradient(165deg,#24292b44 0 1px,transparent 1px 4px),linear-gradient(170deg,#d8d7d2,#6a6d6d)}\n.poster-cross{position:absolute;z-index:5;top:97px;left:778px;width:38px;height:38px;opacity:.25}\n.poster-cross:before,.poster-cross:after{content:\"\";position:absolute;background:#292a2c;width:1px;height:38px;left:18px}\n.poster-cross:after{transform:rotate(90deg)}\n.portrait-plane{z-index:3;left:810px;top:107px;width:725px;height:787px;transform:translate3d(calc(var(--px)*9px + var(--p)*112px),calc(var(--py)*7px - var(--p)*35px),0) rotate(calc(-2.4deg - var(--p)*1.8deg)) scale(calc(1 + var(--p)*.04));transform-origin:50% 60%}\n.photo-frame{clip-path:none;background:#151518;box-shadow:0 15px 40px #0b0c102d}\n.photo-frame img{object-position:center 39%;filter:contrast(1.05) brightness(.99);transform:scale(calc(1.01 + var(--p)*.04));animation:photo-enter 1.3s cubic-bezier(.2,.68,.22,1) both}\n.photo-vignette{background:linear-gradient(100deg,#f0ebd81c,transparent 39%),linear-gradient(0deg,#05060b61,transparent 27%)}\n.portrait-shadow{inset:4% -3% -3% 3%;filter:blur(27px);opacity:.18}\n.poster-title{position:absolute;inset:0;z-index:4;pointer-events:none;font-family:\"Noto Sans CJK SC\",\"Microsoft YaHei\",\"PingFang SC\",system-ui,sans-serif;opacity:calc(1 - var(--p)*.78)}\n.poster-title .t{position:absolute;white-space:nowrap;display:block;line-height:1.0;font-weight:900;color:#121315;letter-spacing:-.10em;will-change:transform,opacity}\n.poster-title .t-into{left:75px;top:145px;font-size:266px;letter-spacing:-.13em;transform:skew(-5deg,-4deg) translate3d(calc(var(--px)*-7px + var(--p)*-90px),calc(var(--p)*-65px),0);animation:poster-come-up 1s .04s cubic-bezier(.2,.74,.14,1) both}\n.poster-title .t-find{left:520px;top:246px;font-size:106px;font-weight:860;letter-spacing:-.10em;transform:rotate(-4deg) translateY(calc(var(--p)*-34px));animation:poster-come-up .95s .22s ease-out both}\n.poster-title .t-center{left:605px;top:337px;font-size:101px;font-weight:650;letter-spacing:-.095em;color:transparent;-webkit-text-stroke:1.8px #1d1e20;transform:skew(-4deg,-3deg) translate(calc(var(--p)*22px),calc(var(--p)*-22px));animation:poster-trace 1.1s .4s ease-out both}\n.poster-title .t-out{left:178px;top:435px;font-size:268px;letter-spacing:-.12em;transform:skew(-6deg,-3deg) translate3d(calc(var(--px)*-3px + var(--p)*-90px),calc(var(--p)*45px),0);animation:poster-come-up 1s .18s cubic-bezier(.16,.82,.14,1) both}\n.poster-title .t-explore{left:620px;top:531px;font-size:105px;letter-spacing:-.10em;transform:rotate(-6deg) translateX(calc(var(--p)*55px));animation:poster-come-up .9s .38s ease-out both}\n.poster-title .t-world{left:601px;top:661px;font-size:98px;letter-spacing:-.10em;transform:rotate(-6deg) translateX(calc(var(--p)*110px));animation:poster-trace 1.1s .55s ease-out both}\n.t-world .outline{color:transparent;-webkit-text-stroke:1.8px #18191a}\n.t-world .solid{color:#141516;font-weight:950}\n.poster-underline{position:absolute;z-index:5;width:345px;height:1px;background:#191a1a7e;left:545px;top:788px;transform:rotate(-13deg)}\n.poster-thought{position:absolute;z-index:5;left:75px;top:717px;font-size:19px;font-weight:720;line-height:1.55;letter-spacing:-.035em;color:#171819}\n.poster-meta{position:absolute;z-index:5;left:75px;top:808px;display:flex;flex-direction:column;gap:9px;font:10px/1.6 ui-monospace,Consolas,monospace;letter-spacing:.16em;color:#1b1c1e}\n.poster-meta strong{font-size:14px;letter-spacing:.16em}\n.poster-meta .sub{font:12px/1.4 \"Noto Sans CJK SC\",system-ui,sans-serif;letter-spacing:0;color:#7b7770}\n.poster-vertical{position:absolute;z-index:5;left:1507px;top:212px;writing-mode:vertical-rl;color:#f3f0eceb;font:11px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.3em;text-shadow:0 1px 7px #000c}\n.poster-asterisk{position:absolute;z-index:4;left:415px;top:843px;color:#9f9b94;font:11px/1.5 ui-monospace,monospace;letter-spacing:.17em}\n.poster-decor{position:absolute;z-index:1;border:1px solid #494b5040;width:238px;height:190px;left:255px;top:860px;transform:rotate(-36deg)}\n.poster-decor:before{content:\"\";position:absolute;inset:30px;border:1px solid #777b7e42}\n.scene-count{right:3.6%;top:43%}\n.enter{right:5%;bottom:8%;z-index:9;color:#252528}\n.grain{opacity:.07}\n@keyframes poster-come-up{from{opacity:0;clip-path:inset(100% 0 0);filter:blur(5px)}to{opacity:1;clip-path:inset(0 0 0);filter:blur(0)}}\n@keyframes poster-trace{from{opacity:0;filter:blur(6px)}to{opacity:1;filter:blur(0)}}\n@media(max-width:900px){\n .poster-artboard{width:100%;height:100%;left:0;top:0;transform:none!important}\n .portrait-plane{left:23%;top:15%;width:79%;height:68%;transform:rotate(-3deg) translateX(calc(var(--p)*45px))}\n .photo-frame img{object-position:55% 40%}\n .poster-title .t{letter-spacing:-.07em}\n .poster-title .t-into{left:3%;top:25%;font-size:clamp(72px,18.5vw,142px);transform:skew(-4deg,-3deg) translateX(calc(var(--p)*-22px))}\n .poster-title .t-find{left:35%;top:33%;font-size:clamp(35px,8.8vw,73px);color:#fff8ef;text-shadow:0 2px 9px #0009}\n .poster-title .t-center{left:44%;top:40%;font-size:clamp(39px,9.4vw,70px);-webkit-text-stroke:1.2px #fff6eb;color:transparent}\n .poster-title .t-out{left:3%;top:53%;font-size:clamp(76px,20vw,145px);color:#0e1012}\n .poster-title .t-explore{left:38%;top:62%;font-size:clamp(37px,9vw,75px);color:#fff9f0;text-shadow:0 2px 7px #000a}\n .poster-title .t-world{left:39%;top:70%;font-size:clamp(40px,9.2vw,70px)}\n .t-world .outline{-webkit-text-stroke:1.25px #faf6ee}\n .t-world .solid{color:#fff9ef;text-shadow:0 2px 8px #0008}\n .poster-rule:before{left:-23%;top:73%;width:98%}\n .poster-rule:after{left:4%;top:31%;width:95%}\n .poster-loop{width:50%;height:7%;left:5%;top:39%}\n .poster-loop.loop-2{left:21%;top:72%}\n .poster-mountain{left:0;top:47%;width:31%;height:4%;opacity:.5}\n .poster-thought{left:6%;top:82%;font-size:clamp(12px,3.6vw,18px)}\n .poster-meta{left:6%;top:auto;bottom:5%;font-size:8px;gap:1px}\n .poster-meta strong{font-size:10px}\n .poster-meta .sub{font-size:9px}\n .poster-vertical{left:auto;right:3%;top:23%;font-size:8px}\n .poster-underline,.poster-cross,.poster-asterisk,.poster-decor{display:none}\n .scene-count{right:2%;top:45%}\n .enter{right:4%;bottom:4%;font-size:8px;gap:6px}\n .arrow{font-size:26px}\n}\n@media(max-width:390px){\n .portrait-plane{left:16%;width:89%;top:17%;height:62%}\n .poster-title .t-find{left:32%;top:34%}\n .poster-title .t-center{left:39%;top:40%}\n .poster-title .t-explore{left:34%;top:63%}\n .poster-title .t-world{left:31%;top:72%}\n}\n@media(prefers-reduced-motion:reduce){\n .poster-title .t,.photo-frame img{animation:none!important;opacity:1!important;filter:none!important}\n .portrait-plane{transform:rotate(-2.4deg)!important}\n}\n/* Subtle ink dropout belongs to heavy glyph surfaces, not the portrait. */\n@media(min-width:901px){\n .poster-title .t-into,.poster-title .t-out{\n  color:transparent;\n  -webkit-text-fill-color:transparent;\n  background-image:radial-gradient(circle,#eeeae1 0 .65px,transparent 1px),radial-gradient(circle,#ebe6dc 0 .55px,transparent .85px),linear-gradient(#111214,#111214);\n  background-size:13px 17px,21px 19px,100% 100%;\n  background-position:2px 4px,7px 11px,0 0;\n  -webkit-background-clip:text;background-clip:text;\n }\n}\n";
+const PORTRAIT_DATA = "./assets/portrait-gaze-hd.webp";
+const asset = path => path.includes('portrait-cinematic.webp') ? './assets/portrait-gaze-hd.webp' : path;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const clamp = x => Math.max(0,Math.min(1,x));
+const smoothstep = x => {const v=clamp(x);return v*v*(3-2*v)};
+class CinematicV3Hero extends HTMLElement {
+  constructor(){
+    super(); this.attachShadow({mode:'open'});
+    this._active=false;this._raf=0;this._lastPx=0;this._lastPy=0;
+    this._update=this._update.bind(this);
+    this._move=this._move.bind(this);
+    this._resetPointer=this._resetPointer.bind(this);
+    this._wheel=this._wheel.bind(this);
+    this._key=this._key.bind(this);
+    this._touchStart=this._touchStart.bind(this);
+    this._touchEnd=this._touchEnd.bind(this);
+    this._touchOrigin=null;
+    this._wheelSum=0;this._wheelAt=0;this._wheelLock=0;this._wheelGesture=false;this._wheelTimer=0;
+  }
+  connectedCallback(){
+    if(this._active)return;this._active=true;
+    this.shadowRoot.innerHTML=`
+      <style>${INLINE_STYLE}</style>
+      <section class="scene" aria-label="个人首页：向内寻找中心，向外探寻世界">
+        <div class="ambient" aria-hidden="true"><span class="orbit orbit-1"></span><span class="orbit orbit-2"></span><span class="glint"></span></div>
+        <div class="poster-artboard" aria-hidden="true">
+          <div class="poster-rule"></div><div class="poster-mountain"></div>
+          <div class="poster-loop"></div><div class="poster-loop loop-2"></div>
+          <div class="poster-cross"></div><div class="poster-decor"></div>
+          <div class="portrait-plane">
+            <div class="portrait-shadow"></div><div class="photo-frame">
+              <img src="./assets/portrait-gaze-hd.webp" alt="" fetchpriority="high" decoding="async"/>
+              <div class="photo-vignette"></div>
+            </div>
+          </div>
+          <div class="poster-title">
+            <span class="t t-into">向内</span><span class="t t-find">寻找</span>
+            <span class="t t-center">中心，</span><span class="t t-out">向外</span>
+            <span class="t t-explore">探寻</span>
+            <span class="t t-world"><span class="outline">世</span><span class="solid">界。</span></span>
+          </div>
+          <div class="poster-underline"></div>
+          <div class="poster-thought">忠于内在的原则，<br/>探索真实的世界。</div>
+          <div class="poster-meta"><span>00 / THE PERSON</span><strong>AI × IDEAS × REAL WORLD</strong><span class="sub">在学习中构建，在实践中扩展。</span></div>
+          <div class="poster-vertical">A SELF PORTRAIT / IN MOTION — 2026</div>
+          <div class="poster-asterisk">THE PERSON / BETWEEN IDEAS AND THE REAL WORLD.</div>
+        </div>
+        <h1 class="sr-only">向内寻找中心，向外探寻世界。</h1>
+        <div class="scene-count" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <a href="#world" class="enter" aria-label="向下滚动，探索作品世界"><span>SCROLL TO EXPLORE</span><span class="arrow">↙</span></a>
+        <div class="grain" aria-hidden="true"></div>
+      </section>`;
+    this._scene=this.shadowRoot.querySelector('.scene');
+    this._artboard=this.shadowRoot.querySelector('.poster-artboard');
+    this._syncArtboardScale();
+    this.addEventListener('pointermove',this._move,{passive:true});
+    this.addEventListener('pointerleave',this._resetPointer,{passive:true});
+    addEventListener('scroll',this._update,{passive:true});
+    addEventListener('wheel',this._wheel,{passive:false});
+    addEventListener('keydown',this._key);
+    addEventListener('touchstart',this._touchStart,{passive:true});
+    addEventListener('touchend',this._touchEnd,{passive:true});
+    addEventListener('touchcancel',this._touchEnd,{passive:true});
+    addEventListener('resize',this._update,{passive:true});
+    reduced.addEventListener('change',this._update);
+    this._update();
+    this.dispatchEvent(new CustomEvent('home-hero:ready',{bubbles:true,composed:true,detail:{version:'v3-poster-v2',status:'draft'}}));
+  }
+  disconnectedCallback(){
+    if(!this._active)return;this._active=false;
+    this.removeEventListener('pointermove',this._move);
+    this.removeEventListener('pointerleave',this._resetPointer);
+    removeEventListener('scroll',this._update);
+    removeEventListener('wheel',this._wheel);
+    removeEventListener('keydown',this._key);
+    removeEventListener('touchstart',this._touchStart);
+    removeEventListener('touchend',this._touchEnd);
+    removeEventListener('touchcancel',this._touchEnd);
+    clearTimeout(this._wheelTimer);
+    removeEventListener('resize',this._update);
+    reduced.removeEventListener('change',this._update);
+    cancelAnimationFrame(this._raf);this._raf=0;this.shadowRoot.replaceChildren();
+  }
+  /**
+   * One deliberate wheel gesture advances one page.
+   * CSS scroll-snap handles touch / keyboard natively; this handler avoids
+   * needing to accumulate ~70svh of wheel deltas to leave the opening scene.
+   */
+  // Small deliberate swipe completes a page flip instead of bouncing back.
+  // Native scrolling remains enabled, including on touch and reduced motion.
+  _touchStart(e){
+    if(e.touches.length!==1){this._touchOrigin=null;return;}
+    const t=e.touches[0];
+    this._touchOrigin={x:t.clientX,y:t.clientY,scroll:scrollY};
+  }
+  _touchEnd(e){
+    const origin=this._touchOrigin;
+    this._touchOrigin=null;
+    if(!origin || e.type==='touchcancel' || !e.changedTouches.length)return;
+    const t=e.changedTouches[0];
+    const dy=origin.y-t.clientY; // Positive = swipe up = next scene
+    const dx=Math.abs(origin.x-t.clientX);
+    if(Math.abs(dy)<55 || Math.abs(dy)<dx*1.25)return;
+    const world=document.getElementById('world');
+    if(!world)return;
+    const worldY=world.getBoundingClientRect().top+scrollY;
+    const beginsInHero=origin.scroll<worldY-15;
+    const beginsAtNextTop=Math.abs(origin.scroll-worldY)<Math.min(110,innerHeight*.13);
+    const forward=dy>0 && beginsInHero;
+    const backward=dy<0 && (beginsInHero || beginsAtNextTop);
+    if(forward||backward)
+      (forward?world:this).scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});
+  }
+  _key(e){
+    if(e.ctrlKey||e.metaKey||e.altKey||e.defaultPrevented||e.repeat)return;
+    if(e.target instanceof Element && e.target.closest('a,button,input,textarea,select,[contenteditable="true"]'))return;
+    const down=e.key==='PageDown'||e.key==='ArrowDown'||(e.key===' '&&!e.shiftKey);
+    const up=e.key==='PageUp'||e.key==='ArrowUp'||(e.key===' '&&e.shiftKey);
+    if(!down&&!up)return;
+    const world=document.getElementById('world');
+    if(!world)return;
+    const worldY=world.getBoundingClientRect().top+scrollY;
+    const inHero=scrollY<worldY-12;
+    const atNextTop=Math.abs(scrollY-worldY)<Math.min(110,innerHeight*.13);
+    if((down&&inHero)||(up&&(inHero||atNextTop))){
+      e.preventDefault();
+      (down?world:this).scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});
+    }
+  }
+  _wheel(e){
+    if(e.ctrlKey||e.metaKey||e.altKey||e.defaultPrevented)return;
+    if(e.target instanceof Element && e.target.closest('input,textarea,select,[contenteditable="true"],[role="slider"]'))return;
+    const world=document.getElementById('world');
+    if(!world)return;
+    const dy=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?innerHeight:1);
+    if(Math.abs(dy)<.01)return;
+    const worldY=world.getBoundingClientRect().top+scrollY;
+    const y=scrollY;
+    const inHero=y<worldY-12;
+    const atNextTop=Math.abs(y-worldY)<Math.min(95,innerHeight*.12);
+    const towardNext=dy>0&&inHero;
+    const towardHero=dy<0&&(inHero||atNextTop);
+    if(!towardNext&&!towardHero)return;
+    if(dy<0&&y<8)return;
+    e.preventDefault();
+    const now=performance.now();
+    if(now-this._wheelAt>260)this._wheelSum=0;
+    this._wheelAt=now;
+    clearTimeout(this._wheelTimer);
+    this._wheelTimer=setTimeout(()=>{this._wheelSum=0;this._wheelGesture=false;},260);
+    if(this._wheelGesture||now<this._wheelLock)return;
+    this._wheelSum+=dy;
+    if(Math.abs(this._wheelSum)<12)return;
+    const forward=this._wheelSum>0;
+    this._wheelSum=0;
+    this._wheelGesture=true;
+    this._wheelLock=now+650;
+    (forward?world:this).scrollIntoView({
+      behavior:reduced.matches?'auto':'smooth',
+      block:'start'
+    });
+  }
+  _syncArtboardScale(){
+    if(!this._artboard)return;
+    const scale=innerWidth>900?Math.min(innerWidth/1672,innerHeight/941):1;
+    this._artboard.style.setProperty('--art-scale',scale.toFixed(5));
+  }
+  _move(e){
+    if(reduced.matches || matchMedia('(pointer:coarse)').matches)return;
+    const r=this.getBoundingClientRect();
+    this._lastPx=clamp((e.clientX-r.left)/r.width)*2-1;
+    this._lastPy=clamp((e.clientY-r.top)/Math.min(r.height,innerHeight))*2-1;
+    this._update();
+  }
+  _resetPointer(){this._lastPx=0;this._lastPy=0;this._update();}
+  _update(){
+    if(this._raf || !this._scene)return;
+    this._raf=requestAnimationFrame(()=>{
+      this._raf=0;if(!this._scene)return;
+      this._syncArtboardScale();
+      const bounds=this.getBoundingClientRect(), distance=Math.max(1,innerHeight);
+      const raw=clamp(-bounds.top/distance);
+      const p=reduced.matches?0:smoothstep(raw);
+      this._scene.style.setProperty('--p',p.toFixed(4));
+      this._scene.style.setProperty('--px',reduced.matches?'0':this._lastPx.toFixed(3));
+      this._scene.style.setProperty('--py',reduced.matches?'0':this._lastPy.toFixed(3));
+      this._scene.classList.toggle('scrolling',raw>.025 && !reduced.matches);
+      this.dispatchEvent(new CustomEvent('home-hero:scroll',{bubbles:true,composed:true,detail:{progress:p}}));
+    });
+  }
+}
+if(!customElements.get('zxyzx-home-hero-v3art'))customElements.define('zxyzx-home-hero-v3art',CinematicV3Hero);
+// In Chromium, scroll-snap can restore a previous snap point in a fresh tab.
+// Start at the hero unless the visitor intentionally opened an anchored scene.
+if(!location.hash){
+  history.scrollRestoration='manual';
+  const initialTop=()=>{
+    const el=document.documentElement,old=el.style.scrollBehavior;
+    el.style.scrollBehavior='auto';
+    scrollTo(0,0);
+    el.style.scrollBehavior=old;
+  };
+  addEventListener('pageshow',()=>{
+    initialTop();
+    requestAnimationFrame(initialTop);
+  },{once:true});
+}
+
+
+</script></body></html>
