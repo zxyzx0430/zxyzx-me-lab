@@ -213,3 +213,6 @@
 
 /* Photo plane must outrank absolute decorative vignette under all Chromium compositors. */
 .m01-root .photo-frame img{position:relative!important;z-index:200!important}
+
+/* Cross-browser screenshot consistency: cinematic tonality lives in image filter, not a composited overlay. */
+.m01-root .photo-vignette{display:none!important}

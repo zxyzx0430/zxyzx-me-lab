@@ -13,6 +13,8 @@ for(const vp of viewports){
     page.on('response',response=>{if(response.status()>=400)errors.push(response.status()+' '+response.url());});
     await page.goto('?static=1',{waitUntil:'networkidle'});
     await page.locator('.photo-frame img').evaluate((img:HTMLImageElement)=>img.decode());
+    await page.evaluate(async ()=>{await document.fonts.ready});
+    await page.waitForTimeout(400);
     await page.screenshot({path:'visual/artifacts/m01-'+vp.width+'x'+vp.height+'.png'});
     expect(errors).toEqual([]);
     expect(await page.getByRole('heading',{name:'向内寻找中心，向外探寻世界。'}).count()).toBe(1);
