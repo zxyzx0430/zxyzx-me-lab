@@ -6,9 +6,9 @@
     941
   ],
   "overall": {
-    "mae_rgb": 5.3016,
-    "p95_pixel_mae": 19.333,
-    "pixels_over_20pct": 4.806
+    "mae_rgb": 5.2349,
+    "p95_pixel_mae": 19.0,
+    "pixels_over_20pct": 4.749
   },
   "regions": {
     "brand_navigation": {
@@ -98,8 +98,8 @@
         1600,
         935
       ],
-      "mae_rgb": 4.083,
-      "pixels_over_20pct": 3.581
+      "mae_rgb": 3.932,
+      "pixels_over_20pct": 3.449
     },
     "lower_captions": {
       "reference_box": [

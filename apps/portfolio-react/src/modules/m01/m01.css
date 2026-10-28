@@ -292,3 +292,11 @@
 @media(prefers-reduced-motion:reduce){
  .m01-root .photo-frame .portrait-master{transform:none!important}
 }
+
+/* Final photograph/microtype correction: the source portrait fragment already
+   includes the exact vertical caption; do not duplicate it on the photo.
+   The original poster has no lower-right scroll caption at desktop size. */
+@media (min-width:901px){
+  .m01-root .poster-vertical{display:none}
+  .m01-root .enter{display:none}
+}
