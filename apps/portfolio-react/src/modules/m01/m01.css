@@ -359,3 +359,19 @@
     overflow-wrap:normal;
   }
 }
+
+/* Preserve the previous photographed edge silhouette so the replacement
+   cannot cover the approved Chinese title art. This mask contains alpha ONLY:
+   no old face, lettering or wall-retouch pixels can appear. */
+@media(min-width:901px){
+ .m01-root .photo-frame .portrait-hd{
+   -webkit-mask-image:url("./assets/portrait-silhouette-mask.png");
+   mask-image:url("./assets/portrait-silhouette-mask.png");
+   -webkit-mask-size:100% 100%;
+   mask-size:100% 100%;
+   -webkit-mask-repeat:no-repeat;
+   mask-repeat:no-repeat;
+   -webkit-mask-mode:alpha;
+   mask-mode:alpha;
+ }
+}
