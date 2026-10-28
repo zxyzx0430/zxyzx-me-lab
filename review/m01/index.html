@@ -120,7 +120,7 @@ footer a{color:inherit}
       button.className="version";button.setAttribute("aria-pressed","false");
       button.dataset.sha=v.sha;
       const thumb=document.createElement("img");
-      thumb.src="./"+v.file;thumb.alt="V3 "+v.sha+" 版本缩略图";
+      thumb.src="./"+v.file+"?capture="+encodeURIComponent(v.capturedAt||v.sha);thumb.alt="V3 "+v.sha+" 版本缩略图";
       thumb.loading="lazy";thumb.width=1920;thumb.height=1080;
       const name=document.createElement("div");name.className="version-title";
       const s=document.createElement("span");s.textContent=(i===0?"最新 · ":"")+"V3 / "+v.sha;
@@ -131,7 +131,7 @@ footer a{color:inherit}
       $("history").append(button);
     });
     function show(v,push){
-      const src="./"+v.file;
+      const src="./"+v.file+"?capture="+encodeURIComponent(v.capturedAt||v.sha);
       $("main-image").src=src;
       $("full-size").href=src;
       $("full-size-button").href=src;

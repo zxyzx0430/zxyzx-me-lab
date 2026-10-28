@@ -27,6 +27,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Install CJK fonts for Chinese titles
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends fonts-noto-cjk
+          fc-cache -f
+          FONT_FAMILY="$(fc-match -f '%{family}' 'Noto Sans CJK SC:lang=zh-cn')"
+          FONT_FILE="$(fc-match -f '%{file}' 'Noto Sans CJK SC:lang=zh-cn')"
+          echo "Chinese font: $FONT_FAMILY ($FONT_FILE)"
+          [[ "$FONT_FAMILY" == *"Noto Sans CJK"* ]] || { echo "Chinese font missing; refusing to capture tofu glyphs"; exit 1; }
       - name: Find Chromium and install screenshot dependency
         shell: bash
         run: |
@@ -43,6 +54,8 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/m01-deps" --no-save --no-package-lock --ignore-scripts puppeteer-core@24.32.1
           echo "NODE_PATH=$RUNNER_TEMP/m01-deps/node_modules" >> "$GITHUB_ENV"
       - name: Start local site and capture 1920x1080 desktop
+        env:
+          REQUIRE_CJK_FONT: "1"
         shell: bash
         run: |
           set -euo pipefail

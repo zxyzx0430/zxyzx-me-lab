@@ -18,3 +18,7 @@ GitHub Actions 工作流：.github/workflows/m01-visual-review.yml
 ## 范围
 
 本目录只用于视觉验收，不修改 V3 源画面、根首页或 Knowledge Network V5。每次任务交付应同时提供截图站的网址。
+
+## 字体保护
+
+截图工作流先安装 Noto Sans CJK 中文字体；capture-m01.cjs 在 CI 中对字体匹配进行硬性校验，缺失则失败，不再生成中文方框截图。版本索引记录 capturedAt，浏览器加载修正图时自动更换缓存 URL，避免旧截图长期被缓存。

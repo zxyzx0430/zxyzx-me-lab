@@ -16,6 +16,12 @@ const message=commitValue("%s");
 const url=process.env.CAPTURE_BASE_URL||"http://127.0.0.1:8765/experiments/m01-v3-art-motion/";
 const chromium=process.env.CHROME_BIN||["/usr/bin/google-chrome","/usr/bin/google-chrome-stable","/usr/bin/chromium","/usr/bin/chromium-browser"].find(fs.existsSync);
 if(!chromium)throw Error("Chrome/Chromium executable not found; set CHROME_BIN.");
+// CI screenshots must have real Chinese glyphs, never tofu squares.
+if(process.env.REQUIRE_CJK_FONT==="1") {
+  const matched=execFileSync("fc-match",["-f","%{family}|%{file}","Noto Sans CJK SC:lang=zh-cn"],{encoding:"utf8"}).trim();
+  if(!matched.includes("Noto Sans CJK"))throw Error("Missing Chinese Noto CJK font: "+matched);
+  console.log("Validated Chinese screenshot font:",matched);
+}
 const puppeteer=require(process.env.PUPPETEER_PATH||"puppeteer-core");
 (async()=>{
   const browser=await puppeteer.launch({headless:true,executablePath:chromium,args:["--no-sandbox","--disable-dev-shm-usage","--hide-scrollbars"]});
@@ -45,7 +51,7 @@ const puppeteer=require(process.env.PUPPETEER_PATH||"puppeteer-core");
     const manifest=path.join(review,"history.json");
     const doc=fs.existsSync(manifest)?JSON.parse(fs.readFileSync(manifest,"utf8")):{schemaVersion:1,viewport:{width:1920,height:1080},versions:[]};
     doc.viewport={width:1920,height:1080};
-    const entry={sha,date,file:"versions/"+sha+".jpg",message};
+    const entry={sha,date,capturedAt:new Date().toISOString(),file:"versions/"+sha+".jpg",message};
     doc.versions=[entry,...(doc.versions||[]).filter(v=>v.sha!==sha)];
     fs.writeFileSync(manifest,JSON.stringify(doc,null,2)+"\n");
     console.log(JSON.stringify({sha,date,message,dimensions:[1920,1080],image:imagePath,versions:doc.versions.length,browserTitle:state.title}));
