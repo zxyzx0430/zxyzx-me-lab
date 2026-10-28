@@ -14,7 +14,7 @@
 }
 .m01-root.cinematic-motion .cinema-photo-scrim{background:linear-gradient(135deg,#05050798,#05050720 65%,transparent);opacity:0}
 .m01-root.cinematic-motion .cinema-photo-light{
-  z-index:211;opacity:.035;mix-blend-mode:screen;
+  z-index:211;opacity:.055;mix-blend-mode:screen;
   background:radial-gradient(ellipse 52% 65% at 71% 25%,#eee9dfaf,transparent 75%)
 }
 .m01-root.cinematic-motion .cinema-film-grain{
@@ -23,8 +23,9 @@
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 108 108' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
   animation:cinema-film-breath 9s ease-in-out infinite alternate
 }
-@keyframes cinema-film-breath{from{opacity:.018}to{opacity:.035}}
-.cinema-track-dot{opacity:0;fill:#fff;stroke:none;pointer-events:none}
+@keyframes cinema-film-breath{from{opacity:.025}to{opacity:.052}}
+.cinema-track-dot{opacity:0;fill:#fff;stroke:none;pointer-events:none;
+  r:3px;filter:drop-shadow(0 0 2px #ffffffaa)}
 /* Sub-pixel perspective on independent collage scraps, never on large title art.
    All offsets are zero at rest; no static poster geometry is modified. */
 @media(min-width:901px) and (pointer:fine){
@@ -54,3 +55,14 @@
 .static-preview .cinema-photo-scrim,
 .static-preview .cinema-film-grain,
 .static-preview .cinema-track-dot{display:none!important}
+
+/* Clip interactive lighting to the approved photographic silhouette: no
+   bright overlay may leak into the paper or typography along the left seam. */
+@media(min-width:901px){
+  .m01-root.cinematic-motion .cinema-photo-light{
+    -webkit-mask-image:url("./assets/portrait-silhouette-mask.png");
+    mask-image:url("./assets/portrait-silhouette-mask.png");
+    -webkit-mask-size:100% 100%;mask-size:100% 100%;
+    -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  }
+}

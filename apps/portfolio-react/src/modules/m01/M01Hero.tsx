@@ -77,27 +77,40 @@ export function M01Hero() {
       el.dataset.intro = 'running';
       window.addEventListener('m01:intro-skip', skip);
       timeline.play();
-      // The weak, occasional glint follows the existing SVG geometry.
-      const dots = [...el.querySelectorAll<SVGCircleElement>('.cinema-track-dot')];
-      const glints: gsap.core.Tween[] = [];
-      for (const dot of dots) {
-        const path = dot.closest('svg')?.querySelector('path');
-        if (!path || getComputedStyle(dot.closest('svg')!).display === 'none') continue;
-        const length = path.getTotalLength();
-        const progress = { t: 0 };
-        glints.push(gsap.to(progress, {
-          t: 1, duration: 5.8, repeat: -1, repeatDelay: 11, ease: 'none', delay: 5,
-          onUpdate: () => {
-            const p = path.getPointAtLength(progress.t * length);
-            dot.setAttribute('cx', String(p.x));
-            dot.setAttribute('cy', String(p.y));
-            dot.style.opacity = String(Math.sin(Math.PI * progress.t) * .48);
-          },
-        }));
-      }
+      // A slow device must not leave the poster stuck in its half-revealed state.
+      const introFallback = window.setTimeout(() => {
+        if (el.dataset.intro === 'running') timeline.progress(1);
+      }, 6500);
+      // The quiet orbit glint uses a timer rather than relying on the GSAP
+      // requestAnimationFrame ticker, which may be throttled on low-power tabs.
+      // It only starts once the intro has actually completed, so the moment of
+      // first motion remains clear to returning viewers.
+      const dotPaths = [...el.querySelectorAll<SVGCircleElement>('.cinema-track-dot')]
+        .map(dot => ({ dot, svg: dot.closest('svg'), path: dot.closest('svg')?.querySelector('path') }))
+        .filter((item): item is { dot: SVGCircleElement; svg: SVGSVGElement; path: SVGPathElement } =>
+          Boolean(item.svg && item.path && getComputedStyle(item.svg).display !== 'none'));
+      let startedAt: number | null = null;
+      const updateGlints = () => {
+        if (el.dataset.intro !== 'complete') return;
+        if (startedAt === null) startedAt = performance.now();
+        const phase = (performance.now() - startedAt) % 8900;
+        const travelling = phase < 6200;
+        for (const { dot, path } of dotPaths) {
+          if (!travelling) { dot.style.opacity = '0'; continue; }
+          const t = phase / 6200;
+          const p = path.getPointAtLength(t * path.getTotalLength());
+          dot.setAttribute('cx', String(p.x));
+          dot.setAttribute('cy', String(p.y));
+          dot.style.opacity = String(Math.sin(Math.PI * t) * .72);
+        }
+      };
+      const glintInterval = window.setInterval(updateGlints, 75);
+      updateGlints();
       cleanups.push(() => {
+        window.clearTimeout(introFallback);
         window.removeEventListener('m01:intro-skip', skip);
-        glints.forEach(t => t.kill());
+        window.clearInterval(glintInterval);
+        dotPaths.forEach(({ dot }) => { dot.style.opacity = '0'; });
       });
     }, el);
     return () => {
@@ -116,12 +129,17 @@ export function M01Hero() {
       const bounds = el.getBoundingClientRect();
       const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
       const y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
-      gsap.to(el, { '--px': x * .24, '--py': y * .24, duration: .85, ease: 'power2.out', overwrite: true });
-      if (light) gsap.to(light, { opacity: x > .05 ? .11 : .035, duration: .9, ease: 'power2.out', overwrite: true });
+      // Normalized coordinates already range [-1,1]; a former .24 factor
+      // reduced the entire collage response to less than one screen pixel.
+      gsap.to(el, { '--px': x, '--py': y, duration: 1.05, ease: 'power2.out', overwrite: true });
+      if (light) gsap.to(light, {
+        x: x * 22, y: y * 13, opacity: x > .05 ? .18 : .085,
+        duration: 1.15, ease: 'power2.out', overwrite: true,
+      });
     };
     const leave = () => {
       gsap.to(el, { '--px': 0, '--py': 0, duration: 1, ease: 'power2.out', overwrite: true });
-      if (light) gsap.to(light, { opacity: .035, duration: 1, overwrite: true });
+      if (light) gsap.to(light, { x: 0, y: 0, opacity: .055, duration: 1.2, overwrite: true });
     };
     el.addEventListener('pointermove', move, { passive: true });
     el.addEventListener('pointerleave', leave, { passive: true });
