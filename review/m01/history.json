@@ -6,6 +6,13 @@
   },
   "versions": [
     {
+      "sha": "3d9bbf9",
+      "date": "2026-10-28T18:37:30+08:00",
+      "capturedAt": "2026-10-28T10:38:09.551Z",
+      "file": "versions/3d9bbf9.jpg",
+      "message": "fix(m01): use high-resolution portrait asset (#1)"
+    },
+    {
       "sha": "2fe063d",
       "date": "2026-10-28T17:48:42+08:00",
       "capturedAt": "2026-10-28T09:50:02.569Z",
