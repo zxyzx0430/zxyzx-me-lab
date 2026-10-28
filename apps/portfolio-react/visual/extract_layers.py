@@ -52,6 +52,23 @@ poly=[(x-rect[0],y-rect[1]) for x,y in poly]
 mask=Image.new('L',cut.size,0)
 ImageDraw.Draw(mask).polygon(poly,fill=255)
 cut.putalpha(mask)
+# User-requested localized correction (2026-10-28): the upper-left light leak
+# should be gray-black, not bright cream. Keep portrait, grain and alpha intact.
+# The feathered mask is constrained to x < 365 / y < 385 in the *crop*.
+rgba=np.array(cut)
+hh,ww=rgba.shape[:2]
+light_leak=np.zeros((hh,ww),np.uint8)
+cv2.fillPoly(light_leak,[np.array([(-50,-80),(315,-80),(385,225),(205,315),(-50,245)],np.int32)],255)
+light_leak=cv2.GaussianBlur(light_leak.astype('float32')/255,(0,0),26)
+light_leak*=np.clip((385-np.arange(hh,dtype='float32'))/65,0,1)[:,None]
+light_leak*=np.clip((365-np.arange(ww,dtype='float32'))/65,0,1)[None,:]
+light_leak*=rgba[:,:,3].astype('float32')/255
+original_rgb=rgba[:,:,:3].astype('float32')
+lum=.2126*original_rgb[:,:,0]+.7152*original_rgb[:,:,1]+.0722*original_rgb[:,:,2]
+gray_lum=lum-np.maximum(lum-105,0)*.96*light_leak
+local_weight=(light_leak*.88)[:,:,None]
+rgba[:,:,:3]=np.clip(original_rgb*(1-local_weight)+gray_lum[:,:,None]*local_weight,0,255).astype('uint8')
+cut=Image.fromarray(rgba,'RGBA')
 cut.save(out/'master-portrait.png',optimize=True)
 # Exact mountain photo fragment is separate; outside of the strip remains transparent.
 rect=(20,421,214,512)
