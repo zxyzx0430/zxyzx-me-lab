@@ -53,3 +53,9 @@ apps/portfolio-react/
 
 These scores use the historical JPG **proxy**, not the user's missing PNG master; they are diagnostic only and do not mean 1:1 approval. The layers and screenshot artifacts are stored under `apps/portfolio-react/visual/`.
 CI recipe: `.github/workflows/react-m01-preview-check.yml` (feature-branch scoped).
+
+## Reproducible typography
+The historical poster was captured on a Linux server where `Noto Sans CJK SC` was unavailable and browser fallback resolved to **WenQuanYi Zen Hei**. CI screenshots initially used Noto and shifted the giant Chinese title. The React CSS now prioritizes WenQuanYi Zen Hei and the scoped CI workflow installs `fonts-wqy-zenhei` to match the historical reference, without bundling font files.
+
+## Font parity stabilization
+Final portable fallback attempt sets explicit WenQuanYi Zen Hei (with CI installing fonts-wqy-zenhei). Local Playwright Chromium 156 comparison yields historical proxy RGB MAE **5.219/255**. This is still NOT a user-original target comparison; browser/device variation remains possible.

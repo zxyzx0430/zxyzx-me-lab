@@ -1,4 +1,4 @@
-.m01-root{--p:0;--px:0;--py:0;display:block;height:100svh;min-height:0;font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#19191b}
+.m01-root{--p:0;--px:0;--py:0;display:block;height:100svh;min-height:0;font-family:"WenQuanYi Zen Hei","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#19191b}
 *,:before,:after{box-sizing:border-box}
 .scene{position:relative;isolation:isolate;width:100%;height:100svh;min-height:0;overflow:hidden;background:radial-gradient(ellipse 75% 55% at 66% 34%,#f9f7f2 1%,#ece9e0 65%,#e2dcd1 140%)}
 .ambient{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
@@ -92,7 +92,7 @@
 .photo-frame img{object-position:center 39%;filter:contrast(1.05) brightness(.99);transform:scale(calc(1.01 + var(--p)*.04));animation:photo-enter 1.3s cubic-bezier(.2,.68,.22,1) both}
 .photo-vignette{background:linear-gradient(100deg,#f0ebd81c,transparent 39%),linear-gradient(0deg,#05060b61,transparent 27%)}
 .portrait-shadow{inset:4% -3% -3% 3%;filter:blur(27px);opacity:.18}
-.poster-title{position:absolute;inset:0;z-index:4;pointer-events:none;font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",system-ui,sans-serif;opacity:calc(1 - var(--p)*.78)}
+.poster-title{position:absolute;inset:0;z-index:4;pointer-events:none;font-family:"WenQuanYi Zen Hei","Noto Sans CJK SC","Microsoft YaHei","PingFang SC",system-ui,sans-serif;opacity:calc(1 - var(--p)*.78)}
 .poster-title .t{position:absolute;white-space:nowrap;display:block;line-height:1.0;font-weight:900;color:#121315;letter-spacing:-.10em;will-change:transform,opacity}
 .poster-title .t-into{left:75px;top:145px;font-size:266px;letter-spacing:-.13em;transform:skew(-5deg,-4deg) translate3d(calc(var(--px)*-7px + var(--p)*-90px),calc(var(--p)*-65px),0);animation:poster-come-up 1s .04s cubic-bezier(.2,.74,.14,1) both}
 .poster-title .t-find{left:520px;top:246px;font-size:106px;font-weight:860;letter-spacing:-.10em;transform:rotate(-4deg) translateY(calc(var(--p)*-34px));animation:poster-come-up .95s .22s ease-out both}
@@ -106,7 +106,7 @@
 .poster-thought{position:absolute;z-index:5;left:75px;top:717px;font-size:19px;font-weight:720;line-height:1.55;letter-spacing:-.035em;color:#171819}
 .poster-meta{position:absolute;z-index:5;left:75px;top:808px;display:flex;flex-direction:column;gap:9px;font:10px/1.6 ui-monospace,Consolas,monospace;letter-spacing:.16em;color:#1b1c1e}
 .poster-meta strong{font-size:14px;letter-spacing:.16em}
-.poster-meta .sub{font:12px/1.4 "Noto Sans CJK SC",system-ui,sans-serif;letter-spacing:0;color:#7b7770}
+.poster-meta .sub{font:12px/1.4 "WenQuanYi Zen Hei","Noto Sans CJK SC",system-ui,sans-serif;letter-spacing:0;color:#7b7770}
 .poster-vertical{position:absolute;z-index:5;left:1507px;top:212px;writing-mode:vertical-rl;color:#f3f0eceb;font:11px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.3em;text-shadow:0 1px 7px #000c}
 .poster-asterisk{position:absolute;z-index:4;left:415px;top:843px;color:#9f9b94;font:11px/1.5 ui-monospace,monospace;letter-spacing:.17em}
 .poster-decor{position:absolute;z-index:1;border:1px solid #494b5040;width:238px;height:190px;left:255px;top:860px;transform:rotate(-36deg)}

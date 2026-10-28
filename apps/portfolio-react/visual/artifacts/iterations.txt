@@ -2,3 +2,4 @@ R1 15.787/255 — portrait occluded
 R2 3.686/255 — vignette opacity correction
 R3 trial 2.085/255 — contrast correction
 Final production 2.303/255 — explicit image z-index 200; *proxy only*
+R4 5.219/255 — explicit WenQuanYi font for reproducible CI, Playwright Chromium 156; proxy only

@@ -4,7 +4,7 @@ export function M01Scene() {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const alpha = (start:number) => interpolate(f,[start,start+fps*0.6],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
-  return <AbsoluteFill style={{background:'#f1eee6',fontFamily:'"Noto Sans CJK SC",sans-serif',overflow:'hidden'}}>
+  return <AbsoluteFill style={{background:'#f1eee6',fontFamily:'"WenQuanYi Zen Hei","Noto Sans CJK SC",sans-serif',overflow:'hidden'}}>
     <AbsoluteFill style={{left:'47%',top:'8%',width:'46%',height:'86%',transform:'rotate(-3deg)',background:'#191919'}}>
       <Img src={staticFile('portrait-gaze-hd.webp')} style={{width:'100%',height:'100%',objectFit:'cover'}}/>
     </AbsoluteFill>

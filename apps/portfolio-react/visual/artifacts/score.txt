@@ -1,1 +1,1 @@
-PROXY IMAGE ONLY; RGB mean absolute error: 2.303/255
+PROXY IMAGE ONLY; RGB mean absolute error: 5.219/255
