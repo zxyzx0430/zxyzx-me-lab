@@ -138,22 +138,26 @@ export function M01Hero() {
       gsap.to(el, { '--px': x, '--py': y, duration: .72, ease: 'power2.out', overwrite: true });
       if (light && portrait) {
         const frame = portrait.getBoundingClientRect();
-        const lx = clamp((event.clientX - frame.left) / frame.width * 100, 27, 55);
-        const ly = clamp((event.clientY - frame.top) / frame.height * 100, 16, 78);
+        const nx = clamp((event.clientX - frame.left) / frame.width, 0, 1);
+        const ny = clamp((event.clientY - frame.top) / frame.height, 0, 1);
+        // Keep the visible beam inside the existing LEFT-wall light cone,
+        // even when the pointer crosses the face; no new glowing facial patch.
+        const lx = 17 + nx * 22;
+        const ly = 17 + ny * 45;
         const inside = event.clientX >= frame.left && event.clientX <= frame.right &&
           event.clientY >= frame.top && event.clientY <= frame.bottom;
         gsap.to(light, {
           '--light-x': lx + '%', '--light-y': ly + '%',
-          opacity: inside ? .52 : x > .05 ? .21 : .055,
-          duration: .72, ease: 'power2.out', overwrite: true,
+          opacity: inside ? .94 : x > .05 ? .28 : .035,
+          duration: .52, ease: 'power2.out', overwrite: true,
         });
       }
     };
     const leave = () => {
       gsap.to(el, { '--px': 0, '--py': 0, duration: 1, ease: 'power2.out', overwrite: true });
       if (light) gsap.to(light, {
-        '--light-x': '71%', '--light-y': '28%', opacity: .055,
-        duration: 1, ease: 'power2.out', overwrite: true,
+        '--light-x': '22%', '--light-y': '29%', opacity: .035,
+        duration: .85, ease: 'power2.out', overwrite: true,
       });
     };
     el.addEventListener('pointermove', move, { passive: true });
