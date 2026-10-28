@@ -98,21 +98,35 @@ test.describe('BEYOND THE FRAME real-browser motion', () => {
     await ctx.close();
   });
 
-  test('subtle independent collage parallax preserves the title geometry', async ({page}) => {
+  test('pointer-responsive photo and titles restore resting composition', async ({page}) => {
     await page.setViewportSize({width:1440,height:900});
     await page.goto('');
-    await expect(page.locator('#top')).toHaveAttribute('data-intro','complete',{timeout:5500});
-    const beforeMountain = await page.locator('.poster-mountain').evaluate(el=>getComputedStyle(el).transform);
+    await expect(page.locator('#top')).toHaveAttribute('data-intro','complete',{timeout:10000});
+    await page.mouse.move(720,450);
+    await page.waitForTimeout(1200);
     const titleBefore = await page.locator('.word-into').boundingBox();
-    await page.mouse.move(1280,390);
-    await page.waitForTimeout(1100);
-    const afterMountain = await page.locator('.poster-mountain').evaluate(el=>getComputedStyle(el).transform);
+    const exploreBefore = await page.locator('.word-explore').boundingBox();
+    const beforeMountain = await page.locator('.poster-mountain').evaluate(el=>getComputedStyle(el).transform);
+    await page.mouse.move(1260,400);
+    await page.waitForTimeout(1200);
     const titleAfter = await page.locator('.word-into').boundingBox();
-    expect(afterMountain).not.toBe(beforeMountain);
+    const exploreAfter = await page.locator('.word-explore').boundingBox();
+    const afterMountain = await page.locator('.poster-mountain').evaluate(el=>getComputedStyle(el).transform);
+    const light = await page.locator('.cinema-photo-light').evaluate(el=>parseFloat(getComputedStyle(el).opacity));
     expect(titleBefore).not.toBeNull();
+    expect(exploreBefore).not.toBeNull();
     expect(titleAfter).not.toBeNull();
-    expect(Math.abs(titleAfter!.x-titleBefore!.x)).toBeLessThan(.3);
-    expect(Math.abs(titleAfter!.y-titleBefore!.y)).toBeLessThan(.3);
+    expect(exploreAfter).not.toBeNull();
+    expect(Math.abs(titleAfter!.x-titleBefore!.x)).toBeGreaterThan(1);
+    expect(Math.abs(titleAfter!.x-titleBefore!.x)).toBeLessThan(12);
+    expect(Math.abs(exploreAfter!.x-exploreBefore!.x)).toBeGreaterThan(1);
+    expect(Math.abs((titleAfter!.x-titleBefore!.x)-(exploreAfter!.x-exploreBefore!.x))).toBeLessThan(4);
+    expect(afterMountain).not.toBe(beforeMountain);
+    expect(light).toBeGreaterThan(.35);
+    await page.mouse.move(720,450);
+    await page.waitForTimeout(1400);
+    const titleRestored = await page.locator('.word-into').boundingBox();
+    expect(Math.abs(titleRestored!.x-titleBefore!.x)).toBeLessThan(1.5);
   });
 
   test('reduced motion bypasses camera and remains navigable', async ({ page }) => {
