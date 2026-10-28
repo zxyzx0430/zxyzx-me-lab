@@ -1,0 +1,29 @@
+name: Validate independent modules
+on:
+  push:
+    branches: [main, "feat/**"]
+    paths:
+      - "modules/**"
+      - "docs/module-registry.json"
+      - "scripts/validate-modules.mjs"
+      - ".github/workflows/validate-modules.yml"
+  pull_request:
+    paths:
+      - "modules/**"
+      - "docs/module-registry.json"
+      - "scripts/validate-modules.mjs"
+      - ".github/workflows/validate-modules.yml"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate registry, manifest and media
+        run: node scripts/validate-modules.mjs
+      - name: Verify approved knowledge network
+        run: node --test modules/knowledge-network/tests/*.test.mjs
+      - name: Check public script syntax
+        run: node --check modules/knowledge-network/module.js

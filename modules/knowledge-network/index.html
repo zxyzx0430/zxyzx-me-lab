@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070e1d"><link rel="icon" href="data:,">
+<title>Knowledge Network — 独立模块预览 · ZXYZX</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090d17;color:#f2f4fd;font-family:Inter,"PingFang SC",system-ui,sans-serif}
+header{padding:24px clamp(20px,5vw,70px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #8394b142;gap:15px}header b{font-size:24px;letter-spacing:-.075em}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:4px}
+main{max-width:1200px;margin:auto;padding:50px clamp(20px,5vw,70px) 70px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.95fr);gap:clamp(24px,5vw,60px);align-items:start}
+.meta{font:12px ui-monospace,monospace;letter-spacing:.16em;color:#9ab7e0}
+h1{font-size:clamp(43px,6vw,87px);line-height:1.15;letter-spacing:-.08em;margin:23px 0}
+h1 span{color:#9bc6ff}p{color:#bdc6d7;line-height:1.9;font-size:16px}
+.split{margin:34px 0 0;border-top:1px solid #536889;padding-top:20px;display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:#adc1df}
+.split button{padding:12px 15px;border:1px solid #728bb0;color:#eef3ff;background:transparent;cursor:pointer}
+.split button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+details{margin-top:45px;border-top:1px solid #657a966b;padding-top:20px;color:#b8c4d5;font-size:13px;line-height:1.8}
+summary{cursor:pointer;color:#f2f4fd;font-size:15px}
+footer{border-top:1px solid #657a966b;margin:0 clamp(20px,5vw,70px);padding:22px 0 45px;color:#9db0cb;font:11px/1.8 ui-monospace,monospace}
+@media(max-width:850px){main{grid-template-columns:1fr;padding-top:35px}zxyzx-knowledge-network{max-width:620px;margin:auto}}
+</style>
+<script type="module" src="./module.js"></script>
+</head>
+<body>
+<header><b>ZXYZX®</b><span class="meta">MODULE 01 / KNOWLEDGE NETWORK</span><a href="../../index.html">返回开发首页 ↗</a></header>
+<main>
+<section>
+<div class="meta">APPROVED V5 · INDEPENDENT COMPONENT</div>
+<h1>从一个点，<br><span>生长成一张网。</span></h1>
+<p>这就是已经确认的知识网络 V5 动画，内容与原版一致。现在将其封装成可嵌入的独立模块：动画素材、样式、播放逻辑与 Remotion 源代码都位于同一模块目录，不依赖现有首页。</p>
+<div class="split">
+<button type="button" id="seek-start">从头观看</button>
+<button type="button" id="seek-middle">跳至生长阶段</button>
+<button type="button" id="seek-end">跳至知识复用</button>
+</div>
+<details><summary>模块化后能做什么？</summary><p>今后首页、项目页或其他页面只需加载一个模块脚本，并放入 <code>&lt;zxyzx-knowledge-network&gt;</code> 标签。可以独立控制播放、暂停、时间轴和事件，而不用复制其视觉样式。所有模块更新必须通过各自的版本和验收流程。</p><p>目前的节点关系是合成数据，不是用户的私人 Obsidian 笔记。</p></details>
+</section>
+<zxyzx-knowledge-network id="network" aria-label="知识网络 V5 已批准独立模块"></zxyzx-knowledge-network>
+</main>
+<footer>MODULE PREVIEW / ORIGINAL V5 VIDEO BYTES PRESERVED · <a href="./README.md">MODULE SPEC ↗</a> · <a href="../../experiments/network-v5/">APPROVED ORIGINAL ↗</a></footer>
+<script type="module">
+const moduleElement=document.querySelector("#network");
+document.querySelector("#seek-start").addEventListener("click",async()=>{await moduleElement.seek(0);moduleElement.play()});
+document.querySelector("#seek-middle").addEventListener("click",async()=>{await moduleElement.seek(8.5);moduleElement.play()});
+document.querySelector("#seek-end").addEventListener("click",async()=>{await moduleElement.seek(14.3);moduleElement.play()});
+</script>
+</body></html>

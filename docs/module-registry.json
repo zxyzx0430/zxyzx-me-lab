@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "repository": "zxyzx0430/zxyzx-me-lab",
+  "siteStatus": "prototype-not-fully-modular",
+  "modules": [
+    {
+      "id": "knowledge-network",
+      "path": "modules/knowledge-network",
+      "status": "approved",
+      "version": "5.0.0",
+      "preview": "modules/knowledge-network/index.html",
+      "approvedTag": "knowledge-network-v5-approved",
+      "owner": "Personal AI System project module",
+      "entry": "modules/knowledge-network/module.js"
+    }
+  ]
+}

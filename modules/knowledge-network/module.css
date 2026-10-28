@@ -1,0 +1,30 @@
+:host {
+  --kn-ink: #e9f1ff;
+  --kn-muted: #afc1df;
+  --kn-border: rgba(147, 185, 243, .32);
+  --kn-background: #070e1d;
+  display: block;
+  width: 100%;
+  color: var(--kn-ink);
+  font-family: Inter, "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+.network { width: 100%; background: var(--kn-background); border: 1px solid var(--kn-border); padding: clamp(8px, 1.8vw, 15px); }
+.frame { position: relative; background: #050916; }
+video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #050916; }
+.overlay { position: absolute; top: 12px; left: 14px; right: 14px; display: flex; gap: 10px; justify-content: space-between; font: 9px ui-monospace, monospace; color: #cad9ef; letter-spacing: .08em; pointer-events: none; text-shadow: 0 1px 5px #111; }
+.controls { display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 8px 1px 0; }
+.toggle { border: 1px solid #7192bd; background: transparent; color: var(--kn-ink); padding: 10px 12px; min-width: 89px; min-height: 42px; cursor: pointer; font: 12px ui-monospace, monospace; }
+.toggle:hover { background: rgba(140, 179, 239, .13); }
+.slider-label { flex: 1; display: flex; align-items: center; min-width: 0; }
+input[type=range] { flex: 1; width: 100%; min-width: 0; accent-color: #a5cdff; cursor: pointer; }
+.counter { font: 11px ui-monospace, monospace; color: var(--kn-muted); min-width: 100px; text-align: right; white-space: nowrap; }
+.foot { border-top: 1px solid rgba(132, 159, 203, .2); padding: 11px 0 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: #9db2d4; font: 9px ui-monospace, monospace; letter-spacing: .08em; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+button:focus-visible, input:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@media (max-width: 500px) {
+  .overlay { font-size: 8px; }
+  .controls { gap: 7px; }
+  .toggle { min-width: 78px; font-size: 11px; }
+  .counter { min-width: 85px; font-size: 10px; }
+}

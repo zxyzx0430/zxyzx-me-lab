@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "knowledge-network",
+  "displayName": "知识网络 / Knowledge Network",
+  "version": "5.0.0",
+  "status": "approved",
+  "scope": "Personal AI System knowledge network visual module only",
+  "approvedTag": "knowledge-network-v5-approved",
+  "approvedCommit": "e87bfac",
+  "visualChangePolicy": "review-required-new-version",
+  "entry": "module.js",
+  "style": "module.css",
+  "preview": "index.html",
+  "customElement": "zxyzx-knowledge-network",
+  "assets": {
+    "video": "assets/obsidian-growth-v5.mp4",
+    "poster": "assets/final.jpg",
+    "storyboard": [
+      "assets/stage-1.jpg",
+      "assets/stage-4.jpg",
+      "assets/stage-8.jpg",
+      "assets/stage-13.jpg"
+    ],
+    "videoSha256": "528b8963cc58e228bbd67233cef159dae57c3af70f7c078c9ec3ac1fd06a3071"
+  },
+  "source": {
+    "remotion": "motion/NetworkObsidianV5.tsx",
+    "root": "motion/Root.tsx",
+    "graphGenerator": "motion/generate-graph-v5.mjs",
+    "graphData": "motion/data/graph-v5.json",
+    "license": "motion/components/LICENSE-RemotionUI.txt"
+  },
+  "runtimeDependencies": [],
+  "buildDependencies": [
+    "Remotion 4.0.365",
+    "d3-force 3.0.0",
+    "React 19.2.0"
+  ],
+  "publicApi": {
+    "attributes": [
+      "autoplay",
+      "loop"
+    ],
+    "methods": [
+      "play()",
+      "pause()",
+      "seek(seconds)",
+      "currentTime",
+      "duration"
+    ],
+    "events": [
+      "knowledge-network:ready",
+      "knowledge-network:play",
+      "knowledge-network:pause",
+      "knowledge-network:seek",
+      "knowledge-network:error"
+    ]
+  },
+  "integration": {
+    "loadAs": "ES module",
+    "worksWith": "Plain HTML / Astro / React",
+    "styles": "Shadow DOM isolated",
+    "basePath": "relative to module.js"
+  }
+}

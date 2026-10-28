@@ -1,0 +1,19 @@
+{
+  "name": "@zxyzx/knowledge-network-motion",
+  "private": true,
+  "version": "5.0.0",
+  "description": "Standalone approved knowledge graph V5 motion source",
+  "scripts": {
+    "studio": "remotion studio index.ts",
+    "compositions": "remotion compositions index.ts",
+    "render": "remotion render index.ts KnowledgeNetworkV5 ../assets/obsidian-growth-v5.mp4",
+    "generate:graph": "node generate-graph-v5.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.365",
+    "remotion": "4.0.365",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "d3-force": "3.0.0"
+  }
+}
