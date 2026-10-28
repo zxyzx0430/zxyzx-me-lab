@@ -1,0 +1,55 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080e1b">
+<title>ZXYZX · 知识网络动态实验 A/B/C</title>
+<meta name="description" content="ZXYZX 个人网站实验：使用 Remotion 与 RemotionUI 组件制作的三组知识网络动画，对比星光、神经信号和 Obsidian 式图谱。">
+<style>
+:root{font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#eef2ff;background:#070c16;--c:#82b1ff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 20%,#17253c,transparent 60%),#070c16;min-height:100vh}button,a{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #b1c8ff;outline-offset:3px}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.11em}.head{padding:23px clamp(18px,4vw,55px);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff24}.head b{font-size:22px;letter-spacing:-.07em}.head small{color:#a9b6cb;font:11px ui-monospace,monospace}.head a:hover{text-decoration:underline}.page{max-width:1380px;margin:0 auto;padding:0 clamp(17px,5vw,65px)}.intro{padding:70px 0 32px}.eyebrow{font:12px ui-monospace,monospace;letter-spacing:.16em;color:#a1bdfb}.intro h1{font-size:clamp(42px,6.3vw,96px);line-height:1.12;letter-spacing:-.08em;margin:22px 0 26px}.intro h1 em{color:#89b3ff;font-style:normal}.intro p{color:#bdc7d7;line-height:1.9;max-width:730px;font-size:16px;margin:0}.stage{margin-top:35px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,70px);align-items:start}.film{min-width:0;border:1px solid #526586;background:#020610;padding:11px;box-shadow:0 0 75px #19408133}.film video{display:block;aspect-ratio:4/5;width:100%;max-height:670px;object-fit:contain;background:#080e1c}.film-bar{margin-top:10px;display:flex;justify-content:space-between;gap:8px;font:10px ui-monospace,monospace;color:#c5d2e7}.film-bar button{background:none;border:1px solid #8099bb;padding:9px 12px;color:#f0f5ff;font:11px ui-monospace,monospace;min-height:36px}.meta{display:flex;justify-content:space-between;color:#aec0dc;font:11px ui-monospace,monospace;gap:16px;margin-bottom:14px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:17px 0 30px}.tabs button{min-height:102px;padding:15px;text-align:left;border:1px solid #53647e;background:#131e31;color:#a6b2c8;display:flex;flex-direction:column;gap:10px;justify-content:space-between}.tabs button strong{font-size:17px;color:#e4efff}.tabs button.active{border-color:var(--c);background:#20365e;box-shadow:inset 0 3px 0 var(--c);color:white}.tabs button small{font:10px ui-monospace,monospace}.deschead{border-top:1px solid #5a6b85;padding-top:28px}.deschead .tag{font:11px ui-monospace,monospace;color:var(--c)}.deschead h2{font-size:clamp(29px,3.8vw,53px);letter-spacing:-.065em;margin:13px 0}.deschead p{color:#c2cada;font-size:15px;line-height:1.9;min-height:70px}.beats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:29px 0}.beats div{border-top:1px solid #59708d;padding:14px 0;color:#dbe6f5;font-size:13px;line-height:1.7}.beats b{display:block;font:11px ui-monospace,monospace;color:var(--c);margin-bottom:7px}.assessment{margin-top:22px;background:#182337;border-left:3px solid var(--c);padding:18px 20px;line-height:1.85;font-size:14px;color:#d1dbee}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.actions a,.actions button{border:1px solid #8ca8ca;background:none;padding:12px 16px;color:#e8f3ff;font-size:13px}.actions button:hover,.actions a:hover{background:#ffffff18}.compare{padding:90px 0}.compare h2{font-size:clamp(30px,4vw,58px);letter-spacing:-.07em;margin:0 0 25px}.compare-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.compare-cards article{background:#121c2d;padding:22px;border:1px solid #344a63}.compare-cards strong{display:block;font-size:18px;margin:13px 0}.compare-cards p{color:#aebbd3;line-height:1.8;font-size:14px}.compare-cards button{border:1px solid #7a9bcc;background:transparent;color:#e8f1ff;padding:11px;font-size:13px}.note{border-top:1px solid #3c506b;padding:32px 0 50px;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;color:#99aeca;font-size:12px;line-height:1.8}.note div{max-width:700px}@media(max-width:920px){.stage{grid-template-columns:1fr}.film{max-width:580px;width:100%;margin:0 auto}.intro{padding-top:44px}.tabs button{min-height:90px}}@media(max-width:520px){.tabs{gap:6px}.tabs button{padding:12px 8px}.tabs button strong{font-size:14px}.tabs button small{font-size:9px}.compare-cards{grid-template-columns:1fr}.film video{max-height:65vh}.beats{gap:7px}.beats div{font-size:12px}.head small{font-size:9px}.intro h1{font-size:45px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header class="head"><a href="../../index.html"><b>ZXYZX®</b></a><small>INTERACTIVE MOTION LAB · 2026 · EXPERIMENT 01</small><a href="../../index.html" class="mono" style="font-size:11px">← SITE V4</a></header>
+<main class="page">
+<section class="intro"><div class="eyebrow">PERSONAL AI SYSTEM / MOTION STUDY</div><h1>知识不是孤岛。<br><em>让它真正生长。</em></h1><p>这不是三种配色，而是三种不同的动画语言。每段视频都由 Remotion 渲染，并直接复用了 RemotionUI 的星尘、连接线与发光脉冲组件。现在先比较镜头是否讲清了「诊断 → 理解 → 验证 → 记忆 → 复用」，再决定哪一种进入网站。</p></section>
+<div class="stage">
+  <div class="film"><video id="show" muted playsinline loop controls preload="metadata" poster="assets/network-a.jpg" aria-label="知识网络动画短片"></video><div class="film-bar"><span>REMOTION / 24 FPS / 720 × 900 / 6 SEC</span><button id="replay" type="button">REPLAY ↺</button></div></div>
+  <section class="details">
+   <div class="meta"><span>SELECT A MOTION DIRECTION</span><span id="choiceNo">A / 03</span></div>
+   <div class="tabs" role="group" aria-label="选择动画方案">
+    <button type="button" class="active" data-mode="a" aria-pressed="true"><small>A · STARS</small><strong>星光觉醒</strong><span>微光 → 连线</span></button>
+    <button type="button" data-mode="b" aria-pressed="false"><small>B · NEURONS</small><strong>神经脉冲</strong><span>传递 → 激活</span></button>
+    <button type="button" data-mode="c" aria-pressed="false"><small>C · GRAPH</small><strong>知识图谱</strong><span>积累 → 生长</span></button>
+   </div>
+   <div class="deschead"><div class="tag" id="tag">A / ORIGIN</div><h2 id="heading">一颗星点醒另一颗星。</h2><p id="detail">安静、神秘的视觉节奏。先有零散微光，随后形成有意义的联系。适合从首屏进入 Personal AI System 的开场转场。</p></div>
+   <div class="beats"><div><b>00 / EMERGE</b><span id="beat0">少量星光随机亮起</span></div><div><b>01 / CONNECT</b><span id="beat1">诊断与理解之间出现连接</span></div><div><b>02 / REMEMBER</b><span id="beat2">整张图谱出现，进入长期记忆</span></div></div>
+   <div class="assessment" id="assess">设计判断：空间感最强、适合首屏；但如果不补充真实学习实例，容易被误解为装饰性星空。</div>
+   <div class="actions"><a href="https://github.com/zxyzx0430/zxyzx-me-lab/tree/main/experiments/network-lab" target="_blank" rel="noopener">查看 Remotion 源码 ↗</a><button id="copyChoice" type="button">复制我选的方案</button></div>
+  </section>
+</div>
+<section class="compare"><h2>三种语言，解决不同的问题。</h2><div class="compare-cards"><article><small class="mono">A / ATMOSPHERE</small><strong>星光觉醒</strong><p>光点逐渐苏醒，沉浸感强。适合作为第一印象的钩子，但可能偏抽象。</p><button data-jump="a">播放 A</button></article><article><small class="mono">B / CAUSALITY</small><strong>神经脉冲</strong><p>把反馈表现为电信号的传递。更强调学习过程及即时反馈，不只是节点数量增加。</p><button data-jump="b">播放 B</button></article><article><small class="mono">C / SYSTEM</small><strong>Obsidian 式图谱</strong><p>从多个知识簇向外生长并逐渐连接，最适合解释长期积累和知识复用。</p><button data-jump="c">播放 C</button></article></div></section>
+<footer class="note"><div>每个镜头由 Remotion + RemotionUI 的源码组件渲染为 MP4。复用组件：ParticleField、ConnectorLines、GlowPulse（RemotionUI，MIT）。这是概念动画，节点和关系为合成示例，尚未连接真实 Obsidian 数据。</div><div><a href="https://github.com/riaz37/remotion-ui" target="_blank" rel="noopener">REMOTIONUI ↗</a><br><a href="https://www.remotion.dev" target="_blank" rel="noopener">REMOTION ↗</a></div></footer>
+</main>
+<script>
+const configs={
+a:{title:"一颗星点醒另一颗星。",tag:"A / ORIGIN",detail:"安静、神秘的视觉节奏。先有零散微光，随后形成有意义的联系。适合从首屏进入 Personal AI System 的开场转场。",beats:["少量星光随机亮起","诊断与理解之间出现连接","整张图谱出现，进入长期记忆"],assess:"设计判断：空间感最强、适合首屏；但如果不补充真实学习实例，容易被误解为装饰性星空。",color:"#82b1ff"},
+b:{title:"像神经信号一样，彼此唤醒。",tag:"B / SIGNAL",detail:"节点之间不只是出现连线，而有明确的脉冲沿着关联传播。它适合解释：学生做出判断、得到即时反馈，再修正自己的理解。",beats:["问题神经元被激活","反馈信号沿路径传播","新的学习经验进入网络"],assess:"设计判断：运动感和因果关系更明确，较有技术辨识度；需要防止过度炫技、忽略具体学习内容。",color:"#7af6c7"},
+c:{title:"越学，联系越多。",tag:"C / ACCUMULATION",detail:"强调从几个独立知识簇出发，逐渐生长为更复杂的图谱。它更接近 Obsidian 的视觉隐喻，最适合表达长期记忆和跨时间的知识复用。",beats:["分散的知识节点出现","同一主题内部建立联系","不同主题间逐渐形成关联"],assess:"设计判断：最贴合系统理念，但密度高时必须克制标签数量，手机上最好使用预渲染视频，点击后再切换到轻量交互图谱。",color:"#bbb0ff"}
+};
+const video=document.getElementById("show"),title=document.getElementById("heading"),tag=document.getElementById("tag"),desc=document.getElementById("detail"),assess=document.getElementById("assess"),choiceNo=document.getElementById("choiceNo");
+let current="a";
+function select(mode){
+ if(!configs[mode])return;current=mode;const cfg=configs[mode];
+ document.documentElement.style.setProperty("--c",cfg.color);title.textContent=cfg.title;tag.textContent=cfg.tag;desc.textContent=cfg.detail;assess.textContent=cfg.assess;choiceNo.textContent=mode.toUpperCase()+" / 03";
+ cfg.beats.forEach((s,i)=>document.getElementById("beat"+i).textContent=s);
+ document.querySelectorAll("[data-mode]").forEach(b=>{b.classList.toggle("active",b.dataset.mode===mode);b.setAttribute("aria-pressed",b.dataset.mode===mode?"true":"false")});
+ video.pause();video.poster="assets/network-"+mode+".jpg";video.src="assets/network-"+mode+".mp4";video.load();
+ if(!matchMedia("(prefers-reduced-motion: reduce)").matches){const p=video.play();if(p)p.catch(()=>{});}
+}
+document.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.mode)));
+document.querySelectorAll("[data-jump]").forEach(b=>b.addEventListener("click",()=>{select(b.dataset.jump);document.querySelector(".stage").scrollIntoView({behavior:"smooth",block:"start"})}));
+document.getElementById("replay").addEventListener("click",()=>{video.currentTime=0;video.play().catch(()=>{})});
+document.getElementById("copyChoice").addEventListener("click",()=>{
+ const text="zxyzx.me 知识网络动效，我选择 "+current.toUpperCase()+"（"+({a:"星光觉醒",b:"神经脉冲",c:"知识图谱"}[current])+"），下一轮请基于这个方案继续打磨。";
+ if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>{document.getElementById("copyChoice").textContent="已复制 ✓"}).catch(()=>{});else prompt("复制以下文字",text);
+});
+document.addEventListener("visibilitychange",()=>{if(document.hidden)video.pause()});
+select("a");
+</script></body></html>

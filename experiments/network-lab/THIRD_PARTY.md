@@ -1,0 +1,1 @@
+Third-party RemotionUI components: particle-field, connector-lines, glow-pulse. Source: https://github.com/riaz37/remotion-ui. License: MIT (consult upstream LICENSE). Local integration adaptations are limited to import path replacement.
