@@ -7,7 +7,8 @@
     "render:a": "remotion render src/index.ts NetworkA assets/network-a.mp4",
     "render:b": "remotion render src/index.ts NetworkB assets/network-b.mp4",
     "render:c": "remotion render src/index.ts NetworkC assets/network-c.mp4",
-    "compositions": "remotion compositions src/index.ts"
+    "compositions": "remotion compositions src/index.ts",
+    "render:d": "remotion render src/index.ts NetworkD assets/network-d.mp4"
   },
   "dependencies": {
     "@remotion/cli": "4.0.365",
