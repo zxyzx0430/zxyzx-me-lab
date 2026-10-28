@@ -9,7 +9,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run",
     "test:browser": "playwright test",
-    "test:visual": "node visual/compare.mjs",
+    "test:visual": "python3 visual/compare.py",
     "remotion": "remotion studio src/remotion/index.ts",
     "validate": "npm run build && npm run test"
   },

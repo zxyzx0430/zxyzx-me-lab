@@ -200,3 +200,16 @@
 /* Deterministic screenshot mode: animation is disabled, geometry unchanged. */
 .static-preview .poster-title .t,.static-preview .photo-frame img{animation:none!important;opacity:1!important;filter:none!important;clip-path:none!important}
 .static-preview .poster-ink-orbits path{stroke-dashoffset:0!important}
+
+/* Visual correction round 2: legacy vignette at full strength obscured the photo in React. */
+.m01-root .photo-vignette{opacity:.25}
+
+/* Visual correction round 3: restore cinematic contrast on independent portrait. */
+.m01-root .photo-frame img{filter:contrast(1.07) brightness(.94)}
+.m01-root.static-preview .photo-frame img{filter:contrast(1.07) brightness(.94)!important}
+
+/* Final stacking fix: ensure decoded portrait paints above the independent vignette plane. */
+.m01-root .photo-frame img{position:relative;z-index:1}
+
+/* Photo plane must outrank absolute decorative vignette under all Chromium compositors. */
+.m01-root .photo-frame img{position:relative!important;z-index:200!important}

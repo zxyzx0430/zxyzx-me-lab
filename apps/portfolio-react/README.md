@@ -9,7 +9,7 @@
 - `src/remotion/`：仅用于可复用的视频预演，**不控制网站**。
 - `visual/proxy-1672.jpg`：历史 1672×941 截图，**不是**用户指定的 `docs/design-references/m01-poster-v2-target.png`。
 
-开发：`npm ci && npm run dev`。构建：`npm run build`。单元：`npm test`。浏览器：`npm run test:browser`。逐帧预演：`npm run remotion`。
+开发：`pnpm install && pnpm run dev`。构建：`pnpm run build`。单元：`pnpm run test`。浏览器：`pnpm run test:browser`。逐帧预演：`pnpm run remotion`。
 
 独立预览路径：`/zxyzx-me-lab/preview/m01-react/`。静态视觉截图加 `?static=1` 可关闭入场动画。
 

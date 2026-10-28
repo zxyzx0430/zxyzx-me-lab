@@ -43,3 +43,13 @@ apps/portfolio-react/
 2. Source historical portrait is 1086×1448 WebP; original independent master and commercial status are not verified.
 3. Historical mountain is CSS geometry, not a separately sourced photographic mountain collage. True source-fidelity depends on reference PNG and assets.
 4. Full M02/module integration requires separate design approval.
+
+## Historical proxy comparison log (three correction passes)
+
+- Initial migrated screenshot: RGB MAE **15.787/255**; portrait obscured by cover-layer paint order.
+- Cover opacity .25 test: RGB MAE **3.686/255**.
+- Contrast correction trial: RGB MAE **2.085/255**.
+- Reproducible final *production build* with portrait position/z-index 200: RGB MAE **2.303/255**; remaining error includes original JPEG compression and subtle film/light changes.
+
+These scores use the historical JPG **proxy**, not the user's missing PNG master; they are diagnostic only and do not mean 1:1 approval. The layers and screenshot artifacts are stored under `apps/portfolio-react/visual/`.
+CI recipe: `.github/workflows/react-m01-preview-check.yml` (feature-branch scoped).
