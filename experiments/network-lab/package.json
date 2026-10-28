@@ -8,12 +8,14 @@
     "render:b": "remotion render src/index.ts NetworkB assets/network-b.mp4",
     "render:c": "remotion render src/index.ts NetworkC assets/network-c.mp4",
     "compositions": "remotion compositions src/index.ts",
-    "render:d": "remotion render src/index.ts NetworkD assets/network-d.mp4"
+    "render:d": "remotion render src/index.ts NetworkD assets/network-d.mp4",
+    "render:v5": "remotion render src/index.ts NetworkV5 ../network-v5/assets/obsidian-growth-v5.mp4"
   },
   "dependencies": {
     "@remotion/cli": "4.0.365",
-    "remotion": "4.0.365",
+    "d3-force": "^3.0.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "remotion": "4.0.365"
   }
 }

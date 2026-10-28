@@ -34,3 +34,7 @@ npm run render:d
 如环境无 Remotion Chrome，可使用 --browser-executable 指定 chromium。
 
 性能策略：离线渲染 H.264，在网站中一次只播放选中的视频；不会随滚动实时计算动态节点。浏览器减少动态效果时不自动播放。
+
+## V5 有机图谱实验
+
+[C 为主体、A 为点缀的自然生长版](../network-v5/)；源码在 src/NetworkObsidianV5.tsx，D3 力导向图谱由 generate-graph-v5.mjs 生成。
