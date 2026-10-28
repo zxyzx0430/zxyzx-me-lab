@@ -44,8 +44,8 @@ export function M01Hero() {
       ] as const) {
         const elWord = word(name);
         if (elWord) timeline.fromTo(elWord,
-          { opacity: 0, clipPath: 'inset(94% 0 0)', y: 5 },
-          { opacity: 1, clipPath: 'inset(0% 0 0)', y: 0, duration }, at);
+          { opacity: 0, clipPath: 'inset(94% 0 0)' },
+          { opacity: 1, clipPath: 'inset(0% 0 0)', duration }, at);
       }
       const mountain = el.querySelector('.poster-mountain');
       if (mountain) timeline.fromTo(mountain, { opacity: 0 }, { opacity: 1, duration: .65 }, .9);

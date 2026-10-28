@@ -17,6 +17,9 @@ test.describe('BEYOND THE FRAME real-browser motion', () => {
     await expect(page.locator('#top')).toHaveAttribute('data-intro', 'complete', { timeout: 3500 });
     await page.screenshot({ path: evidence + '/04-complete.png' });
     expect(errors).toEqual([]);
+    // Newly approved static artwork spacing must survive entrance cleanup.
+    expect(await page.locator('.word-explore').evaluate(el => getComputedStyle(el).transform)).toContain('-50');
+    expect(await page.locator('.word-world').evaluate(el => getComputedStyle(el).transform)).toContain('-40');
     for (const selector of ['.word-into', '.word-out', '.word-world', '.photo-frame']) {
       const opacity = await page.locator(selector).evaluate(el => getComputedStyle(el).opacity);
       expect(opacity).toBe('1');
