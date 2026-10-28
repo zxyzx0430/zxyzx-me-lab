@@ -6,6 +6,13 @@
   },
   "versions": [
     {
+      "sha": "2fe063d",
+      "date": "2026-10-28T17:48:42+08:00",
+      "capturedAt": "2026-10-28T09:50:02.569Z",
+      "file": "versions/2fe063d.jpg",
+      "message": "feat(m01): replace portrait with upward gaze artwork"
+    },
+    {
       "sha": "6e7f831",
       "date": "2026-10-28T17:44:47+08:00",
       "capturedAt": "2026-10-28T09:45:19.086Z",
