@@ -24,5 +24,6 @@ export function App() {
       </section>
     </main>
     <footer className="page-footer"><span>忠心于中心 / THE PERSON BEHIND THE SYSTEM</span><span>REACT M01 · UNAPPROVED PREVIEW</span></footer>
+    <div className="cinema-blackout" aria-hidden="true"/>
   </>;
 }
