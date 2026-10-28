@@ -301,3 +301,34 @@
   .m01-root .poster-vertical{display:none}
   .m01-root .enter{display:none}
 }
+
+/* Portrait replacement 2026-10-28: use the user's original 1152x1536 JPEG
+   as the sole picture on all viewports. Unmounting the original master image
+   disables its baked-in caption and historic white-seam retouch patches. */
+.m01-root .photo-frame .portrait-hd{
+  display:block!important;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 39%;
+  filter:none!important;
+  opacity:1!important;
+  z-index:2;
+}
+@media(min-width:901px){
+  .m01-root .photo-frame{
+    overflow:hidden;
+    clip-path:polygon(1.5% 0,98.5% .5%,100% 99%,0 98.5%);
+  }
+  .m01-root .photo-frame .portrait-hd{
+    width:800px;
+    height:871px;
+    transform:none!important;
+  }
+  .m01-root .poster-vertical{display:block;left:1532px;top:211px;font-size:11px;letter-spacing:.24em}
+}
+@media(max-width:900px){
+  .m01-root .photo-frame .portrait-hd{object-position:center 33%;transform:scale(calc(1.01 + var(--p)*.04))}
+}
