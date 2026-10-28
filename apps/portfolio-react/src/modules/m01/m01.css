@@ -428,11 +428,10 @@
 }
 
 
-/* M01 "Explore / World" artwork-only breathing room, reversible in one commit.
-   At the 1672x941 artboard: 50px / 40px left shift gives a 25px / 26px
-   minimum alpha-to-alpha gap from the existing portrait edge. Orbit artwork
-   and the approved "向内" / "向外" titles retain their original coordinates. */
+/* Desktop breathing room without moving or merging the editorial glyphs.
+   Restore all original word positions; shift only the photograph slightly
+   toward its unused right margin. Its border and vertical caption move together.
+   Rollback: revert this one commit. */
 @media(min-width:901px){
-  .m01-root .master-word.word-explore{transform:translateX(-50px)}
-  .m01-root .master-word.word-world{transform:translateX(-40px)}
+  .m01-root .portrait-plane{left:839px}
 }

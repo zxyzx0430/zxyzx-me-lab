@@ -18,8 +18,9 @@ test.describe('BEYOND THE FRAME real-browser motion', () => {
     await page.screenshot({ path: evidence + '/04-complete.png' });
     expect(errors).toEqual([]);
     // Newly approved static artwork spacing must survive entrance cleanup.
-    expect(await page.locator('.word-explore').evaluate(el => getComputedStyle(el).transform)).toContain('-50');
-    expect(await page.locator('.word-world').evaluate(el => getComputedStyle(el).transform)).toContain('-40');
+    expect(await page.locator('.word-explore').evaluate(el => getComputedStyle(el).transform)).toBe('none');
+    expect(await page.locator('.word-world').evaluate(el => getComputedStyle(el).transform)).toBe('none');
+    expect(await page.locator('.portrait-plane').evaluate(el => getComputedStyle(el).left)).toBe('839px');
     for (const selector of ['.word-into', '.word-out', '.word-world', '.photo-frame']) {
       const opacity = await page.locator(selector).evaluate(el => getComputedStyle(el).opacity);
       expect(opacity).toBe('1');
@@ -74,6 +75,8 @@ test.describe('BEYOND THE FRAME real-browser motion', () => {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
     const page = await ctx.newPage();
     await page.goto('');
+    // Synthetic gestures should start only after React hooks register listeners.
+    await expect(page.locator('#top')).toHaveAttribute('data-intro', /running|complete/, { timeout: 6000 });
     const swipe = async (direction: 1 | -1) => page.evaluate((dir) => {
       const a = new Touch({ identifier: 1, target: document.body, clientX: 165, clientY: dir === 1 ? 620 : 250 });
       const b = new Touch({ identifier: 1, target: document.body, clientX: 165, clientY: dir === 1 ? 350 : 550 });
