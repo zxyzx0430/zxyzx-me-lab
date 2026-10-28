@@ -54,12 +54,12 @@ export function M01Hero() {
     const el=root.current;
     if (!el || staticPreview || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const ctx=gsap.context(() => {
-      const textEls=gsap.utils.toArray<HTMLElement>('.poster-title .t');
+      const textEls=gsap.utils.toArray<HTMLElement>('.poster-title .master-word, .poster-title .t').filter(node => node.getClientRects().length > 0);
       const tl=gsap.timeline({defaults:{ease:cinematic.ease}});
       textEls.forEach((node,index) => tl.fromTo(node,
         {opacity:0,clipPath:'inset(100% 0 0)',filter:'blur(5px)'},
         {opacity:1,clipPath:'inset(0% 0 0)',filter:'blur(0px)',duration:0.72},index*cinematic.staggerSeconds));
-      const paths=gsap.utils.toArray<SVGPathElement>('.poster-ink-orbits path');
+      const paths=gsap.utils.toArray<SVGPathElement>('.master-orbits path, .poster-ink-orbits path').filter(path => path.getClientRects().length > 0);
       paths.forEach(path => {
         const length=path.getTotalLength();
         gsap.set(path,{strokeDasharray:length,strokeDashoffset:length});

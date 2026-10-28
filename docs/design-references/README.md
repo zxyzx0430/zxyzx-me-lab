@@ -1,7 +1,8 @@
-# Reference asset status
+# M01 authoritative visual master
 
-The user-requested **m01-poster-v2-target.png** (1672×941) was not present in the checked repository, local server workspace or accessible conversation/Library files as of 2026-10-28. **Do not fabricate it or rename an old screenshot as the original.**
+- File: `m01-poster-v2-target.png`
+- Dimensions: **1672 × 941 pixels**
+- SHA-256: `f28b1294ca511661d1ed6ce8bddcd524fdf9d50f8ac5428eac6362d3e6333257`
+- Origin: user's original ZIP, extracted and committed byte-for-byte
 
-Temporary historical comparison candidate: `apps/portfolio-react/visual/proxy-1672.jpg`. This was recovered from the old branch `fix/m01-poster-ink-orbits`, not supplied as the user's authoritative PNG.
-
-The source PNG should be placed at `docs/design-references/m01-poster-v2-target.png` once available; then replace the proxy in screenshot comparisons and complete three target-grounded visual correction iterations before any 1:1 acceptance.
+All acceptance measurements use **this PNG alone** via `apps/portfolio-react/visual/compare.py`. The historic JPG is archived for history, never used for acceptance. The website consists of independent React text, portrait, photographic fragments and editable SVG layers, **not** the entire poster as background.

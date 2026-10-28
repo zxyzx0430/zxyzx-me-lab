@@ -216,3 +216,79 @@
 
 /* Cross-browser screenshot consistency: cinematic tonality lives in image filter, not a composited overlay. */
 .m01-root .photo-vignette{display:none!important}
+
+/* Verified 1672x941 poster source: each title and photo is an independent
+   target-derived art layer. This does NOT rasterize the full poster. */
+@media (min-width:901px) {
+  .m01-root .poster-title{z-index:3}
+  .m01-root .responsive-type-layer{display:none}
+  .m01-root .master-word-layer{display:block}
+  .m01-root .master-word{position:absolute;display:block;pointer-events:none;will-change:opacity,filter,clip-path}
+  .m01-root .master-word img{display:block;width:100%;height:100%;object-fit:fill;user-select:none}
+  .m01-root .portrait-plane{left:804px;top:65px;width:800px;height:871px;z-index:4;transform:none!important}
+  .m01-root .portrait-shadow,.m01-root .photo-vignette{display:none!important}
+  .m01-root .photo-frame{inset:0;background:transparent;box-shadow:none;clip-path:none;overflow:visible}
+  .m01-root .photo-frame .portrait-hd{display:none!important}
+  .m01-root .photo-frame .portrait-master{display:block;position:absolute;inset:0;width:800px;height:871px;object-fit:fill;opacity:1;filter:none!important;transform:none!important;animation:none!important;z-index:2}
+  .m01-root .poster-mountain{left:20px;top:421px;width:194px;height:91px;clip-path:none;background:url("./assets/master-mountain.png") 0 0/100% 100% no-repeat;opacity:1}
+  .m01-root .poster-thought{left:72px;top:731px;font-size:19px;line-height:1.5;font-weight:700}
+  .m01-root .poster-meta{left:72px;top:825px;gap:8px;font-size:10px}
+  .m01-root .poster-meta>span:first-child{display:none}
+  .m01-root .poster-meta::before{content:"";position:absolute;left:0;top:-21px;width:23px;height:1px;background:#77736f}
+  .m01-root .poster-meta strong{font-size:13px;letter-spacing:.14em}
+  .m01-root .poster-meta .sub{font-size:11px;color:#8b8681}
+  .m01-root .poster-asterisk{left:459px;top:829px;font-size:10px;letter-spacing:.09em;line-height:1.3;color:#aaa5a0}
+  .m01-root .poster-asterisk::before{content:"";position:absolute;left:-32px;top:0;width:1px;height:72px;background:#aaa5a0}
+}
+@media (max-width:900px){
+ .m01-root .master-word-layer{display:none}
+ .m01-root .photo-frame .portrait-master{display:none!important}
+ .m01-root .photo-frame .portrait-hd{display:block}
+}
+
+/* Master correction pass 2: paper tone, true engraving paths and microtype. */
+@media(min-width:901px){
+  .m01-root .scene{
+    background:linear-gradient(100deg,#f1eee6 0%,#f6f3eb 52%,#f6f2e9 100%);
+  }
+  .m01-root .poster-ink-orbits{display:none}
+  .m01-root .master-orbits{
+    position:absolute;inset:0;width:1672px;height:941px;z-index:7;
+    pointer-events:none;mix-blend-mode:difference;overflow:visible
+  }
+  .m01-root .master-orbits path{fill:none;stroke:white;stroke-linecap:round;stroke-linejoin:round}
+  .m01-root .master-orbits .track-primary{stroke-width:1.6;opacity:.88}
+  .m01-root .master-orbits .track-secondary{stroke-width:1.25;opacity:.55}
+  .m01-root .master-orbits .track-fine{stroke-width:.8;opacity:.44}
+}
+@media(max-width:900px){.m01-root .master-orbits{display:none}}
+
+/* Master correction pass 3: source portrait already contains cinematic grading;
+   never apply the historical photo filter a second time. */
+@media(min-width:901px) {
+ .m01-root.static-preview .photo-frame .portrait-master,
+ .m01-root .photo-frame .portrait-master{
+   filter:none!important;opacity:1!important;
+ }
+ .m01-root .poster-loop{opacity:.08}
+ .m01-root .poster-rule:before,.m01-root .poster-rule:after{opacity:.32}
+ .m01-root .grain{opacity:.025}
+}
+
+/* Separately animated photographed paper scraps and shallow cinematic camera. */
+@media(min-width:901px){
+  .m01-root .poster-tape-left{position:absolute;z-index:4;left:782px;top:283px;width:33px;height:72px;
+    background:linear-gradient(116deg,#4b504b2b,#a4a39a4f,#34363525);
+    clip-path:polygon(0 6%,94% 0,77% 19%,97% 33%,91% 78%,28% 100%,7% 81%)}
+  .m01-root .poster-tape-right{position:absolute;z-index:6;left:1560px;top:794px;width:102px;height:24px;
+    background:repeating-linear-gradient(166deg,#413f3a35 0 5px,#a9a69c5a 5px 9px);
+    clip-path:polygon(0 15%,100% 0,94% 83%,6% 100%);transform:rotate(-10deg)}
+  .m01-root:not(.static-preview) .photo-frame .portrait-master{
+    transform:translate3d(calc(var(--px)*4px + var(--p)*8px),calc(var(--py)*3px - var(--p)*5px),0)!important;
+    will-change:transform
+  }
+}
+@media(max-width:900px){.m01-root .poster-tape-left,.m01-root .poster-tape-right{display:none}}
+@media(prefers-reduced-motion:reduce){
+ .m01-root .photo-frame .portrait-master{transform:none!important}
+}

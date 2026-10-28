@@ -59,3 +59,11 @@ The historical poster was captured on a Linux server where `Noto Sans CJK SC` wa
 
 ## Font parity stabilization
 Final portable fallback attempt sets explicit WenQuanYi Zen Hei (with CI installing fonts-wqy-zenhei). Local Playwright Chromium 156 comparison yields historical proxy RGB MAE **5.219/255**. This is still NOT a user-original target comparison; browser/device variation remains possible.
+
+## FINAL source-of-truth update — 2026-10-28
+
+The original master PNG was recovered byte-for-byte from the uploaded ZIP, dimensions **1672×941**, SHA-256 **f28b1294ca511661d1ed6ce8bddcd524fdf9d50f8ac5428eac6362d3e6333257**, stored at `docs/design-references/m01-poster-v2-target.png`. Earlier notices that the PNG was unavailable and historical JPEG comparison scores are now obsolete. **The original PNG alone is used for all subsequent acceptance checks.**
+
+The React M01 candidate now separates six real ink/distressed Chinese typographic masks, a high-detail cropped portrait, a mountain photographic fragment, tape/scrap layers, and independent SVG orbit paths. Source extractor at `visual/extract_layers.py` verifies the master hash before producing any crops. The original full-poster is **never** presented as a background. `visual/compare.py` checks the same SHA, exports original-vs-React paired and overlay images, a color heatmap, and `master-regions.json`.
+
+Pending user approval: the candidate is still `draft`; true 1:1 perfection has **not** been claimed.

@@ -12,7 +12,7 @@ for(const vp of viewports){
     page.on('pageerror',error=>errors.push(error.message));
     page.on('response',response=>{if(response.status()>=400)errors.push(response.status()+' '+response.url());});
     await page.goto('?static=1',{waitUntil:'networkidle'});
-    await page.locator('.photo-frame img').evaluate((img:HTMLImageElement)=>img.decode());
+    await page.locator('.photo-frame img').evaluateAll((imgs:HTMLImageElement[])=>Promise.all(imgs.map(img=>img.decode())));
     await page.evaluate(async ()=>{await document.fonts.ready});
     await page.waitForTimeout(400);
     await page.screenshot({path:'visual/artifacts/m01-'+vp.width+'x'+vp.height+'.png'});
@@ -21,7 +21,7 @@ for(const vp of viewports){
     expect(await page.locator('.poster-title .t').count()).toBe(6);
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
     expect(overflow).toBe(false);
-    const photo=await page.locator('.photo-frame img').evaluate((img:HTMLImageElement)=>[img.naturalWidth,img.naturalHeight]);
+    const photo=await page.locator('.portrait-hd').evaluate((img:HTMLImageElement)=>[img.naturalWidth,img.naturalHeight]);
     expect(photo[0]).toBeGreaterThan(1000);
     expect(await page.locator('section.scene').evaluate((s)=>Math.abs(s.getBoundingClientRect().height-innerHeight))).toBeLessThan(3);
     if(vp.width===1672)expect(await page.locator('.poster-artboard').evaluate(e=>Math.round(e.getBoundingClientRect().width))).toBe(1672);

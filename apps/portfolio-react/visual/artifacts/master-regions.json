@@ -1,0 +1,135 @@
+{
+  "reference": "docs/design-references/m01-poster-v2-target.png",
+  "reference_sha256": "f28b1294ca511661d1ed6ce8bddcd524fdf9d50f8ac5428eac6362d3e6333257",
+  "size": [
+    1672,
+    941
+  ],
+  "overall": {
+    "mae_rgb": 5.3016,
+    "p95_pixel_mae": 19.333,
+    "pixels_over_20pct": 4.806
+  },
+  "regions": {
+    "brand_navigation": {
+      "reference_box": [
+        34,
+        8,
+        1640,
+        100
+      ],
+      "mae_rgb": 6.307,
+      "pixels_over_20pct": 4.19
+    },
+    "giant_upper": {
+      "reference_box": [
+        61,
+        112,
+        525,
+        420
+      ],
+      "mae_rgb": 4.807,
+      "pixels_over_20pct": 4.646
+    },
+    "find": {
+      "reference_box": [
+        512,
+        232,
+        770,
+        366
+      ],
+      "mae_rgb": 10.564,
+      "pixels_over_20pct": 11.738
+    },
+    "outline_center": {
+      "reference_box": [
+        522,
+        342,
+        838,
+        481
+      ],
+      "mae_rgb": 7.393,
+      "pixels_over_20pct": 8.394
+    },
+    "giant_lower": {
+      "reference_box": [
+        127,
+        412,
+        622,
+        747
+      ],
+      "mae_rgb": 5.978,
+      "pixels_over_20pct": 7.012
+    },
+    "explore": {
+      "reference_box": [
+        605,
+        491,
+        890,
+        635
+      ],
+      "mae_rgb": 8.004,
+      "pixels_over_20pct": 9.196
+    },
+    "world": {
+      "reference_box": [
+        597,
+        611,
+        886,
+        779
+      ],
+      "mae_rgb": 8.717,
+      "pixels_over_20pct": 10.037
+    },
+    "mountain_collage": {
+      "reference_box": [
+        12,
+        413,
+        233,
+        515
+      ],
+      "mae_rgb": 11.969,
+      "pixels_over_20pct": 11.104
+    },
+    "portrait_photo": {
+      "reference_box": [
+        805,
+        67,
+        1600,
+        935
+      ],
+      "mae_rgb": 4.083,
+      "pixels_over_20pct": 3.581
+    },
+    "lower_captions": {
+      "reference_box": [
+        42,
+        723,
+        793,
+        935
+      ],
+      "mae_rgb": 9.331,
+      "pixels_over_20pct": 7.876
+    },
+    "paper_blank_top": {
+      "reference_box": [
+        260,
+        0,
+        580,
+        110
+      ],
+      "mae_rgb": 1.138,
+      "pixels_over_20pct": 0.0
+    },
+    "orbit_crossings": {
+      "reference_box": [
+        0,
+        185,
+        940,
+        828
+      ],
+      "mae_rgb": 6.754,
+      "pixels_over_20pct": 6.956
+    }
+  }
+}
