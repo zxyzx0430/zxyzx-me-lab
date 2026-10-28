@@ -61,7 +61,7 @@ Remotion 独立预演：`pnpm run remotion`。
 - GSAP 入场依次完成字体油墨显影、现有轨道绘制、照片暗部显影与微型文字；不改变任何 SVG 路径或原始 PNG 视觉母版。
 - 指针只对现有图层施加极弱视差与照片光照，手机不模拟鼠标；`?static=1` 和系统减少动态效果均禁用电影镜头。
 - 一次明确向下滚动即沿轨道穿入右侧照片，经历短黑场再进入既有第二幕；向上滚动、PageUp、方向键和手机轻扫支持返回。
-- 本地真实 Chrome 测试：`pnpm run build`、`pnpm run test`、`pnpm exec playwright test --workers=1`；15 项浏览器测试全部通过，覆盖 5 个指定尺寸。
-- 同步新原始肖像后，1672×941 的动态定格与 `?static=1` 浏览器截图平均 RGB 差异约 `3.359/255`；这是局部摄影呼吸和光照叠加的差别，几何构图未被重排。
+- 本地真实 Chrome 测试：`pnpm run build`、`pnpm run test`、`pnpm exec playwright test --workers=1`；16 项浏览器测试全部通过，覆盖 5 个指定尺寸。
+- 同步新原始肖像后，1672×941 的动态定格与 `?static=1` 浏览器截图平均 RGB 差异约 `3.375/255`；这是局部摄影呼吸和光照叠加的差别，几何构图未被重排。
 - 真实测试截图、浏览器录屏：`visual/motion-evidence/`。录屏文件来自 Playwright Chrome，非人工拼接的动画模拟。
 - 持续性能压力测试、低端真机 GPU 帧率测量仍待单独验证；本次没有臆造 FPS/CPU 数值。

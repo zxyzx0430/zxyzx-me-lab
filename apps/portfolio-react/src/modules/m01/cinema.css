@@ -25,6 +25,22 @@
 }
 @keyframes cinema-film-breath{from{opacity:.018}to{opacity:.035}}
 .cinema-track-dot{opacity:0;fill:#fff;stroke:none;pointer-events:none}
+/* Sub-pixel perspective on independent collage scraps, never on large title art.
+   All offsets are zero at rest; no static poster geometry is modified. */
+@media(min-width:901px) and (pointer:fine){
+  .m01-root.cinematic-motion .poster-mountain{
+    transform:translate3d(calc(var(--px) * -5px),calc(var(--py) * -3px),0);
+  }
+  .m01-root.cinematic-motion .poster-tape-left{
+    transform:translate3d(calc(var(--px) * 3px),calc(var(--py) * 2px),0);
+  }
+  .m01-root.cinematic-motion .poster-tape-right{
+    transform:rotate(-10deg) translate3d(calc(var(--px) * 2px),calc(var(--py) * 2px),0);
+  }
+  .m01-root.cinematic-motion .master-orbits{
+    transform:translate3d(calc(var(--px) * 1.5px),calc(var(--py) * 1px),0);
+  }
+}
 @media(max-width:900px){
   .cinema-stage{transform-origin:70% 46%}
   .m01-root.cinematic-motion .cinema-photo-light{opacity:.015}

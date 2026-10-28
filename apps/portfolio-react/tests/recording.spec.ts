@@ -2,6 +2,8 @@ import { test, expect } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
 const folder = 'visual/motion-evidence';
 mkdirSync(folder, { recursive: true });
+// Recording finalization can be slower than interaction checks under shared CPU load.
+test.setTimeout(90_000);
 
 test('record real desktop film journey', async ({ browser }) => {
   const context = await browser.newContext({

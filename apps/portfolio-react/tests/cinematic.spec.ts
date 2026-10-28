@@ -95,6 +95,23 @@ test.describe('BEYOND THE FRAME real-browser motion', () => {
     await ctx.close();
   });
 
+  test('subtle independent collage parallax preserves the title geometry', async ({page}) => {
+    await page.setViewportSize({width:1440,height:900});
+    await page.goto('');
+    await expect(page.locator('#top')).toHaveAttribute('data-intro','complete',{timeout:5500});
+    const beforeMountain = await page.locator('.poster-mountain').evaluate(el=>getComputedStyle(el).transform);
+    const titleBefore = await page.locator('.word-into').boundingBox();
+    await page.mouse.move(1280,390);
+    await page.waitForTimeout(1100);
+    const afterMountain = await page.locator('.poster-mountain').evaluate(el=>getComputedStyle(el).transform);
+    const titleAfter = await page.locator('.word-into').boundingBox();
+    expect(afterMountain).not.toBe(beforeMountain);
+    expect(titleBefore).not.toBeNull();
+    expect(titleAfter).not.toBeNull();
+    expect(Math.abs(titleAfter!.x-titleBefore!.x)).toBeLessThan(.3);
+    expect(Math.abs(titleAfter!.y-titleBefore!.y)).toBeLessThan(.3);
+  });
+
   test('reduced motion bypasses camera and remains navigable', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('');
