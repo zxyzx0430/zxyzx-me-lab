@@ -35,8 +35,8 @@ function update(){const dur=Number.isFinite(video.duration)?video.duration:17;sc
 video.addEventListener("timeupdate",update);video.addEventListener("loadedmetadata",update);video.addEventListener("play",update);video.addEventListener("pause",update);video.addEventListener("ended",()=>{video.currentTime=0;video.pause();update()});
 play.addEventListener("click",()=>{if(video.paused)video.play().catch(()=>{});else video.pause()});
 scrub.addEventListener("input",()=>{video.currentTime=Number(scrub.value);update()});
-document.querySelectorAll("[data-seek]").forEach(b=>b.addEventListener("click",()=>{video.pause();video.currentTime=Number(b.dataset.seek);document.querySelector("#player").scrollIntoView({behavior:"auto",block:"center"});requestAnimationFrame(()=>video.play().catch(()=>{}))}));
-const observer=new IntersectionObserver(es=>{if(!es[0].isIntersecting&&!video.paused)video.pause()},{threshold:.05});observer.observe(video);
+document.querySelectorAll("[data-seek]").forEach(b=>b.addEventListener("click",()=>{document.querySelector("#player").scrollIntoView({behavior:"auto",block:"center"});video.currentTime=Number(b.dataset.seek);video.play().catch(()=>{})}));
+// One lightweight pre-rendered video: do not pause on transient scrolling intersections.
 document.addEventListener("visibilitychange",()=>{if(document.hidden)video.pause()});
 update();
 </script></body></html>
