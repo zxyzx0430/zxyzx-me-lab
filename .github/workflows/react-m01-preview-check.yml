@@ -33,5 +33,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install pillow
-      - run: python visual/compare.py
       - run: node ../../scripts/validate-modules.mjs
+      - run: python visual/compare.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m01-react-visual-${{ github.run_id }}
+          path: apps/portfolio-react/visual/artifacts/
+          retention-days: 7

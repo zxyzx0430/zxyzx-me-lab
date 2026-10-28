@@ -16,5 +16,8 @@ overlay.save(src/'artifacts/overlay-proxy-1672.png')
 ImageEnhance.Contrast(diff).enhance(3).save(src/'artifacts/diff-proxy-1672.png')
 (src/'artifacts/score.txt').write_text(f'PROXY IMAGE ONLY; RGB mean absolute error: {score:.3f}/255\n')
 print(f'PROXY comparison: RGB mean absolute error={score:.3f}/255')
+for name,coords in {'header':(0,0,1672,110),'title':(30,100,790,800),'portrait':(790,100,1550,910),'footer':(0,800,790,941)}.items():
+    sub=ImageChops.difference(reference.crop(coords),actual.crop(coords))
+    print(f'  {name} MAE: {sum(ImageStat.Stat(sub).mean)/3:.3f}/255')
 if score > 8.0: raise SystemExit('Historical proxy regression threshold exceeded (MAE > 8/255)')
 print('Visual deliverables: visual/artifacts/overlay-proxy-1672.png and diff-proxy-1672.png')
