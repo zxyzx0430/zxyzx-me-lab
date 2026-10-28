@@ -20,8 +20,23 @@
       "version": "0.1.0",
       "preview": "modules/home-hero/index.html",
       "approvedTag": null,
-      "owner": "M01 identity hero",
-      "entry": "modules/home-hero/module.js"
+      "owner": "Legacy M01 V1 draft; superseded visually by approved V3 experiment",
+      "entry": "modules/home-hero/module.js",
+      "visualStatus": "not-approved"
+    }
+  ],
+  "designBaselines": [
+    {
+      "id": "M01",
+      "displayName": "Home Hero — V3 Art Motion",
+      "visualStatus": "approved",
+      "integrationStatus": "not-packaged",
+      "source": "experiments/m01-v3-art-motion/index.html",
+      "designSpec": "docs/module-designs/M01_HOME_APPROVED.md",
+      "review": "review/m01/",
+      "tag": "m01-v3-visual-approved",
+      "acceptedDate": "2026-10-28",
+      "note": "Visual approval only; legacy modules/home-hero remains superseded V1 draft, root V4 untouched."
     }
   ]
 }

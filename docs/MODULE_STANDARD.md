@@ -2,6 +2,13 @@
 
 > 本文档是独立开发仓库的**交接合同**。先读根目录的 AGENTS.md，再读本文件与目标模块 README.md；不要直接从根目录 index.html 着手做全站重构。
 
+## 最新验收事实（2026-10-28）
+
+- M01 V3 视觉已通过用户验收：原稿 experiments/m01-v3-art-motion/index.html，设计母稿 docs/module-designs/M01_HOME_APPROVED.md，Git 标签 m01-v3-visual-approved。视觉批准不等于正式独立模块封装。
+- modules/home-hero/ 是已被 V3 替代的旧 V1 草稿；不要误用它作为首页。
+- 每个模块完成后均须按 docs/MODULE_ACCEPTANCE_AND_HANDOFF.md 保存思想、构图、交互、版本、截图、批准边界和给下个线程的交接材料。
+- M02 下一步是精选作品入口：docs/module-designs/M02_WORKS_DESIGN_BRIEF.md（目前只是构思稿，尚未开发）。
+
 ## 0. 当前状态（必须如实区分）
 
 - 正式域名 zxyzx.me **未通过本仓库覆盖或接管**。
@@ -9,7 +16,7 @@
 - 从现在开始，`modules/<module-id>/` 是可独立预览、测试、开发的模块边界。
 - 已完成独立封装的模块：`knowledge-network`（已批准视觉 V5）。
 - `experiments/network-v5/` 是此前用户认可的历史原稿，不迁移、不覆盖、不删除。
-- 首页、项目入口、Open Margin、Hardware RAG Agent、About 等只是未来模块候选，**没有确认视觉、也没有被本次改造**。
+- M01 首页 V3 视觉基准已验收，但仍需正式封装及全站集成；M02、Open Margin、Hardware RAG Agent、About 等后续模块尚未验收。
 
 ## 1. 分层与职责
 
@@ -96,7 +103,7 @@ zxyzx-me-lab/
 
 ## 7. 什么才算“整个网站模块化”
 
-当前只完成了**模块规范初始化 + 知识网络的独立模块化**。要将整个网站模块化，需要未来逐个完成首页 Hero、作品入口、每个项目等的独立封装，最后由组合层装配；这一步尚未实施。
+当前完成了**模块规范初始化 + 知识网络的独立模块化 + M01 V3 视觉验收**。要将整个网站模块化，需要未来逐个完成首页 Hero、作品入口、每个项目等的独立封装，最后由组合层装配；这一步尚未实施。
 
 本标准不要求为每个模块创建单独 GitHub 仓库。所有模块可以同仓库、独立目录、独立验收、独立版本。
 
