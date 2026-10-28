@@ -9,9 +9,9 @@ test("V3 hero is one viewport, not long sticky scrub",()=>{
   assert.doesNotMatch(html,/position:sticky;isolation:isolate;top:0/);
   assert.match(html,/const bounds=this\.getBoundingClientRect\(\), distance=Math\.max\(1,innerHeight\)/);
 });
-test("full-screen snapping and direct wheel/touch flipping",()=>{
-  assert.match(html,/scroll-snap-type:y mandatory/);
-  assert.match(html,/scroll-snap-align:start;scroll-snap-stop:always/);
+test("direct wheel, touch and keyboard flipping",()=>{
+  assert.doesNotMatch(html,/scroll-snap-type:y mandatory/);
+  assert.match(html,/addEventListener\('keydown',this\._key\)/);
   assert.match(html,/addEventListener\('wheel',this\._wheel,\{passive:false\}\)/);
   assert.match(html,/addEventListener\('touchstart',this\._touchStart,\{passive:true\}\)/);
   assert.match(html,/addEventListener\('touchend',this\._touchEnd,\{passive:true\}\)/);
