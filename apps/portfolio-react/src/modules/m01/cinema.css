@@ -4,6 +4,8 @@
 .m01-root.cinematic-motion .poster-title .t,
 .m01-root.cinematic-motion .photo-frame img{animation:none!important}
 .m01-root.cinematic-motion .poster-title .master-word{animation:none!important}
+/* The portrait and its new vertical signature must reveal as one GSAP-controlled layer. */
+.m01-root.cinematic-motion .photo-frame{animation:none!important}
 .cinema-photo-scrim,.cinema-photo-light,.cinema-film-grain{display:none}
 .m01-root.cinematic-motion .cinema-photo-scrim,
 .m01-root.cinematic-motion .cinema-photo-light,

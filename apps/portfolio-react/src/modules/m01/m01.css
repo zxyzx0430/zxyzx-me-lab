@@ -301,3 +301,128 @@
   .m01-root .poster-vertical{display:none}
   .m01-root .enter{display:none}
 }
+
+/* Portrait replacement 2026-10-28: use the user's original 1152x1536 JPEG
+   as the sole picture on all viewports. Unmounting the original master image
+   disables its baked-in caption and historic white-seam retouch patches. */
+.m01-root .photo-frame .portrait-hd{
+  display:block!important;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 39%;
+  filter:none!important;
+  opacity:1!important;
+  z-index:2;
+}
+@media(min-width:901px){
+  .m01-root .photo-frame{
+    overflow:hidden;
+    clip-path:polygon(1.5% 0,98.5% .5%,100% 99%,0 98.5%);
+  }
+  .m01-root .photo-frame .portrait-hd{
+    width:800px;
+    height:871px;
+    transform:none!important;
+  }
+  .m01-root .poster-vertical{display:block;left:1532px;top:211px;font-size:11px;letter-spacing:.24em}
+}
+@media(max-width:900px){
+  .m01-root .photo-frame .portrait-hd{object-position:center 33%;transform:scale(calc(1.01 + var(--p)*.04))}
+}
+
+/* Bilingual corner motto: retain its original poster placement and
+   leave the AI × IDEAS × REAL WORLD microtype untouched. */
+.m01-root .poster-thought{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+}
+.m01-root .poster-thought-cn{display:block}
+.m01-root .poster-thought-en{
+  display:block;
+  font:10px/1.45 ui-monospace,Consolas,monospace;
+  letter-spacing:.014em;
+  color:#514e4b;
+  white-space:nowrap;
+  max-width:680px;
+}
+@media(max-width:900px){
+  .m01-root .poster-thought{width:88%;gap:4px}
+  .m01-root .poster-thought-en{
+    font-size:clamp(8px,2.15vw,10px);
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:normal;
+  }
+}
+
+/* Preserve the previous photographed edge silhouette so the replacement
+   cannot cover the approved Chinese title art. This mask contains alpha ONLY:
+   no old face, lettering or wall-retouch pixels can appear. */
+@media(min-width:901px){
+ .m01-root .photo-frame .portrait-hd{
+   -webkit-mask-image:url("./assets/portrait-silhouette-mask.png");
+   mask-image:url("./assets/portrait-silhouette-mask.png");
+   -webkit-mask-size:100% 100%;
+   mask-size:100% 100%;
+   -webkit-mask-repeat:no-repeat;
+   mask-repeat:no-repeat;
+   -webkit-mask-mode:alpha;
+   mask-mode:alpha;
+ }
+}
+
+/* On tablet aspect ratios, keep the small quote below the photo silhouette. */
+@media(min-width:600px) and (max-width:900px){
+ .m01-root .poster-thought{top:86%}
+}
+
+
+/* Right-side signature belongs to the photo, not to the paper behind it.
+   Keep the established vertical reading direction with a subtle diagonal. */
+.m01-root .photo-frame .poster-vertical{
+  display:block;
+  position:absolute;
+  left:auto;
+  right:7.5%;
+  top:24%;
+  z-index:300;
+  writing-mode:vertical-rl;
+  color:#f6f1e9;
+  font:13px/1.3 ui-monospace,Consolas,monospace;
+  letter-spacing:.53em;
+  text-shadow:0 1px 4px #000,0 0 9px #000b;
+  transform:rotate(-4.5deg);
+  transform-origin:50% 50%;
+  white-space:nowrap;
+  pointer-events:none;
+}
+@media(max-width:900px){
+  .m01-root .photo-frame .poster-vertical{
+    right:10%;
+    top:19%;
+    font-size:10px;
+    letter-spacing:.35em;
+  }
+}
+@media(max-width:390px){
+  .m01-root .photo-frame .poster-vertical{right:10%;font-size:9px;letter-spacing:.28em}
+}
+
+/* Single shared entrance: photograph and vertical signature form one visual
+   layer. Do not animate the photo or its caption independently. */
+.m01-root .photo-frame .portrait-hd{animation:none!important}
+.m01-root:not(.static-preview) .photo-frame{
+  animation:m01-portrait-with-signature-enter 1.35s .2s cubic-bezier(.22,.68,.22,1) both;
+}
+@keyframes m01-portrait-with-signature-enter{
+  from{opacity:0;transform:translate3d(0,20px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .m01-root .photo-frame{animation:none!important}
+}
