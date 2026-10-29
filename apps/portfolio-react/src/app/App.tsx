@@ -1,10 +1,14 @@
 import { M01Hero } from '../modules/m01/M01Hero';
 import { usePageNavigation } from '../shared/navigation/usePageNavigation';
 import { motion } from 'motion/react';
-import { WorldStatic, getWorldFromQuery, worldLink } from '../modules/m01/WorldStatic';
+import { WorldStatic, getWorldFromQuery, getWorldViewFromQuery, worldLink } from '../modules/m01/WorldStatic';
+import { WorldLayered } from '../modules/m01/WorldLayered';
 export function App() {
   const world = getWorldFromQuery();
-  return world ? <WorldStatic world={world}/> : <OriginalApp/>;
+  if (!world) return <OriginalApp/>;
+  return getWorldViewFromQuery() === 'layers'
+    ? <WorldLayered world={world}/>
+    : <WorldStatic world={world}/>;
 }
 function OriginalApp() {
   const staticPreview = new URLSearchParams(location.search).has('static');

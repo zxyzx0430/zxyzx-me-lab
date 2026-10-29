@@ -1,0 +1,60 @@
+{
+  "canvas": {
+    "width": 1536,
+    "height": 864
+  },
+  "backgroundPlate": {
+    "cleanPlateSource": "within-architecture-cleanplate-guide.png",
+    "patchedPixels": 938025,
+    "patchedPercent": 70.68
+  },
+  "layerOrder": [
+    {
+      "asset": "02-left-mountain.png",
+      "label": "\u5de6\u4fa7\u5c71\u8109\u62fc\u8d34",
+      "pixels": 56279,
+      "coveragePercent": 4.24
+    },
+    {
+      "asset": "03-rock-architecture.png",
+      "label": "\u524d\u540e\u666f\u5ca9\u58c1\u4e0e\u5efa\u7b51\u7ed3\u6784",
+      "pixels": 184330,
+      "coveragePercent": 13.89
+    },
+    {
+      "asset": "04-light-shaft.png",
+      "label": "\u9876\u90e8\u81ea\u7136\u5149\u675f",
+      "pixels": 166747,
+      "coveragePercent": 12.56
+    },
+    {
+      "asset": "05-within-title.png",
+      "label": "\u5de8\u578b\u7834\u635f WITHIN \u5b57\u5f62",
+      "pixels": 139652,
+      "coveragePercent": 10.52
+    },
+    {
+      "asset": "06-observer.png",
+      "label": "\u4eba\u7269\u80cc\u5f71",
+      "pixels": 17679,
+      "coveragePercent": 1.33
+    },
+    {
+      "asset": "07-foreground-paper.png",
+      "label": "\u524d\u666f\u7eb8\u5f20\u3001\u6495\u8fb9\u4e0e\u5ca9\u77f3\u906e\u6321",
+      "pixels": 311352,
+      "coveragePercent": 23.46
+    },
+    {
+      "asset": "08-rails-annotations.png",
+      "label": "\u8f68\u9053\u3001\u6d4b\u7ed8\u7ebf\u4e0e\u5fae\u6392\u7248",
+      "pixels": 61986,
+      "coveragePercent": 4.67
+    }
+  ],
+  "reconstruction": {
+    "changedPixels": 0,
+    "pixelCount": 1327104,
+    "exactPercent": 100.0
+  }
+}

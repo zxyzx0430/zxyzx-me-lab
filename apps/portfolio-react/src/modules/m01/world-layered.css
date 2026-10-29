@@ -1,0 +1,37 @@
+.m01-world-layered .world-layered-background,
+.m01-world-layered .world-layer-stack {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.m01-world-layered .world-layered-background,
+.m01-world-layered .world-scene-layer {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.m01-world-layered .world-layered-background {
+  object-fit: fill;
+}
+
+.m01-world-layer-stack {
+  pointer-events: none;
+}
+
+.world-scene-layer {
+  position: absolute;
+  display: block;
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.world-reference-hotspot {
+  top: 0;
+  right: 0;
+  width: 13%;
+  height: 9%;
+}

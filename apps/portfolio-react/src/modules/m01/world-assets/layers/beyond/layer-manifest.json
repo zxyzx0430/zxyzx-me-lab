@@ -1,0 +1,48 @@
+{
+  "canvas": {
+    "width": 1536,
+    "height": 864
+  },
+  "backgroundPlate": {
+    "cleanPlateSource": "beyond-full-cleanplate-guide.png",
+    "patchedPixels": 940720,
+    "patchedPercent": 70.89
+  },
+  "layerOrder": [
+    {
+      "asset": "02-left-mountain.png",
+      "label": "\u5de6\u4fa7\u5c71\u8109\u4e0e\u8fd1\u666f\u5c71\u810a",
+      "pixels": 140976,
+      "coveragePercent": 10.62
+    },
+    {
+      "asset": "03-right-city-clouds.png",
+      "label": "\u53f3\u4fa7\u57ce\u5e02\u3001\u4e91\u5c42\u4e0e\u8fdc\u666f",
+      "pixels": 220189,
+      "coveragePercent": 16.59
+    },
+    {
+      "asset": "04-torn-paper.png",
+      "label": "\u6495\u88c2\u7eb8\u5f20\u4e0e\u62fc\u8d34\u906e\u6321",
+      "pixels": 358706,
+      "coveragePercent": 27.03
+    },
+    {
+      "asset": "05-beyond-title.png",
+      "label": "\u5de8\u578b\u7834\u635f BEYOND \u5b57\u5f62",
+      "pixels": 165180,
+      "coveragePercent": 12.45
+    },
+    {
+      "asset": "06-rails-microtype.png",
+      "label": "\u8f68\u9053\u3001\u6d4b\u7ed8\u7ebf\u4e0e\u5fae\u6392\u7248",
+      "pixels": 55669,
+      "coveragePercent": 4.19
+    }
+  ],
+  "reconstruction": {
+    "changedPixels": 0,
+    "pixelCount": 1327104,
+    "exactPercent": 100.0
+  }
+}

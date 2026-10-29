@@ -9,7 +9,15 @@ export const getWorldFromQuery = (): WorldName | null => {
   return value === 'within' || value === 'beyond' ? value : null;
 };
 
+export const getWorldViewFromQuery = (): 'reference' | 'layers' =>
+  new URLSearchParams(window.location.search).get('view') === 'layers'
+    ? 'layers'
+    : 'reference';
+
 export const worldLink = (world: WorldName) =>
+  window.location.pathname + '?world=' + world + '&view=layers';
+
+export const worldReferenceLink = (world: WorldName) =>
   window.location.pathname + '?world=' + world;
 
 export const homeLink = () => window.location.pathname;
@@ -40,7 +48,7 @@ export function WorldStatic({ world }: { world: WorldName }) {
           />
           <a
             className={'world-hotspot world-switch-hotspot world-switch-' + world}
-            href={worldLink(otherWorld)}
+            href={worldReferenceLink(otherWorld)}
             aria-label={'切换到 ' + otherWorld.toUpperCase() + ' 场景'}
             title={'切换到 ' + otherWorld.toUpperCase() + ' 场景'}
           />
