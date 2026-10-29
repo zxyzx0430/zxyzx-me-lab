@@ -31,7 +31,7 @@ try {
   const dims2={width:1440,height:810};
   for(const [name,url] of [['site','https://zxyzx.me/?static=1'],['local',base+'?static=1']]){
     const p=await browser.newPage({viewport:dims2,deviceScaleFactor:1});
-    await p.goto(url,{waitUntil:'networkidle'});await p.screenshot({path:out+'/baseline-'+name+'.png'});await p.close();
+    await p.goto(url,{waitUntil:'networkidle'});await p.locator('.photo-frame .portrait-hd').evaluate(img => img.decode());await p.waitForTimeout(800);await p.screenshot({path:out+'/baseline-'+name+'.png'});await p.close();
   }
   const p=PNG.sync.read(fs.readFileSync(out+'/baseline-site.png'));
   const q=PNG.sync.read(fs.readFileSync(out+'/baseline-local.png'));
