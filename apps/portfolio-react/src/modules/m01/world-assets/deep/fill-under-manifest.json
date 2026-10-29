@@ -1,0 +1,893 @@
+{
+  "schema": "m01-inferred-fill-under/v1",
+  "method": "shiftmap",
+  "provenance": "All opaque patch pixels are generated/inferred by OpenCV xphoto ShiftMap; none are original hidden source pixels.",
+  "scenes": {
+    "within": {
+      "canvas": {
+        "width": 1536,
+        "height": 864
+      },
+      "layers": [
+        {
+          "id": "title-w",
+          "name": "W glyph",
+          "parent": "within-title-group",
+          "asset": "title-w-fill-under.png",
+          "sourceLayerAsset": "layers/title-w.png",
+          "bounds": {
+            "x": 182,
+            "y": 228,
+            "width": 161,
+            "height": 351
+          },
+          "anchor": {
+            "x": 262,
+            "y": 403
+          },
+          "inferredPixelCount": 33876,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.52,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "title-w-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 48546
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 48555
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 39027
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 39044
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 54252
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 54322
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 46478
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 46488
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 67512
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 67581
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 56140
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 56170
+            }
+          ],
+          "limitations": "Letter-shaped hidden background is inferred from nearby collage; neighboring letters remain in the source context."
+        },
+        {
+          "id": "observer-back",
+          "name": "central observer with backpack",
+          "parent": "within-midground",
+          "asset": "observer-back-fill-under.png",
+          "sourceLayerAsset": "layers/observer-back.png",
+          "bounds": {
+            "x": 951,
+            "y": 569,
+            "width": 136,
+            "height": 236
+          },
+          "anchor": {
+            "x": 1022,
+            "y": 684
+          },
+          "inferredPixelCount": 21040,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.72,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "observer-back-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 26792
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 26808
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 24277
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 24479
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 36677
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 36664
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 27912
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 30112
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 42019
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 42037
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 27584
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 37397
+            }
+          ],
+          "limitations": "The coat/floor boundary is ambiguous; ShiftMap borrows from adjacent steps and rock, so long travel may reveal repeated texture."
+        },
+        {
+          "id": "light-core",
+          "name": "central light shaft core",
+          "parent": "within-light-group",
+          "asset": "light-core-fill-under.png",
+          "sourceLayerAsset": "layers/light-core.png",
+          "bounds": {
+            "x": 904,
+            "y": 0,
+            "width": 115,
+            "height": 505
+          },
+          "anchor": {
+            "x": 940,
+            "y": 270
+          },
+          "inferredPixelCount": 23797,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.42,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "light-core-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 35040
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 35246
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 27413
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 26034
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 47421
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 47435
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 32883
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 28115
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 47582
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 47591
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 38145
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 27979
+            }
+          ],
+          "limitations": "The broad shaft has weak surrounding context and may retain a halo-shaped tonal seam."
+        },
+        {
+          "id": "wall-central-tower",
+          "name": "central vertical rock tower",
+          "parent": "within-photography-group",
+          "asset": "wall-central-tower-fill-under.png",
+          "sourceLayerAsset": "layers/wall-central-tower.png",
+          "bounds": {
+            "x": 599,
+            "y": 0,
+            "width": 147,
+            "height": 611
+          },
+          "anchor": {
+            "x": 681,
+            "y": 302
+          },
+          "inferredPixelCount": 28459,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.48,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "wall-central-tower-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 42357
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 42367
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 32321
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 30600
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 56594
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 56566
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 37334
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 32267
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 56888
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 56829
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 43070
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 32678
+            }
+          ],
+          "limitations": "Only the visible tower silhouette is filled; adjacent wall planes remain as source pixels."
+        },
+        {
+          "id": "paper-upper-left",
+          "name": "upper-left masthead sheet",
+          "parent": "within-paper-group",
+          "asset": "paper-upper-left-fill-under.png",
+          "sourceLayerAsset": "layers/paper-upper-left.png",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 326,
+            "height": 248
+          },
+          "anchor": {
+            "x": 162,
+            "y": 87
+          },
+          "inferredPixelCount": 66317,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.34,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "paper-upper-left-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 74000
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 67418
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 77137
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 67388
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 86128
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 69859
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 91331
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 67089
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 100949
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 71106
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 112298
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 67078
+            }
+          ],
+          "limitations": "The cutout includes printed type and torn edges; a shifted sheet may reveal local text-like texture."
+        }
+      ]
+    },
+    "beyond": {
+      "canvas": {
+        "width": 1536,
+        "height": 864
+      },
+      "layers": [
+        {
+          "id": "glyph-b",
+          "name": "Independent B glyph",
+          "parent": "glyph-b",
+          "asset": "glyph-b-fill-under.png",
+          "sourceLayerAsset": "assets/glyph/16-glyph-b.png",
+          "bounds": {
+            "x": 423,
+            "y": 250,
+            "width": 180,
+            "height": 344
+          },
+          "anchor": {
+            "x": 423,
+            "y": 250
+          },
+          "inferredPixelCount": 44530,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.56,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "glyph-b-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 57970
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 57958
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 53565
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 53481
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 71859
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 71905
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 63175
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 63002
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 84469
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 84548
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 68609
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 68652
+            }
+          ],
+          "limitations": "Fill samples nearby mountain/paper texture; the hidden image behind the B cannot be verified from the flattened master."
+        },
+        {
+          "id": "mountain-front-dark",
+          "name": "Foreground dark mountain mass",
+          "parent": "mountain-system",
+          "asset": "mountain-front-dark-fill-under.png",
+          "sourceLayerAsset": "assets/mountain/03-mountain-front-dark.png",
+          "bounds": {
+            "x": 163,
+            "y": 483,
+            "width": 403,
+            "height": 300
+          },
+          "anchor": {
+            "x": 163,
+            "y": 483
+          },
+          "inferredPixelCount": 48070,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.52,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "mountain-front-dark-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 57828
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 57752
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 62643
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 62859
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 70969
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 70858
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 75684
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 75907
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 86594
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 86160
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 69107
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 82629
+            }
+          ],
+          "limitations": "Nearby ridges inform the fill, but this does not recover the original hidden ridge geometry."
+        },
+        {
+          "id": "cloud-bank-front",
+          "name": "Front cloud bank",
+          "parent": "horizon-system",
+          "asset": "cloud-bank-front-fill-under.png",
+          "sourceLayerAsset": "assets/city-clouds/05-cloud-bank-front.png",
+          "bounds": {
+            "x": 520,
+            "y": 327,
+            "width": 1016,
+            "height": 185
+          },
+          "anchor": {
+            "x": 520,
+            "y": 327
+          },
+          "inferredPixelCount": 30764,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.5,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "cloud-bank-front-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 39509
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 41757
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 47143
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 47141
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 39279
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 45001
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 61430
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 61427
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 39762
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 50455
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 61498
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 61505
+            }
+          ],
+          "limitations": "Cloud texture is inferred from adjacent sky/cloud pixels; the image may repeat soft formations after translation."
+        },
+        {
+          "id": "city-center",
+          "name": "Central skyline cluster",
+          "parent": "horizon-system",
+          "asset": "city-center-fill-under.png",
+          "sourceLayerAsset": "assets/city-clouds/08-city-center.png",
+          "bounds": {
+            "x": 1208,
+            "y": 505,
+            "width": 164,
+            "height": 85
+          },
+          "anchor": {
+            "x": 1208,
+            "y": 505
+          },
+          "inferredPixelCount": 7849,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.48,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "city-center-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 11570
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 11571
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 11817
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 11817
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 13844
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 13849
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 15300
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 15310
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 15577
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 15582
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 15692
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 15687
+            }
+          ],
+          "limitations": "The small skyline cluster is filled from the nearby horizon; hidden buildings remain unknown."
+        },
+        {
+          "id": "paper-header",
+          "name": "Upper left archival sheet",
+          "parent": "paper-system",
+          "asset": "paper-header-fill-under.png",
+          "sourceLayerAsset": "assets/paper/11-paper-header.png",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 607,
+            "height": 252
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0
+          },
+          "inferredPixelCount": 118772,
+          "fillMethod": "OpenCV xphoto ShiftMap in Lab color space",
+          "fillConfidence": 0.32,
+          "outsideMaskChangedPixels": 0,
+          "restReconstructionChangedPixels": 0,
+          "fillIsInferred": true,
+          "motionPreview": "paper-header-shiftmap-motion.jpg",
+          "motionChangedPixels": [
+            {
+              "dx": 30,
+              "dy": 0,
+              "changedVsRest": 124206
+            },
+            {
+              "dx": -30,
+              "dy": 0,
+              "changedVsRest": 118977
+            },
+            {
+              "dx": 0,
+              "dy": 30,
+              "changedVsRest": 137725
+            },
+            {
+              "dx": 0,
+              "dy": -30,
+              "changedVsRest": 119985
+            },
+            {
+              "dx": 80,
+              "dy": 0,
+              "changedVsRest": 138323
+            },
+            {
+              "dx": -80,
+              "dy": 0,
+              "changedVsRest": 124558
+            },
+            {
+              "dx": 0,
+              "dy": 80,
+              "changedVsRest": 168487
+            },
+            {
+              "dx": 0,
+              "dy": -80,
+              "changedVsRest": 120755
+            },
+            {
+              "dx": 150,
+              "dy": 0,
+              "changedVsRest": 154159
+            },
+            {
+              "dx": -150,
+              "dy": 0,
+              "changedVsRest": 127574
+            },
+            {
+              "dx": 0,
+              "dy": 150,
+              "changedVsRest": 206280
+            },
+            {
+              "dx": 0,
+              "dy": -150,
+              "changedVsRest": 118779
+            }
+          ],
+          "limitations": "The sheet covers mixed text and photo content; the fill is provisional and should be reviewed at full size."
+        }
+      ]
+    }
+  }
+}

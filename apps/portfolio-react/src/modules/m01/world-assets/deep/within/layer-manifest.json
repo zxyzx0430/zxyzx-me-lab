@@ -1,0 +1,1574 @@
+{
+  "schema": "m01-scene-layer-manifest/v1",
+  "world": "within",
+  "canvas": {
+    "width": 1536,
+    "height": 864,
+    "coordinateOrigin": "top-left pixel coordinates",
+    "depthConvention": "larger depth values render closer to the viewer"
+  },
+  "groups": [
+    {
+      "id": "world-within",
+      "parent": null,
+      "transformRoot": true
+    },
+    {
+      "id": "within-title-group",
+      "parent": "world-within",
+      "transformRoot": false
+    },
+    {
+      "id": "within-midground",
+      "parent": "world-within",
+      "transformRoot": false
+    },
+    {
+      "id": "within-light-group",
+      "parent": "world-within",
+      "transformRoot": false
+    },
+    {
+      "id": "within-paper-group",
+      "parent": "world-within",
+      "transformRoot": false
+    },
+    {
+      "id": "within-photography-group",
+      "parent": "world-within",
+      "transformRoot": false
+    },
+    {
+      "id": "within-survey-group",
+      "parent": "world-within",
+      "transformRoot": false
+    },
+    {
+      "id": "within-type-group",
+      "parent": "world-within",
+      "transformRoot": false
+    }
+  ],
+  "source": {
+    "path": "work/references/WITHIN_TARGET_1536x864.png",
+    "sha256": "17a912b119d78e9466318f8d2138a4d4a0c1835e975d27aec5457fe24fdbf39a",
+    "foregroundRGB": "copied byte-for-byte from target PNG; no generated pixels in cutout assets"
+  },
+  "background": {
+    "asset": "source-background-before-fill.png",
+    "filledPixels": 0,
+    "status": "not filled by this agent; the original flattened scene remains visible in the background base until the dedicated clean-plate pass"
+  },
+  "renderOrder": [
+    "photo-left-mountain-band",
+    "wall-left-slab",
+    "wall-central-tower",
+    "light-core",
+    "wall-right-tower",
+    "light-halo",
+    "photo-right-profile",
+    "photo-left-inset",
+    "stairway-middle",
+    "stairway-right-inset",
+    "title-w",
+    "title-i-01",
+    "title-t",
+    "title-h",
+    "title-i-02",
+    "title-n",
+    "title-dot",
+    "observer-back",
+    "paper-upper-left",
+    "paper-left-description",
+    "paper-right-note",
+    "paper-right-lower",
+    "rock-left-foreground",
+    "rock-center-foreground",
+    "rail-upper-arc",
+    "rail-center-orbit",
+    "rail-lower-path",
+    "rail-diagonal",
+    "survey-crosshairs",
+    "type-brand",
+    "type-left-index",
+    "type-caption-en",
+    "type-caption-cn",
+    "type-body-cn",
+    "type-body-en",
+    "type-top-self",
+    "type-top-right",
+    "type-mid-thinking",
+    "type-right-quote",
+    "type-bottom-meaning"
+  ],
+  "layers": [
+    {
+      "id": "title-w",
+      "name": "W glyph",
+      "category": "distressed-title-glyph",
+      "asset": "layers/title-w.png",
+      "mask": "masks/title-w.png",
+      "canvasBounds": {
+        "x": 182,
+        "y": 228,
+        "width": 161,
+        "height": 351
+      },
+      "anchorCanvas": {
+        "x": 262,
+        "y": 403
+      },
+      "parent": "within-title-group",
+      "depth": 40,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 33876,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group",
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.72,
+      "limitations": "Guide-derived silhouette split at a letter seam; shared kerning and distress chips need a hand matte for deep-through typography motion."
+    },
+    {
+      "id": "title-i-01",
+      "name": "first I glyph",
+      "category": "distressed-title-glyph",
+      "asset": "layers/title-i-01.png",
+      "mask": "masks/title-i-01.png",
+      "canvasBounds": {
+        "x": 341,
+        "y": 268,
+        "width": 77,
+        "height": 312
+      },
+      "anchorCanvas": {
+        "x": 379,
+        "y": 423
+      },
+      "parent": "within-title-group",
+      "depth": 40,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 13340,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group",
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.72,
+      "limitations": "Guide-derived silhouette split at a letter seam; shared kerning and distress chips need a hand matte for deep-through typography motion."
+    },
+    {
+      "id": "title-t",
+      "name": "T glyph",
+      "category": "distressed-title-glyph",
+      "asset": "layers/title-t.png",
+      "mask": "masks/title-t.png",
+      "canvasBounds": {
+        "x": 422,
+        "y": 268,
+        "width": 132,
+        "height": 335
+      },
+      "anchorCanvas": {
+        "x": 487,
+        "y": 435
+      },
+      "parent": "within-title-group",
+      "depth": 40,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 26619,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group",
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.72,
+      "limitations": "Guide-derived silhouette split at a letter seam; shared kerning and distress chips need a hand matte for deep-through typography motion."
+    },
+    {
+      "id": "title-h",
+      "name": "H glyph",
+      "category": "distressed-title-glyph",
+      "asset": "layers/title-h.png",
+      "mask": "masks/title-h.png",
+      "canvasBounds": {
+        "x": 552,
+        "y": 301,
+        "width": 153,
+        "height": 314
+      },
+      "anchorCanvas": {
+        "x": 628,
+        "y": 457
+      },
+      "parent": "within-title-group",
+      "depth": 40,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 26238,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group",
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.72,
+      "limitations": "Guide-derived silhouette split at a letter seam; shared kerning and distress chips need a hand matte for deep-through typography motion."
+    },
+    {
+      "id": "title-i-02",
+      "name": "second I glyph",
+      "category": "distressed-title-glyph",
+      "asset": "layers/title-i-02.png",
+      "mask": "masks/title-i-02.png",
+      "canvasBounds": {
+        "x": 703,
+        "y": 339,
+        "width": 91,
+        "height": 284
+      },
+      "anchorCanvas": {
+        "x": 748,
+        "y": 480
+      },
+      "parent": "within-title-group",
+      "depth": 40,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 18575,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group",
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.72,
+      "limitations": "Guide-derived silhouette split at a letter seam; shared kerning and distress chips need a hand matte for deep-through typography motion."
+    },
+    {
+      "id": "title-n",
+      "name": "N glyph",
+      "category": "distressed-title-glyph",
+      "asset": "layers/title-n.png",
+      "mask": "masks/title-n.png",
+      "canvasBounds": {
+        "x": 801,
+        "y": 363,
+        "width": 123,
+        "height": 263
+      },
+      "anchorCanvas": {
+        "x": 862,
+        "y": 494
+      },
+      "parent": "within-title-group",
+      "depth": 40,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 20863,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group",
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.72,
+      "limitations": "Guide-derived silhouette split at a letter seam; shared kerning and distress chips need a hand matte for deep-through typography motion."
+    },
+    {
+      "id": "title-dot",
+      "name": "terminal dot",
+      "category": "distressed-title-glyph",
+      "asset": "layers/title-dot.png",
+      "mask": "masks/title-dot.png",
+      "canvasBounds": {
+        "x": 922,
+        "y": 555,
+        "width": 50,
+        "height": 72
+      },
+      "anchorCanvas": {
+        "x": 946,
+        "y": 590
+      },
+      "parent": "within-title-group",
+      "depth": 40,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 2770,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group",
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.72,
+      "limitations": "Guide-derived silhouette split at a letter seam; shared kerning and distress chips need a hand matte for deep-through typography motion."
+    },
+    {
+      "id": "observer-back",
+      "name": "central observer with backpack",
+      "category": "human-subject",
+      "asset": "layers/observer-back.png",
+      "mask": "masks/observer-back.png",
+      "canvasBounds": {
+        "x": 951,
+        "y": 569,
+        "width": 136,
+        "height": 236
+      },
+      "anchorCanvas": {
+        "x": 1022,
+        "y": 684
+      },
+      "parent": "within-midground",
+      "depth": 60,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 21040,
+      "occludes": [
+        "stairway-middle"
+      ],
+      "occludedBy": [
+        "rock-left-foreground",
+        "rock-center-foreground"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.82,
+      "limitations": "Image-guided upper silhouette; lower coat merges into dark rubble. Keep the rubble occluder above the person and refine the hem on the clean plate."
+    },
+    {
+      "id": "light-core",
+      "name": "central light shaft core",
+      "category": "light-field",
+      "asset": "layers/light-core.png",
+      "mask": "masks/light-core.png",
+      "canvasBounds": {
+        "x": 904,
+        "y": 0,
+        "width": 115,
+        "height": 505
+      },
+      "anchorCanvas": {
+        "x": 940,
+        "y": 270
+      },
+      "parent": "within-light-group",
+      "depth": 25,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 23797,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.64,
+      "limitations": "Guide-aligned main shaft shape; diffuse spill and light on nearby stone remain baked into photography."
+    },
+    {
+      "id": "light-halo",
+      "name": "shaft edge glow and haze",
+      "category": "light-field",
+      "asset": "layers/light-halo.png",
+      "mask": "masks/light-halo.png",
+      "canvasBounds": {
+        "x": 851,
+        "y": 0,
+        "width": 195,
+        "height": 556
+      },
+      "anchorCanvas": {
+        "x": 935,
+        "y": 350
+      },
+      "parent": "within-light-group",
+      "depth": 26,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 48264,
+      "occludes": [],
+      "occludedBy": [
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.52,
+      "limitations": "Guide alpha is nearly binary, so halo is a narrow remainder mask; broader bounce light still requires a luminance matte."
+    },
+    {
+      "id": "paper-upper-left",
+      "name": "upper-left masthead sheet",
+      "category": "torn-paper-fragment",
+      "asset": "layers/paper-upper-left.png",
+      "mask": "masks/paper-upper-left.png",
+      "canvasBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 326,
+        "height": 248
+      },
+      "anchorCanvas": {
+        "x": 162,
+        "y": 87
+      },
+      "parent": "within-paper-group",
+      "depth": 70,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 66317,
+      "occludes": [],
+      "occludedBy": [
+        "annotation-type",
+        "survey-rails"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.7,
+      "limitations": "Hand-traced irregular polygon follows the visible sheet envelope; refine the exact fiber edge and separate any photo scraps glued over this sheet."
+    },
+    {
+      "id": "paper-left-description",
+      "name": "left torn description sheet",
+      "category": "torn-paper-fragment",
+      "asset": "layers/paper-left-description.png",
+      "mask": "masks/paper-left-description.png",
+      "canvasBounds": {
+        "x": 0,
+        "y": 437,
+        "width": 329,
+        "height": 427
+      },
+      "anchorCanvas": {
+        "x": 168,
+        "y": 650
+      },
+      "parent": "within-paper-group",
+      "depth": 70,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 101249,
+      "occludes": [],
+      "occludedBy": [
+        "annotation-type",
+        "survey-rails"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.7,
+      "limitations": "Hand-traced irregular polygon follows the visible sheet envelope; refine the exact fiber edge and separate any photo scraps glued over this sheet."
+    },
+    {
+      "id": "paper-right-note",
+      "name": "right-side quotation sheet",
+      "category": "torn-paper-fragment",
+      "asset": "layers/paper-right-note.png",
+      "mask": "masks/paper-right-note.png",
+      "canvasBounds": {
+        "x": 1353,
+        "y": 405,
+        "width": 183,
+        "height": 234
+      },
+      "anchorCanvas": {
+        "x": 1455,
+        "y": 515
+      },
+      "parent": "within-paper-group",
+      "depth": 70,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 36993,
+      "occludes": [],
+      "occludedBy": [
+        "annotation-type",
+        "survey-rails"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.7,
+      "limitations": "Hand-traced irregular polygon follows the visible sheet envelope; refine the exact fiber edge and separate any photo scraps glued over this sheet."
+    },
+    {
+      "id": "paper-right-lower",
+      "name": "lower-right map sheet",
+      "category": "torn-paper-fragment",
+      "asset": "layers/paper-right-lower.png",
+      "mask": "masks/paper-right-lower.png",
+      "canvasBounds": {
+        "x": 1148,
+        "y": 638,
+        "width": 388,
+        "height": 226
+      },
+      "anchorCanvas": {
+        "x": 1407,
+        "y": 767
+      },
+      "parent": "within-paper-group",
+      "depth": 70,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 51822,
+      "occludes": [],
+      "occludedBy": [
+        "annotation-type",
+        "survey-rails"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.7,
+      "limitations": "Hand-traced irregular polygon follows the visible sheet envelope; refine the exact fiber edge and separate any photo scraps glued over this sheet."
+    },
+    {
+      "id": "photo-left-mountain-band",
+      "name": "midground mountain and ruin collage strip",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/photo-left-mountain-band.png",
+      "mask": "masks/photo-left-mountain-band.png",
+      "canvasBounds": {
+        "x": 0,
+        "y": 207,
+        "width": 854,
+        "height": 344
+      },
+      "anchorCanvas": {
+        "x": 520,
+        "y": 449
+      },
+      "parent": "within-photography-group",
+      "depth": 15,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 27490,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "photo-left-inset",
+      "name": "left mountain photograph inset",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/photo-left-inset.png",
+      "mask": "masks/photo-left-inset.png",
+      "canvasBounds": {
+        "x": 0,
+        "y": 208,
+        "width": 210,
+        "height": 147
+      },
+      "anchorCanvas": {
+        "x": 91,
+        "y": 280
+      },
+      "parent": "within-photography-group",
+      "depth": 28,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 22825,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "rock-left-foreground",
+      "name": "left foreground broken rock",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/rock-left-foreground.png",
+      "mask": "masks/rock-left-foreground.png",
+      "canvasBounds": {
+        "x": 232,
+        "y": 602,
+        "width": 338,
+        "height": 262
+      },
+      "anchorCanvas": {
+        "x": 396,
+        "y": 732
+      },
+      "parent": "within-photography-group",
+      "depth": 80,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 54689,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "rock-center-foreground",
+      "name": "central foreground rock ridge beneath observer",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/rock-center-foreground.png",
+      "mask": "masks/rock-center-foreground.png",
+      "canvasBounds": {
+        "x": 572,
+        "y": 797,
+        "width": 564,
+        "height": 67
+      },
+      "anchorCanvas": {
+        "x": 856,
+        "y": 837
+      },
+      "parent": "within-photography-group",
+      "depth": 82,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 28360,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "wall-left-slab",
+      "name": "left midground stone slab",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/wall-left-slab.png",
+      "mask": "masks/wall-left-slab.png",
+      "canvasBounds": {
+        "x": 301,
+        "y": 99,
+        "width": 321,
+        "height": 492
+      },
+      "anchorCanvas": {
+        "x": 460,
+        "y": 344
+      },
+      "parent": "within-photography-group",
+      "depth": 18,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 40741,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "wall-central-tower",
+      "name": "central vertical rock tower",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/wall-central-tower.png",
+      "mask": "masks/wall-central-tower.png",
+      "canvasBounds": {
+        "x": 599,
+        "y": 0,
+        "width": 147,
+        "height": 611
+      },
+      "anchorCanvas": {
+        "x": 681,
+        "y": 302
+      },
+      "parent": "within-photography-group",
+      "depth": 22,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 28459,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "wall-right-tower",
+      "name": "right midground rock tower",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/wall-right-tower.png",
+      "mask": "masks/wall-right-tower.png",
+      "canvasBounds": {
+        "x": 989,
+        "y": 0,
+        "width": 127,
+        "height": 564
+      },
+      "anchorCanvas": {
+        "x": 1040,
+        "y": 275
+      },
+      "parent": "within-photography-group",
+      "depth": 25,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 33772,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "stairway-middle",
+      "name": "central stairway and landing",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/stairway-middle.png",
+      "mask": "masks/stairway-middle.png",
+      "canvasBounds": {
+        "x": 483,
+        "y": 599,
+        "width": 699,
+        "height": 177
+      },
+      "anchorCanvas": {
+        "x": 830,
+        "y": 700
+      },
+      "parent": "within-photography-group",
+      "depth": 30,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 47005,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "photo-right-profile",
+      "name": "right-side profile photo panel",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/photo-right-profile.png",
+      "mask": "masks/photo-right-profile.png",
+      "canvasBounds": {
+        "x": 1319,
+        "y": 152,
+        "width": 217,
+        "height": 264
+      },
+      "anchorCanvas": {
+        "x": 1440,
+        "y": 288
+      },
+      "parent": "within-photography-group",
+      "depth": 27,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 37724,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "stairway-right-inset",
+      "name": "right-side stair inset with distant figure",
+      "category": "photographic-or-architecture-cutout",
+      "asset": "layers/stairway-right-inset.png",
+      "mask": "masks/stairway-right-inset.png",
+      "canvasBounds": {
+        "x": 1162,
+        "y": 550,
+        "width": 223,
+        "height": 136
+      },
+      "anchorCanvas": {
+        "x": 1280,
+        "y": 618
+      },
+      "parent": "within-photography-group",
+      "depth": 32,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 15328,
+      "occludes": [],
+      "occludedBy": [
+        "within-title-group",
+        "observer-back",
+        "within-paper-group",
+        "within-survey-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.66,
+      "limitations": "Source pixels are genuine, but this polygon is a first-pass spatial fragment boundary rather than a semantic pixel matte."
+    },
+    {
+      "id": "rail-upper-arc",
+      "name": "upper framing trajectory",
+      "category": "survey-rail-or-crosshair",
+      "asset": "layers/rail-upper-arc.png",
+      "mask": "masks/rail-upper-arc.png",
+      "canvasBounds": {
+        "x": 0,
+        "y": 90,
+        "width": 946,
+        "height": 209
+      },
+      "anchorCanvas": {
+        "x": 672,
+        "y": 141
+      },
+      "parent": "within-survey-group",
+      "depth": 90,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 2793,
+      "occludes": [],
+      "occludedBy": [
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.58,
+      "limitations": "Hand-traced thin line corridor; nearby paper/photo texture remains within the stroke width and some fine source lines may not be included."
+    },
+    {
+      "id": "rail-center-orbit",
+      "name": "central orbital survey curve",
+      "category": "survey-rail-or-crosshair",
+      "asset": "layers/rail-center-orbit.png",
+      "mask": "masks/rail-center-orbit.png",
+      "canvasBounds": {
+        "x": 0,
+        "y": 184,
+        "width": 1536,
+        "height": 228
+      },
+      "anchorCanvas": {
+        "x": 763,
+        "y": 354
+      },
+      "parent": "within-survey-group",
+      "depth": 90,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 4570,
+      "occludes": [],
+      "occludedBy": [
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.58,
+      "limitations": "Hand-traced thin line corridor; nearby paper/photo texture remains within the stroke width and some fine source lines may not be included."
+    },
+    {
+      "id": "rail-lower-path",
+      "name": "lower cross-scene path",
+      "category": "survey-rail-or-crosshair",
+      "asset": "layers/rail-lower-path.png",
+      "mask": "masks/rail-lower-path.png",
+      "canvasBounds": {
+        "x": 0,
+        "y": 568,
+        "width": 1536,
+        "height": 181
+      },
+      "anchorCanvas": {
+        "x": 770,
+        "y": 624
+      },
+      "parent": "within-survey-group",
+      "depth": 90,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 4238,
+      "occludes": [],
+      "occludedBy": [
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.58,
+      "limitations": "Hand-traced thin line corridor; nearby paper/photo texture remains within the stroke width and some fine source lines may not be included."
+    },
+    {
+      "id": "rail-diagonal",
+      "name": "diagonal coordinate trajectory",
+      "category": "survey-rail-or-crosshair",
+      "asset": "layers/rail-diagonal.png",
+      "mask": "masks/rail-diagonal.png",
+      "canvasBounds": {
+        "x": 299,
+        "y": 325,
+        "width": 1208,
+        "height": 227
+      },
+      "anchorCanvas": {
+        "x": 897,
+        "y": 413
+      },
+      "parent": "within-survey-group",
+      "depth": 90,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1163,
+      "occludes": [],
+      "occludedBy": [
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.58,
+      "limitations": "Hand-traced thin line corridor; nearby paper/photo texture remains within the stroke width and some fine source lines may not be included."
+    },
+    {
+      "id": "survey-crosshairs",
+      "name": "survey crosshair and node marks",
+      "category": "survey-rail-or-crosshair",
+      "asset": "layers/survey-crosshairs.png",
+      "mask": "masks/survey-crosshairs.png",
+      "canvasBounds": {
+        "x": 253,
+        "y": 82,
+        "width": 1133,
+        "height": 751
+      },
+      "anchorCanvas": {
+        "x": 891,
+        "y": 95
+      },
+      "parent": "within-survey-group",
+      "depth": 90,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 350,
+      "occludes": [],
+      "occludedBy": [
+        "within-type-group"
+      ],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.58,
+      "limitations": "Hand-traced thin line corridor; nearby paper/photo texture remains within the stroke width and some fine source lines may not be included."
+    },
+    {
+      "id": "type-brand",
+      "name": "brand wordmark and URL",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-brand.png",
+      "mask": "masks/type-brand.png",
+      "canvasBounds": {
+        "x": 61,
+        "y": 36,
+        "width": 116,
+        "height": 39
+      },
+      "anchorCanvas": {
+        "x": 122,
+        "y": 52
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1706,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-left-index",
+      "name": "left vertical thought index",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-left-index.png",
+      "mask": "masks/type-left-index.png",
+      "canvasBounds": {
+        "x": 62,
+        "y": 112,
+        "width": 56,
+        "height": 56
+      },
+      "anchorCanvas": {
+        "x": 96,
+        "y": 148
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1049,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-caption-en",
+      "name": "WITHIN English caption",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-caption-en.png",
+      "mask": "masks/type-caption-en.png",
+      "canvasBounds": {
+        "x": 149,
+        "y": 525,
+        "width": 200,
+        "height": 27
+      },
+      "anchorCanvas": {
+        "x": 246,
+        "y": 541
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1359,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-caption-cn",
+      "name": "WITHIN Chinese caption",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-caption-cn.png",
+      "mask": "masks/type-caption-cn.png",
+      "canvasBounds": {
+        "x": 149,
+        "y": 562,
+        "width": 186,
+        "height": 25
+      },
+      "anchorCanvas": {
+        "x": 236,
+        "y": 577
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1675,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-body-cn",
+      "name": "left Chinese description",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-body-cn.png",
+      "mask": "masks/type-body-cn.png",
+      "canvasBounds": {
+        "x": 62,
+        "y": 653,
+        "width": 212,
+        "height": 78
+      },
+      "anchorCanvas": {
+        "x": 169,
+        "y": 684
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 3329,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-body-en",
+      "name": "left English description",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-body-en.png",
+      "mask": "masks/type-body-en.png",
+      "canvasBounds": {
+        "x": 62,
+        "y": 735,
+        "width": 205,
+        "height": 40
+      },
+      "anchorCanvas": {
+        "x": 161,
+        "y": 750
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1707,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-top-self",
+      "name": "top-center self coordinates",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-top-self.png",
+      "mask": "masks/type-top-self.png",
+      "canvasBounds": {
+        "x": 804,
+        "y": 96,
+        "width": 119,
+        "height": 94
+      },
+      "anchorCanvas": {
+        "x": 855,
+        "y": 139
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1592,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-top-right",
+      "name": "upper-right deeper-self label",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-top-right.png",
+      "mask": "masks/type-top-right.png",
+      "canvasBounds": {
+        "x": 1410,
+        "y": 53,
+        "width": 48,
+        "height": 67
+      },
+      "anchorCanvas": {
+        "x": 1442,
+        "y": 72
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 573,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-mid-thinking",
+      "name": "mid-right thinking coordinates",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-mid-thinking.png",
+      "mask": "masks/type-mid-thinking.png",
+      "canvasBounds": {
+        "x": 1127,
+        "y": 448,
+        "width": 108,
+        "height": 80
+      },
+      "anchorCanvas": {
+        "x": 1182,
+        "y": 494
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1474,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-right-quote",
+      "name": "right-side world-limit note",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-right-quote.png",
+      "mask": "masks/type-right-quote.png",
+      "canvasBounds": {
+        "x": 1425,
+        "y": 444,
+        "width": 88,
+        "height": 97
+      },
+      "anchorCanvas": {
+        "x": 1467,
+        "y": 490
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 1408,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    },
+    {
+      "id": "type-bottom-meaning",
+      "name": "lower-right meaning coordinates",
+      "category": "microtype-or-annotation",
+      "asset": "layers/type-bottom-meaning.png",
+      "mask": "masks/type-bottom-meaning.png",
+      "canvasBounds": {
+        "x": 1373,
+        "y": 702,
+        "width": 142,
+        "height": 126
+      },
+      "anchorCanvas": {
+        "x": 1441,
+        "y": 764
+      },
+      "parent": "within-type-group",
+      "depth": 100,
+      "alpha": "binary mask over original target pixels; outside alpha stored transparent",
+      "opaquePixelCount": 2498,
+      "occludes": [],
+      "occludedBy": [],
+      "requiresBackgroundFill": true,
+      "fillStatus": "not-included-in-this-deliverable",
+      "fillNote": "Behind-pixel area is absent from the flattened target; background fill must be supplied by the plate pass.",
+      "motion": {
+        "translate": true,
+        "scale": true,
+        "rotate": true,
+        "opacity": true
+      },
+      "confidence": 0.62,
+      "limitations": "Local-contrast glyph extraction from a raster composite; fine ink chips are preserved but paper grain may appear in the mask."
+    }
+  ],
+  "reconstructionAudit": {
+    "changedPixels": 0,
+    "totalPixels": 1327104,
+    "exactPercent": 100.0,
+    "scope": "exact source-pixel partition only; does not certify clean-plate quality or displaced-object edges"
+  }
+}

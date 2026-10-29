@@ -1,0 +1,1428 @@
+{
+  "scene": "beyond",
+  "canvas": {
+    "width": 1536,
+    "height": 864
+  },
+  "source": {
+    "file": "BEYOND_TARGET_1536x864.png",
+    "sha256": "e6ab22728fa5a4eeb2180990a591fbcaca11940b18c2b29e7910332f3742cd53",
+    "sourceRGBPolicy": "All visible foreground RGB values are sampled from the target PNG. Generated guides supply alpha only."
+  },
+  "groups": [
+    {
+      "id": "scene",
+      "parent": null,
+      "kind": "root"
+    },
+    {
+      "id": "mountain-system",
+      "parent": "scene",
+      "kind": "photo-depth-group"
+    },
+    {
+      "id": "horizon-system",
+      "parent": "scene",
+      "kind": "photo-depth-group"
+    },
+    {
+      "id": "paper-system",
+      "parent": "scene",
+      "kind": "paper-collage-group"
+    },
+    {
+      "id": "glyph-b",
+      "parent": "hero-title",
+      "kind": "nested-transform-group"
+    },
+    {
+      "id": "glyph-e",
+      "parent": "hero-title",
+      "kind": "nested-transform-group"
+    },
+    {
+      "id": "glyph-y",
+      "parent": "hero-title",
+      "kind": "nested-transform-group"
+    },
+    {
+      "id": "glyph-o",
+      "parent": "hero-title",
+      "kind": "nested-transform-group"
+    },
+    {
+      "id": "glyph-n",
+      "parent": "hero-title",
+      "kind": "nested-transform-group"
+    },
+    {
+      "id": "glyph-d",
+      "parent": "hero-title",
+      "kind": "nested-transform-group"
+    },
+    {
+      "id": "glyph-dot",
+      "parent": "hero-title",
+      "kind": "nested-transform-group"
+    },
+    {
+      "id": "hero-title",
+      "parent": "scene",
+      "kind": "compound-type-group"
+    },
+    {
+      "id": "instrumentation",
+      "parent": "scene",
+      "kind": "vector-overlay-group"
+    },
+    {
+      "id": "annotations",
+      "parent": "instrumentation",
+      "kind": "microtype-group"
+    }
+  ],
+  "maskRegistration": {
+    "mountain": {
+      "guide": "generated/beyond-mountain-guide.png",
+      "method": "SIFT + FLANN + RANSAC partial affine",
+      "matches": 309,
+      "inliers": 180,
+      "medianErrorPx": 1.869,
+      "affine": [
+        [
+          0.7898169748059402,
+          0.02716284188241516,
+          -11.96968509721692
+        ],
+        [
+          -0.02716284188241516,
+          0.7898169748059402,
+          51.77381001643707
+        ]
+      ]
+    },
+    "cityClouds": {
+      "guide": "generated/beyond-city-clouds-guide.png",
+      "method": "SIFT + FLANN + RANSAC partial affine",
+      "matches": 403,
+      "inliers": 349,
+      "medianErrorPx": 0.955,
+      "affine": [
+        [
+          0.9245162600250927,
+          0.0015556169762975538,
+          -8.907060709891068
+        ],
+        [
+          -0.0015556169762975538,
+          0.9245162600250927,
+          30.383047961177766
+        ]
+      ]
+    },
+    "title": {
+      "method": "manually aligned alpha guide",
+      "placement": {
+        "x": 423,
+        "y": 250,
+        "scaleX": 0.55,
+        "scaleY": 0.96
+      }
+    }
+  },
+  "layerCount": 40,
+  "layers": [
+    {
+      "id": "mountain-upper-left",
+      "name": "Upper left snow peaks",
+      "group": "mountain",
+      "parent": "mountain-system",
+      "z": 21,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 319,
+        "y": 310,
+        "width": 291,
+        "height": 136,
+        "anchor": {
+          "x": 319,
+          "y": 310
+        }
+      },
+      "asset": "assets/mountain/01-mountain-upper-left.png",
+      "activePixelCount": 4477,
+      "maskMethodConfidence": 0.82,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered source-derived alpha; split line follows scene/collage boundary approximately.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "mountain-mid-left",
+      "name": "Midground left ridge",
+      "group": "mountain",
+      "parent": "mountain-system",
+      "z": 22,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 263,
+        "y": 344,
+        "width": 710,
+        "height": 319,
+        "anchor": {
+          "x": 263,
+          "y": 344
+        }
+      },
+      "asset": "assets/mountain/02-mountain-mid-left.png",
+      "activePixelCount": 42763,
+      "maskMethodConfidence": 0.82,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered source-derived alpha; split line follows scene/collage boundary approximately.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "mountain-front-dark",
+      "name": "Foreground dark mountain mass",
+      "group": "mountain",
+      "parent": "mountain-system",
+      "z": 23,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 163,
+        "y": 483,
+        "width": 403,
+        "height": 300,
+        "anchor": {
+          "x": 163,
+          "y": 483
+        }
+      },
+      "asset": "assets/mountain/03-mountain-front-dark.png",
+      "activePixelCount": 48070,
+      "maskMethodConfidence": 0.82,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered source-derived alpha; split line follows scene/collage boundary approximately.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "mountain-long-shard",
+      "name": "Long lower diagonal mountain photo",
+      "group": "mountain",
+      "parent": "mountain-system",
+      "z": 24,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 359,
+        "y": 579,
+        "width": 716,
+        "height": 197,
+        "anchor": {
+          "x": 359,
+          "y": 579
+        }
+      },
+      "asset": "assets/mountain/04-mountain-long-shard.png",
+      "activePixelCount": 72391,
+      "maskMethodConfidence": 0.82,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered source-derived alpha; split line follows scene/collage boundary approximately.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "cloud-bank-front",
+      "name": "Front cloud bank",
+      "group": "city-clouds",
+      "parent": "horizon-system",
+      "z": 31,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 520,
+        "y": 327,
+        "width": 1016,
+        "height": 185,
+        "anchor": {
+          "x": 520,
+          "y": 327
+        }
+      },
+      "asset": "assets/city-clouds/05-cloud-bank-front.png",
+      "activePixelCount": 30764,
+      "maskMethodConfidence": 0.8,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered city/cloud alpha clipped to a purposeful depth band; internal boundary is a first-pass animation seam.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "far-horizon",
+      "name": "Far ridges and horizon",
+      "group": "city-clouds",
+      "parent": "horizon-system",
+      "z": 32,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 554,
+        "y": 430,
+        "width": 982,
+        "height": 170,
+        "anchor": {
+          "x": 554,
+          "y": 430
+        }
+      },
+      "asset": "assets/city-clouds/06-far-horizon.png",
+      "activePixelCount": 60851,
+      "maskMethodConfidence": 0.8,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered city/cloud alpha clipped to a purposeful depth band; internal boundary is a first-pass animation seam.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "city-west",
+      "name": "Western city cluster",
+      "group": "city-clouds",
+      "parent": "horizon-system",
+      "z": 33,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1015,
+        "y": 520,
+        "width": 193,
+        "height": 224,
+        "anchor": {
+          "x": 1015,
+          "y": 520
+        }
+      },
+      "asset": "assets/city-clouds/07-city-west.png",
+      "activePixelCount": 4393,
+      "maskMethodConfidence": 0.8,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered city/cloud alpha clipped to a purposeful depth band; internal boundary is a first-pass animation seam.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "city-center",
+      "name": "Central skyline cluster",
+      "group": "city-clouds",
+      "parent": "horizon-system",
+      "z": 34,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1208,
+        "y": 505,
+        "width": 164,
+        "height": 85,
+        "anchor": {
+          "x": 1208,
+          "y": 505
+        }
+      },
+      "asset": "assets/city-clouds/08-city-center.png",
+      "activePixelCount": 7849,
+      "maskMethodConfidence": 0.8,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered city/cloud alpha clipped to a purposeful depth band; internal boundary is a first-pass animation seam.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "city-east",
+      "name": "Eastern skyline cluster",
+      "group": "city-clouds",
+      "parent": "horizon-system",
+      "z": 35,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1372,
+        "y": 492,
+        "width": 164,
+        "height": 98,
+        "anchor": {
+          "x": 1372,
+          "y": 492
+        }
+      },
+      "asset": "assets/city-clouds/09-city-east.png",
+      "activePixelCount": 16057,
+      "maskMethodConfidence": 0.8,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered city/cloud alpha clipped to a purposeful depth band; internal boundary is a first-pass animation seam.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "water-reflection",
+      "name": "River and reflected light",
+      "group": "city-clouds",
+      "parent": "horizon-system",
+      "z": 36,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1020,
+        "y": 590,
+        "width": 516,
+        "height": 180,
+        "anchor": {
+          "x": 1020,
+          "y": 590
+        }
+      },
+      "asset": "assets/city-clouds/10-water-reflection.png",
+      "activePixelCount": 64841,
+      "maskMethodConfidence": 0.8,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Registered city/cloud alpha clipped to a purposeful depth band; internal boundary is a first-pass animation seam.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "paper-header",
+      "name": "Upper left archival sheet",
+      "group": "paper",
+      "parent": "paper-system",
+      "z": 41,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 607,
+        "height": 252,
+        "anchor": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "asset": "assets/paper/11-paper-header.png",
+      "activePixelCount": 118772,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Source RGB follows a hand-traced irregular sheet contour; torn edge should be reviewed before large rotations.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "paper-left-window",
+      "name": "Left torn mountain-window sheets",
+      "group": "paper",
+      "parent": "paper-system",
+      "z": 42,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 0,
+        "y": 177,
+        "width": 324,
+        "height": 459,
+        "anchor": {
+          "x": 0,
+          "y": 177
+        }
+      },
+      "asset": "assets/paper/12-paper-left-window.png",
+      "activePixelCount": 109142,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Source RGB follows a hand-traced irregular sheet contour; torn edge should be reviewed before large rotations.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "paper-left-copy",
+      "name": "Lower left statement sheet",
+      "group": "paper",
+      "parent": "paper-system",
+      "z": 43,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 0,
+        "y": 566,
+        "width": 387,
+        "height": 298,
+        "anchor": {
+          "x": 0,
+          "y": 566
+        }
+      },
+      "asset": "assets/paper/13-paper-left-copy.png",
+      "activePixelCount": 66502,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Source RGB follows a hand-traced irregular sheet contour; torn edge should be reviewed before large rotations.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "paper-bottom-center",
+      "name": "Bottom center torn fragment",
+      "group": "paper",
+      "parent": "paper-system",
+      "z": 44,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 366,
+        "y": 770,
+        "width": 229,
+        "height": 94,
+        "anchor": {
+          "x": 366,
+          "y": 770
+        }
+      },
+      "asset": "assets/paper/14-paper-bottom-center.png",
+      "activePixelCount": 10612,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Source RGB follows a hand-traced irregular sheet contour; torn edge should be reviewed before large rotations.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "paper-right-map",
+      "name": "Right bottom map-paper sheet",
+      "group": "paper",
+      "parent": "paper-system",
+      "z": 45,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1082,
+        "y": 660,
+        "width": 454,
+        "height": 204,
+        "anchor": {
+          "x": 1082,
+          "y": 660
+        }
+      },
+      "asset": "assets/paper/15-paper-right-map.png",
+      "activePixelCount": 67387,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Source RGB follows a hand-traced irregular sheet contour; torn edge should be reviewed before large rotations.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "glyph-b",
+      "name": "Independent B glyph",
+      "group": "glyph",
+      "parent": "glyph-b",
+      "z": 51,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 423,
+        "y": 250,
+        "width": 180,
+        "height": 344,
+        "anchor": {
+          "x": 423,
+          "y": 250
+        }
+      },
+      "asset": "assets/glyph/16-glyph-b.png",
+      "activePixelCount": 44530,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Per-letter mask from the source-derived title guide; internal distress and photographic fill stay together to protect the glyph silhouette.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "glyph-e",
+      "name": "Independent E glyph",
+      "group": "glyph",
+      "parent": "glyph-e",
+      "z": 51,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 609,
+        "y": 272,
+        "width": 157,
+        "height": 335,
+        "anchor": {
+          "x": 609,
+          "y": 272
+        }
+      },
+      "asset": "assets/glyph/17-glyph-e.png",
+      "activePixelCount": 30407,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Per-letter mask from the source-derived title guide; internal distress and photographic fill stay together to protect the glyph silhouette.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "glyph-y",
+      "name": "Independent Y glyph",
+      "group": "glyph",
+      "parent": "glyph-y",
+      "z": 51,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 766,
+        "y": 260,
+        "width": 161,
+        "height": 344,
+        "anchor": {
+          "x": 766,
+          "y": 260
+        }
+      },
+      "asset": "assets/glyph/18-glyph-y.png",
+      "activePixelCount": 29085,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Per-letter mask from the source-derived title guide; internal distress and photographic fill stay together to protect the glyph silhouette.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "glyph-o",
+      "name": "Independent O glyph",
+      "group": "glyph",
+      "parent": "glyph-o",
+      "z": 51,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 927,
+        "y": 285,
+        "width": 157,
+        "height": 315,
+        "anchor": {
+          "x": 927,
+          "y": 285
+        }
+      },
+      "asset": "assets/glyph/19-glyph-o.png",
+      "activePixelCount": 26826,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Per-letter mask from the source-derived title guide; internal distress and photographic fill stay together to protect the glyph silhouette.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "glyph-n",
+      "name": "Independent N glyph",
+      "group": "glyph",
+      "parent": "glyph-n",
+      "z": 51,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1084,
+        "y": 305,
+        "width": 125,
+        "height": 301,
+        "anchor": {
+          "x": 1084,
+          "y": 305
+        }
+      },
+      "asset": "assets/glyph/20-glyph-n.png",
+      "activePixelCount": 23427,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Per-letter mask from the source-derived title guide; internal distress and photographic fill stay together to protect the glyph silhouette.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "glyph-d",
+      "name": "Independent D glyph",
+      "group": "glyph",
+      "parent": "glyph-d",
+      "z": 51,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1209,
+        "y": 336,
+        "width": 80,
+        "height": 261,
+        "anchor": {
+          "x": 1209,
+          "y": 336
+        }
+      },
+      "asset": "assets/glyph/21-glyph-d.png",
+      "activePixelCount": 10573,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Per-letter mask from the source-derived title guide; internal distress and photographic fill stay together to protect the glyph silhouette.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "glyph-dot",
+      "name": "Independent title period",
+      "group": "glyph",
+      "parent": "glyph-dot",
+      "z": 51,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1289,
+        "y": 523,
+        "width": 16,
+        "height": 73,
+        "anchor": {
+          "x": 1289,
+          "y": 523
+        }
+      },
+      "asset": "assets/glyph/22-glyph-dot.png",
+      "activePixelCount": 845,
+      "maskMethodConfidence": 0.72,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Source-derived title period mask; kept independently steerable.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "rail-title-arc",
+      "name": "Title-crossing orbital arc",
+      "group": "track",
+      "parent": "instrumentation",
+      "z": 61,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 300,
+        "y": 280,
+        "width": 968,
+        "height": 71,
+        "anchor": {
+          "x": 300,
+          "y": 280
+        }
+      },
+      "asset": "assets/track/23-rail-title-arc.png",
+      "activePixelCount": 3003,
+      "maskMethodConfidence": 0.63,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Manually traced narrow corridor around a visible line; inspect for residual line ghosts and underlying texture contamination.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "rail-upper-diagonal",
+      "name": "Upper left-to-center survey line",
+      "group": "track",
+      "parent": "instrumentation",
+      "z": 62,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 0,
+        "y": 147,
+        "width": 684,
+        "height": 24,
+        "anchor": {
+          "x": 0,
+          "y": 147
+        }
+      },
+      "asset": "assets/track/24-rail-upper-diagonal.png",
+      "activePixelCount": 2047,
+      "maskMethodConfidence": 0.63,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Manually traced narrow corridor around a visible line; inspect for residual line ghosts and underlying texture contamination.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "rail-right-curve",
+      "name": "Right descending survey curve",
+      "group": "track",
+      "parent": "instrumentation",
+      "z": 63,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1054,
+        "y": 0,
+        "width": 223,
+        "height": 281,
+        "anchor": {
+          "x": 1054,
+          "y": 0
+        }
+      },
+      "asset": "assets/track/25-rail-right-curve.png",
+      "activePixelCount": 1103,
+      "maskMethodConfidence": 0.63,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Manually traced narrow corridor around a visible line; inspect for residual line ghosts and underlying texture contamination.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "rail-city-line",
+      "name": "City horizon connection",
+      "group": "track",
+      "parent": "instrumentation",
+      "z": 64,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1135,
+        "y": 467,
+        "width": 401,
+        "height": 179,
+        "anchor": {
+          "x": 1135,
+          "y": 467
+        }
+      },
+      "asset": "assets/track/26-rail-city-line.png",
+      "activePixelCount": 1194,
+      "maskMethodConfidence": 0.63,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Manually traced narrow corridor around a visible line; inspect for residual line ghosts and underlying texture contamination.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "rail-lower-loop",
+      "name": "Lower left loop annotation",
+      "group": "track",
+      "parent": "instrumentation",
+      "z": 65,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 216,
+        "y": 634,
+        "width": 259,
+        "height": 116,
+        "anchor": {
+          "x": 216,
+          "y": 634
+        }
+      },
+      "asset": "assets/track/27-rail-lower-loop.png",
+      "activePixelCount": 749,
+      "maskMethodConfidence": 0.63,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Manually traced narrow corridor around a visible line; inspect for residual line ghosts and underlying texture contamination.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "rail-lower-diagonal",
+      "name": "Lower diagonal survey line",
+      "group": "track",
+      "parent": "instrumentation",
+      "z": 66,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 351,
+        "y": 648,
+        "width": 849,
+        "height": 216,
+        "anchor": {
+          "x": 351,
+          "y": 648
+        }
+      },
+      "asset": "assets/track/28-rail-lower-diagonal.png",
+      "activePixelCount": 2515,
+      "maskMethodConfidence": 0.63,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Manually traced narrow corridor around a visible line; inspect for residual line ghosts and underlying texture contamination.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "copy-brand",
+      "name": "Brand and upper left microcopy",
+      "group": "microtype",
+      "parent": "annotations",
+      "z": 72,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 50,
+        "y": 66,
+        "width": 141,
+        "height": 90,
+        "anchor": {
+          "x": 50,
+          "y": 66
+        }
+      },
+      "asset": "assets/microtype/29-copy-brand.png",
+      "activePixelCount": 2190,
+      "maskMethodConfidence": 0.68,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Local-contrast component mask, dilated one pixel to retain antialiased glyph edges; grain may be included.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "copy-nature",
+      "name": "01 Nature coordinate label",
+      "group": "microtype",
+      "parent": "annotations",
+      "z": 73,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 310,
+        "y": 185,
+        "width": 110,
+        "height": 75,
+        "anchor": {
+          "x": 310,
+          "y": 185
+        }
+      },
+      "asset": "assets/microtype/30-copy-nature.png",
+      "activePixelCount": 608,
+      "maskMethodConfidence": 0.68,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Local-contrast component mask, dilated one pixel to retain antialiased glyph edges; grain may be included.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "copy-world",
+      "name": "BEYOND heading and Chinese subtitle",
+      "group": "microtype",
+      "parent": "annotations",
+      "z": 74,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1130,
+        "y": 97,
+        "width": 214,
+        "height": 112,
+        "anchor": {
+          "x": 1130,
+          "y": 97
+        }
+      },
+      "asset": "assets/microtype/31-copy-world.png",
+      "activePixelCount": 1719,
+      "maskMethodConfidence": 0.68,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Local-contrast component mask, dilated one pixel to retain antialiased glyph edges; grain may be included.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "copy-folio",
+      "name": "Upper right folio",
+      "group": "microtype",
+      "parent": "annotations",
+      "z": 75,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1432,
+        "y": 29,
+        "width": 76,
+        "height": 56,
+        "anchor": {
+          "x": 1432,
+          "y": 29
+        }
+      },
+      "asset": "assets/microtype/32-copy-folio.png",
+      "activePixelCount": 1200,
+      "maskMethodConfidence": 0.68,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Local-contrast component mask, dilated one pixel to retain antialiased glyph edges; grain may be included.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "copy-ideas",
+      "name": "03 Ideas coordinate label",
+      "group": "microtype",
+      "parent": "annotations",
+      "z": 76,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1389,
+        "y": 186,
+        "width": 131,
+        "height": 117,
+        "anchor": {
+          "x": 1389,
+          "y": 186
+        }
+      },
+      "asset": "assets/microtype/33-copy-ideas.png",
+      "activePixelCount": 2562,
+      "maskMethodConfidence": 0.68,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Local-contrast component mask, dilated one pixel to retain antialiased glyph edges; grain may be included.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "copy-people",
+      "name": "02 People coordinate label",
+      "group": "microtype",
+      "parent": "annotations",
+      "z": 77,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1037,
+        "y": 461,
+        "width": 133,
+        "height": 112,
+        "anchor": {
+          "x": 1037,
+          "y": 461
+        }
+      },
+      "asset": "assets/microtype/34-copy-people.png",
+      "activePixelCount": 5045,
+      "maskMethodConfidence": 0.68,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Local-contrast component mask, dilated one pixel to retain antialiased glyph edges; grain may be included.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "copy-statement",
+      "name": "Lower left Chinese and English statement",
+      "group": "microtype",
+      "parent": "annotations",
+      "z": 78,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 42,
+        "y": 597,
+        "width": 244,
+        "height": 210,
+        "anchor": {
+          "x": 42,
+          "y": 597
+        }
+      },
+      "asset": "assets/microtype/35-copy-statement.png",
+      "activePixelCount": 10553,
+      "maskMethodConfidence": 0.68,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Local-contrast component mask, dilated one pixel to retain antialiased glyph edges; grain may be included.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "cross-nature",
+      "name": "01 Nature crosshair",
+      "group": "crosshair",
+      "parent": "instrumentation",
+      "z": 81,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 286,
+        "y": 250,
+        "width": 29,
+        "height": 29,
+        "anchor": {
+          "x": 286,
+          "y": 250
+        }
+      },
+      "asset": "assets/crosshair/36-cross-nature.png",
+      "activePixelCount": 61,
+      "maskMethodConfidence": 0.62,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Narrow source pixel mark corridor; exact fine-line placement should be verified.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "cross-folio",
+      "name": "Top center crosshair",
+      "group": "crosshair",
+      "parent": "instrumentation",
+      "z": 82,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1032,
+        "y": 17,
+        "width": 31,
+        "height": 31,
+        "anchor": {
+          "x": 1032,
+          "y": 17
+        }
+      },
+      "asset": "assets/crosshair/37-cross-folio.png",
+      "activePixelCount": 65,
+      "maskMethodConfidence": 0.62,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Narrow source pixel mark corridor; exact fine-line placement should be verified.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "cross-ideas",
+      "name": "03 Ideas crosshair",
+      "group": "crosshair",
+      "parent": "instrumentation",
+      "z": 83,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1383,
+        "y": 250,
+        "width": 31,
+        "height": 31,
+        "anchor": {
+          "x": 1383,
+          "y": 250
+        }
+      },
+      "asset": "assets/crosshair/38-cross-ideas.png",
+      "activePixelCount": 65,
+      "maskMethodConfidence": 0.62,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Narrow source pixel mark corridor; exact fine-line placement should be verified.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "cross-people",
+      "name": "02 People crosshair",
+      "group": "crosshair",
+      "parent": "instrumentation",
+      "z": 84,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 1042,
+        "y": 514,
+        "width": 31,
+        "height": 31,
+        "anchor": {
+          "x": 1042,
+          "y": 514
+        }
+      },
+      "asset": "assets/crosshair/39-cross-people.png",
+      "activePixelCount": 65,
+      "maskMethodConfidence": 0.62,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Narrow source pixel mark corridor; exact fine-line placement should be verified.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    },
+    {
+      "id": "cross-bottom",
+      "name": "Lower center crosshair",
+      "group": "crosshair",
+      "parent": "instrumentation",
+      "z": 85,
+      "underfill": "needs clean plate for removed footprint",
+      "bounds": {
+        "x": 453,
+        "y": 834,
+        "width": 31,
+        "height": 30,
+        "anchor": {
+          "x": 453,
+          "y": 834
+        }
+      },
+      "asset": "assets/crosshair/40-cross-bottom.png",
+      "activePixelCount": 64,
+      "maskMethodConfidence": 0.62,
+      "sourceRGB": "copied from BEYOND_TARGET_1536x864.png",
+      "underfillRequired": true,
+      "underfillSource": "No clean plate is included yet; hidden pixels remain unknown",
+      "occlusionNotes": "Narrow source pixel mark corridor; exact fine-line placement should be verified.",
+      "capabilities": [
+        "translate",
+        "scale",
+        "rotate",
+        "opacity",
+        "nested transform"
+      ]
+    }
+  ],
+  "staticPartitionCheck": {
+    "changedPixels": 0,
+    "exactPixelPercent": 100.0,
+    "note": "Reassembly starts from the transparent-hole base and alpha-composites only the exported source-pixel crop assets. This validates the static file partition only; it does not validate clean-plate quality or movement realism."
+  },
+  "reviewNotes": [
+    "Generated mask guides are not used as foreground RGB; the mask fit still needs human review around letter/photo overlap.",
+    "The six major track corridors are manually traced and may leave a residual line where the mask falls short.",
+    "Paper contours are irregular hand-traced first passes; they are more detailed than rectangular panels but need edge-by-edge review.",
+    "Mountain and city/cloud masks have SIFT/RANSAC fit reports; their internal depth split lines remain semantic first passes.",
+    "Every moved layer needs a matching filled hole under the source footprint. The base file intentionally leaves holes transparent pending Agent C fill."
+  ]
+}
