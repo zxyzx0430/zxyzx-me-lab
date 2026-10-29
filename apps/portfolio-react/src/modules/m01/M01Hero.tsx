@@ -4,6 +4,7 @@ import { Portrait } from './components/Portrait';
 import { PosterTypography } from './components/PosterTypography';
 import { PosterDetails } from './components/PosterDetails';
 import { TrackLines } from './components/TrackLines';
+import { WorldEntry } from './WorldEntry';
 import './m01.css';
 import './cinema.css';
 
@@ -171,7 +172,8 @@ export function M01Hero() {
   }, [staticPreview]);
 
   return <div ref={root} id="top" data-module="M01"
-    className={'m01-root' + (staticPreview ? ' static-preview' : ' cinematic-motion')}>
+    className={'m01-root' + (staticPreview ? ' static-preview' : ' cinematic-motion')}
+    style={{ '--art-scale': scale } as CSSProperties}>
     <section className="scene" aria-label="个人首页：向内寻找中心，向外探寻世界">
       <div className="ambient" aria-hidden="true"><span className="orbit orbit-1"/><span className="orbit orbit-2"/><span className="glint"/></div>
       <div className="cinema-stage">
@@ -179,6 +181,7 @@ export function M01Hero() {
           <PosterDetails/><Portrait/><PosterTypography/><TrackLines/>
         </div>
       </div>
+      <WorldEntry hero={root} staticPreview={staticPreview}/>
       <h1 className="sr-only">向内寻找中心，向外探寻世界。</h1>
       <div className="scene-count" aria-hidden="true"><i/><i/><i/><i/></div>
       <a href="#world" className="enter" aria-label="向下滚动，探索作品世界"><span>SCROLL TO EXPLORE</span><span className="arrow">↙</span></a>

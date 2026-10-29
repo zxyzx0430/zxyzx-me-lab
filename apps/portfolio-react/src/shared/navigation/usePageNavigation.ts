@@ -85,6 +85,7 @@ export function usePageNavigation(ids: readonly string[]) {
       return true;
     };
     const wheel = (e: WheelEvent) => {
+      if (document.body.dataset.m01World) return;
       if (e.ctrlKey || e.metaKey || e.altKey || isEditable(e.target)) return;
       const delta = normalizedWheel(e.deltaY, e.deltaMode, innerHeight);
       if (!delta) return;
@@ -101,6 +102,7 @@ export function usePageNavigation(ids: readonly string[]) {
       }
     };
     const key = (e: KeyboardEvent) => {
+      if (document.body.dataset.m01World) return;
       if (e.repeat || e.altKey || e.ctrlKey || e.metaKey || isEditable(e.target) ||
         (e.target instanceof Element && e.target.closest('a,button'))) return;
       const dir = ['ArrowDown', 'PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey) ? 1 :
@@ -114,9 +116,11 @@ export function usePageNavigation(ids: readonly string[]) {
       }
     };
     const touchBegin = (e: TouchEvent) => {
+      if (document.body.dataset.m01World) return;
       if (e.touches.length === 1) touchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
     };
     const touchMove = (e: TouchEvent) => {
+      if (document.body.dataset.m01World) return;
       if (!touchStart || e.touches.length !== 1 || isEditable(e.target)) return;
       const t = e.touches[0], deltaY = touchStart.y - t.clientY;
       const index = current(), dir = Math.sign(deltaY);

@@ -2,12 +2,28 @@ import { M01Hero } from '../modules/m01/M01Hero';
 import { usePageNavigation } from '../shared/navigation/usePageNavigation';
 import { motion } from 'motion/react';
 export function App() {
+  const staticPreview = new URLSearchParams(window.location.search).has('static');
+  const enterWorld = (world: 'within' | 'beyond') => {
+    window.dispatchEvent(new CustomEvent('m01:enter-world', { detail: { world } }));
+  };
   usePageNavigation(['top', 'world']);
   return <>
     <a className="skip" href="#world">跳过首页开场</a>
     <header className="nav" aria-label="站点导航">
-      <a href="#top" className="brand" aria-label="忠心于中心，返回开场"><span className="brand-name">忠心于中心</span><span className="brand-small">ZXYZX.ME</span></a>
-      <nav className="navitems" aria-label="个人站导航"><span className="nav-note">PERSONAL DIGITAL SPACE / 2026</span><a href="#world">WORK</a><a href="#world-details">ABOUT</a></nav>
+      <a href="#top" className="brand" aria-label="忠心于中心，返回开场" onClick={(event) => {
+        event.preventDefault();
+        window.dispatchEvent(new Event('m01:close-world'));
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }}><span className="brand-name">忠心于中心</span><span className="brand-small">ZXYZX.ME</span></a>
+      <nav className="navitems" aria-label="个人站导航">
+        <span className="nav-note">PERSONAL DIGITAL SPACE / 2026</span>
+        {staticPreview ? <>
+          <a href="#world">WORK</a><a href="#world-details">ABOUT</a>
+        </> : <>
+          <button type="button" onClick={() => enterWorld('within')}>WITHIN</button>
+          <button type="button" onClick={() => enterWorld('beyond')}>BEYOND</button>
+        </>}
+      </nav>
     </header>
     <main>
       <M01Hero />

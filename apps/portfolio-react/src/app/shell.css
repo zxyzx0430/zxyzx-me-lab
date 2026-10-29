@@ -9,3 +9,9 @@
 .page-footer{background:#181a20;color:#a8adb7;border-top:1px solid #48495155;display:flex;justify-content:space-between;gap:24px;padding:20px clamp(24px,6.2vw,110px);font:10px/1.7 ui-monospace,Consolas,monospace;letter-spacing:.11em}
 @media(max-width:700px){.nav{padding:19px 20px}.brand-name{font-size:19px}.navitems{font-size:9px;gap:15px;letter-spacing:.04em}.nav-note{display:none}.next{min-height:100svh;grid-template-columns:1fr;gap:20px}.next h2{font-size:17vw;margin:22px 0}.page-footer{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+/* Stage-1 dual-world navigation; ?static=1 keeps its original reference labels. */
+.navitems button{border:0;border-bottom:1px solid transparent;padding:8px 0;
+ color:inherit;background:transparent;font:inherit;letter-spacing:inherit;cursor:pointer}
+.navitems button:hover{border-bottom-color:currentColor}
+body[data-m01-world] .nav{z-index:28}
