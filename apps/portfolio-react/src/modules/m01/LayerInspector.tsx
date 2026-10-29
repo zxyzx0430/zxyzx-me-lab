@@ -145,6 +145,9 @@ export function LayerInspector({
               <div><dt>Source</dt><dd>原图像素</dd></div>
               <div><dt>Fill under</dt><dd>{selectedNode.fillUnder === 'approximate' ? '推测补全' : selectedNode.fillUnder === 'missing' ? '尚无 clean plate' : '不需要'}</dd></div>
               <div><dt>Fill note</dt><dd>{selectedNode.fillStatus}</dd></div>
+              <div><dt>Safe move</dt><dd>{selectedNode.requiresBackgroundFill
+                ? '0 px certified · no clean plate; transforms below are diagnostic and reveal unknown pixels.'
+                : 'Not certified by motion audit.'}</dd></div>
               <div><dt>Bounds</dt><dd>{selectedNode.bounds.x}, {selectedNode.bounds.y} · {selectedNode.bounds.width} × {selectedNode.bounds.height}</dd></div>
               <div><dt>Depth / order</dt><dd>{selectedNode.depth} / {selectedNode.compositionOrder}</dd></div>
               <div><dt>Mask confidence</dt><dd>{Math.round(selectedNode.maskConfidence * 100)}%</dd></div>
@@ -163,7 +166,7 @@ export function LayerInspector({
               )}
             </dl>
           )}
-          {isGroup && <p className="layer-inspector-note">父级变换会作用于组内全部图层。Group type: {selectedNode.groupKind}.</p>}
+          {isGroup && <p className="layer-inspector-note">父级变换会作用于组内全部图层。{selectedNode.groupKind === 'scene-root' ? '根组会同步变换底板及所有图层；不露画布外黑边需满足 |x|≤(scale−1)×768px、|y|≤(scale−1)×432px（旋转另算）。' : '局部组尚无 clean plate 验证，移动会暴露未知背景。'} Group type: {selectedNode.groupKind}.</p>}
         </section>
       )}
 

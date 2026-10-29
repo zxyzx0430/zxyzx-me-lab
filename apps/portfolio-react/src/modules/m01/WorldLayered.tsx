@@ -107,13 +107,27 @@ function ImageLayer({
   );
 }
 
-function FillUnderLayer({ node }: { node: SceneImageNode }) {
+function FillUnderLayer({
+  node,
+  matrix,
+  opacity,
+  visible,
+}: {
+  node: SceneImageNode;
+  matrix: Matrix2D | null;
+  opacity: number;
+  visible: boolean;
+}) {
   const style = {
-    left: `${(node.bounds.x / 1536) * 100}%`,
-    top: `${(node.bounds.y / 864) * 100}%`,
+    left: matrix ? 0 : `${(node.bounds.x / 1536) * 100}%`,
+    top: matrix ? 0 : `${(node.bounds.y / 864) * 100}%`,
     width: `${(node.bounds.width / 1536) * 100}%`,
     height: `${(node.bounds.height / 864) * 100}%`,
     zIndex: node.zIndex,
+    opacity,
+    visibility: visible ? 'visible' : 'hidden',
+    transformOrigin: matrix ? '0 0' : '50% 50%',
+    transform: matrix ? `matrix(${matrix.map((value) => Number(value.toFixed(6))).join(',')})` : 'none',
   } satisfies CSSProperties;
 
   return (
@@ -149,7 +163,8 @@ export function WorldLayered({ world }: { world: WorldName }) {
   const [alphaPreview, setAlphaPreview] = useState(false);
   const [showSelectedFillUnder, setShowSelectedFillUnder] = useState(false);
   const [canvasScale, setCanvasScale] = useState({ x: 1, y: 1 });
-  const inspector = new URLSearchParams(window.location.search).get('inspect') === '1';
+  const rootGroup = manifest.nodes.find((node): node is Extract<SceneNode, { kind: 'group' }> => node.kind === 'group');
+  const inspector = import.meta.env.DEV && new URLSearchParams(window.location.search).get('inspect') === '1';
   const otherWorld = world === 'within' ? 'beyond' : 'within';
 
   useLayoutEffect(() => {
@@ -186,10 +201,10 @@ export function WorldLayered({ world }: { world: WorldName }) {
     setShowSelectedFillUnder(false);
   };
 
-  const presentationFor = (node: SceneImageNode) => {
-    const ownTransform = transforms[node.id] ?? defaultSceneTransform;
-    let visible = ownTransform.visible;
-    let opacity = ownTransform.opacity;
+  const presentationFor = (node: SceneImageNode, includeOwnTransform = true) => {
+    const ownTransform = includeOwnTransform ? transforms[node.id] ?? defaultSceneTransform : defaultSceneTransform;
+    let visible = includeOwnTransform ? ownTransform.visible : true;
+    let opacity = includeOwnTransform ? ownTransform.opacity : 1;
     let groupMatrix = IDENTITY;
     let parentId: string | null = node.parentId;
     let hasMovedAncestor = false;
@@ -244,6 +259,19 @@ export function WorldLayered({ world }: { world: WorldName }) {
   const selectedFillNode = selectedNode?.kind === 'image' && selectedNode.fillUnderCandidate
     ? selectedNode
     : null;
+  const rootTransform = rootGroup ? transforms[rootGroup.id] ?? defaultSceneTransform : defaultSceneTransform;
+  const canvasCenterX = (1536 * canvasScale.x) / 2;
+  const canvasCenterY = (864 * canvasScale.y) / 2;
+  const rootMatrix = hasGeometry(rootTransform)
+    ? aroundTransform(rootTransform, canvasCenterX, canvasCenterY, canvasScale.x, canvasScale.y)
+    : null;
+  const rootStyle = {
+    zIndex: 0,
+    opacity: rootTransform.opacity,
+    visibility: rootTransform.visible ? 'visible' : 'hidden',
+    transformOrigin: '0 0',
+    transform: rootMatrix ? `matrix(${rootMatrix.map((value) => Number(value.toFixed(6))).join(',')})` : 'none',
+  } satisfies CSSProperties;
 
   return (
     <main className={`m01-world-world m01-world-${world} m01-world-layered${alphaPreview && inspector ? ' is-alpha-preview' : ''}`} data-background-plate-status={manifest.backgroundPlateStatus}>
@@ -257,14 +285,34 @@ export function WorldLayered({ world }: { world: WorldName }) {
         data-layered-scene={world}
         data-inspector={inspector ? 'true' : 'false'}
       >
-        {showBackground && <img className="world-layered-background" src={manifest.backgroundPlate} alt="" aria-hidden="true" draggable={false} width="1536" height="864" />}
         {visibleReference && <img className="world-reference-image" src={manifest.reference} alt="" aria-hidden="true" draggable={false} width="1536" height="864" />}
         {showLayers && (
           <div className="world-layer-stack" aria-hidden="true">
+            {showBackground && (
+              <img
+                className="world-layered-background"
+                src={manifest.backgroundPlate}
+                alt=""
+                aria-hidden="true"
+                draggable={false}
+                width="1536"
+                height="864"
+                data-scene-background={world}
+                data-scene-background-transform={JSON.stringify(rootTransform)}
+                style={rootStyle}
+              />
+            )}
             {imageNodes.flatMap((node) => {
               const presentation = presentationFor(node);
+              const fillPresentation = presentationFor(node, false);
               const fillUnder = inspector && showSelectedFillUnder && selectedFillNode?.id === node.id && view === 'composite'
-                ? [<FillUnderLayer key={`fill-under-${node.id}`} node={node} />]
+                ? [<FillUnderLayer
+                    key={`fill-under-${node.id}`}
+                    node={node}
+                    matrix={fillPresentation.matrix}
+                    opacity={fillPresentation.opacity}
+                    visible={fillPresentation.visible}
+                  />]
                 : [];
               return [...fillUnder, <ImageLayer
                 key={node.id}
