@@ -1,0 +1,61 @@
+{
+  "browser": "Chromium 147.0.7727.15",
+  "viewport": {
+    "width": 1536,
+    "height": 864,
+    "deviceScaleFactor": 1
+  },
+  "routes": {
+    "within": "http://127.0.0.1:4180/zxyzx-me-lab/preview/m01-react/?world=within",
+    "beyond": "http://127.0.0.1:4180/zxyzx-me-lab/preview/m01-react/?world=beyond",
+    "home_after_hotspot": "http://127.0.0.1:4180/zxyzx-me-lab/preview/m01-react/"
+  },
+  "responsive_geometry": {
+    "1920x1080": {
+      "width": 1920,
+      "height": 1080,
+      "ratio": 1.7777777777777777
+    },
+    "390x844": {
+      "width": 390,
+      "height": 219.375,
+      "ratio": 1.7777777777777777,
+      "x": 0,
+      "y": 312.3125
+    }
+  },
+  "pixel_comparison": {
+    "within": {
+      "reference": "WITHIN_TARGET_1536x864.png",
+      "browser_screenshot": "within-browser-1536x864.png",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "pixels": 1327104,
+      "changed_pixels": 0,
+      "exact_pixel_percent": 100.0,
+      "mean_absolute_rgb_error_0_255": 0.0,
+      "max_channel_error": 0,
+      "image_sha256": "17a912b119d78e9466318f8d2138a4d4a0c1835e975d27aec5457fe24fdbf39a"
+    },
+    "beyond": {
+      "reference": "BEYOND_TARGET_1536x864.png",
+      "browser_screenshot": "beyond-browser-1536x864.png",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "pixels": 1327104,
+      "changed_pixels": 0,
+      "exact_pixel_percent": 100.0,
+      "mean_absolute_rgb_error_0_255": 0.0,
+      "max_channel_error": 0,
+      "image_sha256": "e6ab22728fa5a4eeb2180990a591fbcaca11940b18c2b29e7910332f3742cd53"
+    }
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "http_errors": []
+}

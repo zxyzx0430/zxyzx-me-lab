@@ -1,418 +1,69 @@
-/* Static destination pages only. NO transitions, scroll timelines or scene animations.
-   Artboard language derives from M01 paper, ink-eroded type and archival orbit marks. */
-.m01-world-world{
- --bone:#e9e4db;--charcoal:#111210;
- color:#171715;width:100%;min-height:100svh;
- font-family:"Noto Sans CJK SC","WenQuanYi Zen Hei","PingFang SC",system-ui,sans-serif;
- background:#141412;
-}
-.world-canvas{
- position:relative;width:100%;height:100svh;min-height:570px;overflow:hidden;isolation:isolate;
- background-color:var(--bone);background-image:var(--world-paper);background-size:330px 290px;
-}
-.world-ground{position:absolute;inset:0;z-index:0;pointer-events:none;
- background:
- radial-gradient(ellipse 45% 50% at 72% 35%,#fcfaf25d,transparent 100%),
- linear-gradient(123deg,#eae6dd 0%,#ddd7ca 41%,#bbb7ab 100%);
- mix-blend-mode:multiply}
-.world-photo{position:absolute;pointer-events:none;background-size:cover;background-position:center;
- filter:grayscale(1) contrast(1.27) sepia(.10)}
-.world-paper-left,.world-paper-top,.world-print,.world-stone,
-.world-torn-black,.world-torn-white,.world-torn-bottom{position:absolute;pointer-events:none}
-.world-paper-left,.world-paper-top,.world-torn-white{background:
- linear-gradient(160deg,#fffdf49c,#c9c3b3ac),var(--world-paper);
- background-size:cover,320px 300px;filter:contrast(1.08)}
-.world-print{background:var(--world-paper);background-size:260px 210px;filter:grayscale(1) contrast(1.7)}
-.world-word-cut{position:absolute;z-index:8;pointer-events:none;
- font-family:Impact,"Arial Black","Liberation Sans",sans-serif;
- font-weight:950;line-height:1;white-space:nowrap;color:#171815;
- letter-spacing:-.082em;opacity:.92;text-transform:uppercase;
- background-image:var(--world-ink),linear-gradient(90deg,#111211,#252421);
- background-size:980px auto,100% 100%;background-blend-mode:screen;
- -webkit-background-clip:text;background-clip:text;
- -webkit-text-fill-color:transparent;filter:contrast(1.5);
-}
-.world-brand{z-index:34;top:3.5%;left:3.6%;width:25%;display:flex;flex-direction:column;align-items:flex-start}
-.world-editorial{position:absolute;pointer-events:none}
-.world-editorial a{pointer-events:auto}
-.world-brand-name{color:#101110;display:block;font-size:clamp(17px,2.03vw,32px);
- font-weight:900;letter-spacing:-.075em;line-height:1.05}
-.world-brand-code{font:10px/1.7 ui-monospace,Consolas,monospace;letter-spacing:.27em;margin-top:3px}
-.world-brand-rule{width:26px;height:1px;background:#45413e;margin:13px 0}
-.world-brand-statement{font:clamp(7px,.72vw,11px)/1.9 ui-monospace,Consolas,monospace;letter-spacing:.17em}
-.world-brand-ideas{font:800 clamp(8px,.87vw,14px)/1.6 ui-monospace,Consolas,monospace;letter-spacing:.17em}
-.world-brand-cn{font-size:clamp(9px,.78vw,13px);letter-spacing:.08em;white-space:nowrap;margin-top:2px}
-.world-route-nav{z-index:50;position:absolute;top:3.3%;right:3.2%;
- display:flex;align-items:center;gap:clamp(11px,1.4vw,23px);
- font:700 clamp(9px,.75vw,13px)/1.4 ui-monospace,Consolas,monospace;letter-spacing:.13em;
- background:linear-gradient(90deg,transparent,#ebe8ddaf);padding:9px 10px}
-.world-route-nav a{color:#171716;text-decoration:none;border-bottom:1px solid transparent;padding:3px 0}
-.world-route-nav a:hover,.world-route-nav a[aria-current=page]{border-color:currentColor}
-.world-route-nav a:focus-visible{outline:2px solid currentColor}
-.world-top-micro{z-index:31;top:5.6%;right:2.8%;
- font:clamp(8px,.7vw,11px)/1.45 ui-monospace,Consolas,monospace;letter-spacing:.2em}
-.world-engraving{position:absolute;inset:0;width:100%;height:100%;z-index:27;
- pointer-events:none;overflow:visible;mix-blend-mode:multiply}
-.world-axis path{stroke:#292925;opacity:.25;stroke-width:.65;fill:none}
-.world-arc{stroke:#1f201c;stroke-width:1.12;opacity:.67;fill:none}
-.world-arc.thinner{stroke-width:.8;opacity:.57}
-.world-arc.finer{stroke-width:.48;opacity:.49}
-.world-dash{stroke:#1d201b;stroke-width:.65;opacity:.24;stroke-dasharray:6 9;fill:none}
-.world-target path,.world-target circle{stroke:#141514;stroke-width:.8;fill:#1d1e1b;opacity:.75}
-.world-archive{z-index:31;position:absolute;display:flex;flex-direction:column;gap:0;
- color:#1c1c1a;font:clamp(9px,.73vw,13px)/1.38 ui-monospace,Consolas,monospace;
- letter-spacing:.12em;text-shadow:0 1px 4px #f6f3e799}
-.world-archive-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#171817;
- left:-17px;top:4px;box-shadow:0 0 0 1px #ffffffe5}
-.world-archive b{font-size:1.15em;letter-spacing:0}
-.world-archive strong{font-size:.88em;font-weight:750}
-.world-archive-coords{font-size:.78em;margin-top:4px;letter-spacing:.04em}
-.world-grain{z-index:40;position:absolute;inset:0;pointer-events:none;
- background-image:var(--world-paper);background-size:310px 270px;
- mix-blend-mode:multiply;opacity:.12}
-.world-subtitle{z-index:35;display:flex;flex-direction:column;gap:5px}
-.world-small-en{font:clamp(12px,1.1vw,19px)/1.4 ui-monospace,Consolas,monospace;letter-spacing:.16em}
-.world-subtitle strong{font-size:clamp(16px,1.45vw,26px);font-weight:800;letter-spacing:.09em}
-.world-quote{z-index:35;display:flex;flex-direction:column;align-items:flex-start}
-.world-quote p{font-size:clamp(14px,1.25vw,22px);line-height:1.9;letter-spacing:.12em;margin:0 0 10px}
-.world-quote>span:not(.world-quote-line){font:clamp(9px,.78vw,14px)/1.65 ui-monospace,Consolas,monospace;letter-spacing:.16em}
-.world-quote-line{width:27px;height:1px;background:#bbb8ac;margin:0 0 17px}
-
-/* WITHIN: shadowed photographic typespace, not a separate game cave. */
-.m01-world-within .world-canvas{background-color:#161614;background-image:
- linear-gradient(90deg,#e7e2d9 0%,#c7c1b4 20%,#484740 40%,#151614 80%),var(--world-paper);
- background-blend-mode:multiply}
-.m01-world-within .world-ground{background:
- radial-gradient(ellipse 28% 45% at 70% 28%,#ede9d9b2,transparent 94%),
- linear-gradient(104deg,#f2eee8 0%,#dad4c9 23%,#5a5751 38%,#171714 58%,#1b1c19 100%);
- mix-blend-mode:normal}
-.world-photo-within-rock-left{
- z-index:2;left:-7%;top:21%;width:58%;height:62%;
- background-position:43% 50%;clip-path:polygon(0 3%,38% 0,66% 8%,73% 1%,94% 20%,100% 49%,85% 61%,94% 90%,45% 99%,19% 79%,0 86%);
- filter:grayscale(1) contrast(1.75) brightness(.83)}
-.world-photo-within-rock-rear{
- z-index:1;left:36%;top:-8%;width:61%;height:93%;
- background-position:50% 48%;clip-path:polygon(18% 0,95% 0,100% 83%,83% 100%,58% 91%,40% 97%,3% 78%,0 31%);
- filter:grayscale(1) contrast(1.9) brightness(.42)}
-.world-photo-within-rock-right{
- z-index:5;left:65%;top:-10%;width:53%;height:112%;
- background-position:25% 64%;clip-path:polygon(9% 0,100% 0,100% 100%,20% 100%,40% 79%,19% 62%,38% 37%,0 18%);
- filter:grayscale(1) contrast(2.1) brightness(.33)}
-.world-photo-within-peaks{
- z-index:6;left:-3%;top:21%;width:53%;height:49%;
- background-size:100% 100%;clip-path:polygon(0 23%,13% 16%,28% 35%,44% 16%,64% 35%,76% 10%,100% 44%,100% 100%,0 100%);
- filter:grayscale(1) contrast(1.8)}
-.world-photo-within-portrait-print{
- z-index:10;right:-7%;top:16%;width:24%;height:48%;
- background-position:41% 30%;clip-path:polygon(0 18%,77% 0,100% 13%,93% 100%,9% 88%);
- filter:grayscale(1) contrast(1.4) brightness(.52);opacity:.82;mix-blend-mode:luminosity}
-.m01-world-within .world-paper-left{
- z-index:7;left:-4%;top:-6%;width:27%;height:77%;
- clip-path:polygon(0 0,100% 0,90% 12%,100% 22%,79% 34%,92% 47%,60% 55%,72% 70%,40% 75%,59% 100%,0 91%);
- opacity:.95}
-.m01-world-within .world-paper-top{
- z-index:2;left:1%;top:-8%;width:60%;height:39%;
- clip-path:polygon(0 0,100% 0,80% 43%,73% 81%,52% 64%,38% 94%,17% 63%,0 100%);
- opacity:.62}
-.m01-world-within .world-print-one{
- z-index:12;left:14%;top:22%;width:29%;height:47%;
- clip-path:polygon(0 12%,19% 0,94% 18%,100% 100%,6% 87%);
- opacity:.18;transform:rotate(-13deg)}
-.m01-world-within .world-print-two{
- z-index:8;left:42%;top:49%;width:38%;height:30%;
- clip-path:polygon(0 10%,80% 0,100% 55%,69% 95%,10% 100%);
- opacity:.12;transform:rotate(14deg)}
-.m01-world-within .world-word-cut{
- top:23%;left:12%;font-size:clamp(170px,20.2vw,430px);letter-spacing:-.1em;
- transform:rotate(-7deg) scaleX(.87) scaleY(1.28);transform-origin:left center;opacity:.92;
- z-index:9;mix-blend-mode:multiply;
-}
-.world-beam{z-index:15;position:absolute;left:58%;top:-6%;width:28%;height:88%;pointer-events:none;
- clip-path:polygon(29% 0,54% 0,100% 100%,0 100%);
- background:linear-gradient(180deg,#fffaf0d9,#f9f6e58b 19%,#e2decc20 75%,transparent 100%);
- filter:blur(8px);mix-blend-mode:screen;opacity:.82}
-.world-beam span{position:absolute;height:100%;width:2px;background:#fff9ee;opacity:.28;transform:rotate(8deg)}
-.world-beam span:nth-child(1){left:33%}.world-beam span:nth-child(2){left:59%}.world-beam span:nth-child(3){left:79%}
-.world-stone{z-index:17;background:linear-gradient(140deg,#1b1b1a,#696862,#141513);
- filter:grayscale(1) contrast(1.3)}
-.world-stone-one{left:30%;bottom:-2%;width:41%;height:24%;
- clip-path:polygon(0 58%,19% 43%,39% 55%,51% 19%,80% 38%,100% 2%,100% 100%,0 100%)}
-.world-stone-two{right:-5%;bottom:-3%;width:44%;height:40%;
- clip-path:polygon(0 82%,16% 40%,35% 45%,56% 6%,82% 17%,100% 0,100% 100%,0 100%);opacity:.87}
-.world-stone-three{left:-6%;bottom:-6%;width:44%;height:28%;
- clip-path:polygon(0 30%,32% 53%,46% 12%,71% 48%,100% 35%,100% 100%,0 100%)}
-.world-observer{position:absolute;z-index:21;left:59%;bottom:-1%;height:37%;width:auto;filter:contrast(1.3) brightness(.82) drop-shadow(-6px 2px 11px #0809089e)}
-.m01-world-within .world-archive{color:#ece8df;text-shadow:0 1px 7px #080808}
-.m01-world-within .world-archive-dot{background:#ded7c7}
-.m01-world-within .world-archive:nth-of-type(2){color:#dedad0}
-.world-within-subtitle{top:63%;left:9.6%;color:#171715}
-.world-within-quote{left:4%;bottom:8.5%;color:#171714}
-.world-within-quote p{font-size:clamp(12px,1.04vw,17px);line-height:1.8}
-.world-right-maxim{right:4%;top:47%;z-index:32;
- color:#eee9df;font:clamp(9px,.74vw,12px)/1.6 ui-monospace,Consolas,monospace;letter-spacing:.17em}
-.m01-world-within .world-top-micro{color:#eeeae0}
-.m01-world-within .world-route-nav{background:linear-gradient(90deg,transparent,#121210b6)}
-.m01-world-within .world-route-nav a{color:#f1efe8}
-.m01-world-within .world-engraving{mix-blend-mode:screen}
-.m01-world-within .world-arc{stroke:#f5f0e6;opacity:.38}
-.m01-world-within .world-axis path,.m01-world-within .world-target path{stroke:#f3ead9;opacity:.24}
-
-/* BEYOND: long photographic horizon across a torn editorial sheet. */
-.m01-world-beyond .world-canvas{background:#ece7da}
-.m01-world-beyond .world-ground{background:
- linear-gradient(90deg,#ede8de 0%,#faf8f1 26%,#cecdc3 62%,#f5f4ee 100%)}
-.world-photo-beyond-sky{
- z-index:1;left:35%;top:-8%;width:75%;height:73%;
- background-position:50% 49%;opacity:.65;
- filter:grayscale(1) contrast(1.05) brightness(1.9)}
-.world-photo-beyond-mountain{
- z-index:5;left:-4%;top:25%;width:69%;height:59%;background-position:50% 43%;
- filter:grayscale(1) contrast(1.8) brightness(.90);
- clip-path:polygon(0 4%,22% 5%,37% 16%,42% 11%,58% 5%,76% 14%,91% 0,100% 28%,100% 100%,0 100%)}
-.world-photo-beyond-ridges{
- z-index:8;left:0;top:20%;width:60%;height:56%;background-size:100% 100%;
- clip-path:polygon(0 27%,18% 18%,35% 35%,52% 15%,68% 39%,80% 4%,100% 40%,100% 100%,0 100%);
- filter:grayscale(1) contrast(1.9)}
-.world-photo-beyond-horizon{
- z-index:3;left:36%;top:35%;width:77%;height:45%;background-position:30% 76%;
- filter:grayscale(1) contrast(1.7) brightness(1.25);opacity:.69;
- clip-path:polygon(0 21%,27% 5%,55% 10%,67% 0,100% 9%,100% 100%,0 100%)}
-.world-photo-beyond-city{
- z-index:9;right:-4%;bottom:4%;width:54%;height:53%;background-position:center 43%;
- filter:grayscale(1) contrast(1.2) brightness(1.22);
- clip-path:polygon(0 13%,11% 0,100% 0,100% 85%,87% 96%,66% 85%,44% 100%,9% 94%)}
-.world-photo-beyond-cityprint{
- z-index:20;left:33%;bottom:1%;width:14%;height:28%;
- background-position:50% 50%;filter:grayscale(1) contrast(1.8);
- clip-path:polygon(4% 0,96% 7%,100% 94%,0 100%);transform:rotate(-7deg)}
-.m01-world-beyond .world-paper-left{
- z-index:3;left:-3%;top:-4%;width:46%;height:43%;
- clip-path:polygon(0 0,100% 0,100% 29%,79% 40%,81% 80%,45% 87%,0 100%)}
-.m01-world-beyond .world-paper-top{
- z-index:4;left:35%;top:-1%;width:21%;height:32%;
- clip-path:polygon(0 0,100% 0,96% 100%,27% 75%,0 82%)}
-.m01-world-beyond .world-print-one{
- z-index:6;left:4%;top:23%;width:36%;height:34%;
- clip-path:polygon(0 15%,78% 0,100% 14%,90% 97%,7% 100%);transform:rotate(-6deg);opacity:.19}
-.m01-world-beyond .world-print-two{
- z-index:12;left:73%;top:18%;width:8%;height:27%;
- clip-path:polygon(0 0,100% 10%,85% 100%,15% 90%);transform:rotate(8deg);opacity:.28}
-.m01-world-beyond .world-word-cut{
- z-index:10;top:20%;left:27%;font-size:clamp(160px,19.2vw,420px);
- transform:scaleX(.90) scaleY(1.08);transform-origin:left center;
- mix-blend-mode:multiply;opacity:.85}
-.world-torn-black{
- z-index:17;left:-3%;bottom:-5%;width:50%;height:51%;
- clip-path:polygon(0 0,18% 8%,33% 1%,43% 14%,57% 7%,67% 22%,86% 24%,100% 45%,86% 60%,93% 77%,69% 74%,65% 100%,0 100%);
- background:linear-gradient(160deg,#0a0b0b,#272823 52%,#060607);
-}
-.world-torn-bottom{
- z-index:15;right:-4%;bottom:-6%;width:55%;height:25%;
- background:linear-gradient(130deg,#262724,#6e6b65 30%,#dedad0 90%),var(--world-paper);
- clip-path:polygon(0 46%,9% 41%,20% 60%,27% 31%,39% 41%,52% 14%,68% 39%,78% 18%,100% 8%,100% 100%,0 100%);
- filter:contrast(1.4)}
-.world-torn-white{
- z-index:16;left:15%;bottom:-8%;width:50%;height:29%;
- clip-path:polygon(0 73%,9% 50%,24% 65%,33% 20%,44% 45%,61% 19%,70% 56%,87% 17%,100% 24%,100% 100%,0 100%);
- opacity:.93}
-.world-beyond-tag{z-index:32;top:12%;left:73.5%;display:flex;flex-direction:column;gap:5px}
-.world-beyond-tag>span{font:clamp(13px,1.13vw,21px)/1.35 ui-monospace,Consolas,monospace;letter-spacing:.14em}
-.world-beyond-tag>i{width:30px;height:1px;background:#282721;margin:4px 0}
-.world-beyond-tag strong{font-size:clamp(12px,1.06vw,18px);letter-spacing:.08em}
-.world-beyond-quote{left:3.4%;bottom:9%;color:#faf7ee}
-.world-beyond-quote p{font-size:clamp(19px,1.55vw,26px);letter-spacing:.12em;line-height:1.7}
-.world-beyond-quote>span:not(.world-quote-line){font-size:clamp(10px,.9vw,14px)}
-.world-beyond-quote .world-quote-line{background:#eee7dc;margin:4px 0 14px}
-.m01-world-beyond .world-top-micro{display:none}
-
-/* Tablets: editorial layout rebalanced without stretching photo sources. */
-@media(min-width:701px) and (max-width:1000px){
- .world-brand{top:4%;left:4%}.world-brand-ideas{font-size:9px}
- .world-route-nav{top:3%;right:3%;gap:10px}
- .world-word-cut{letter-spacing:-.095em}
- .m01-world-within .world-word-cut{left:9%;top:28%;font-size:21vw}
- .m01-world-beyond .world-word-cut{left:17%;top:25%;font-size:20vw}
- .world-beyond-tag{left:72%;top:16%}
- .world-within-subtitle{top:67%;left:7%}
- .world-quote p{font-size:15px}
- .world-archive{font-size:10px}
-}
-/* Mobile is a DISTINCT portrait composition, not the desktop stretched to 390×844. */
-@media(max-width:700px){
- .world-canvas{height:100svh;min-height:650px}
- .world-route-nav{top:2.7%;right:4%;gap:11px;padding:7px 2px 7px 5px;
- font-size:9px;letter-spacing:0;background:linear-gradient(90deg,transparent,#e8e5dbe0)}
- .world-brand{top:2.8%;left:5%;width:40%}
- .world-brand-name{font-size:18px}
- .world-brand-code{font-size:8px}
- .world-brand-rule{margin:8px 0}
- .world-brand-statement{font-size:8px}
- .world-brand-ideas{font-size:7.5px;white-space:nowrap}
- .world-brand-cn{font-size:8px;white-space:normal}
- .world-archive{font-size:8px}
- .world-archive-coords{font-size:7px}
- .world-archive-dot{width:5px;height:5px;left:-8px}
- .world-top-micro{display:none}
- .world-engraving{opacity:.68}
- .world-subtitle strong{font-size:15px}
- .world-small-en{font-size:10px;letter-spacing:.09em}
- .world-grain{opacity:.095}
- .m01-world-within .world-paper-left{left:-4%;top:-2%;width:72%;height:34%}
- .m01-world-within .world-paper-top{left:5%;top:0%;width:78%;height:28%}
- .world-photo-within-rock-left{left:-18%;top:24%;width:108%;height:55%}
- .world-photo-within-rock-rear{left:18%;top:8%;width:100%;height:85%}
- .world-photo-within-rock-right{left:61%;top:8%;width:55%;height:80%}
- .world-photo-within-peaks{left:-20%;top:40%;width:100%;height:30%}
- .world-photo-within-portrait-print{right:-8%;top:25%;width:30%;height:29%}
- .m01-world-within .world-word-cut{left:1%;top:31%;font-size:24vw;transform:rotate(-8deg) scaleX(.92) scaleY(1.9);z-index:10}
- .world-beam{left:46%;top:9%;width:60%;height:73%}
- .world-observer{left:52%;bottom:8%;height:28%}
- .world-stone-one{left:8%;bottom:0;width:85%;height:20%}
- .world-stone-two{right:-15%;bottom:0%;width:78%;height:31%}
- .world-stone-three{left:-15%;width:72%;height:20%}
- .world-within-subtitle{top:65%;left:6%;color:#faf6e9;text-shadow:0 1px 5px #111}
- .world-within-quote{left:5%;bottom:4.5%;color:#e9e5dc;text-shadow:0 1px 3px #111}
- .world-within-quote p{font-size:11px;line-height:1.65}
- .world-within-quote>span:not(.world-quote-line){font-size:8px}
- .world-right-maxim{right:4%;top:67%;font-size:7px}
- .m01-world-within .world-archive:nth-last-of-type(1){display:none}
- .world-photo-beyond-sky{left:13%;top:5%;width:115%;height:58%}
- .world-photo-beyond-mountain{left:-32%;top:32%;width:145%;height:43%}
- .world-photo-beyond-ridges{left:-18%;top:34%;width:110%;height:30%}
- .world-photo-beyond-horizon{left:5%;top:49%;width:115%;height:32%}
- .world-photo-beyond-city{right:-28%;bottom:17%;width:95%;height:39%}
- .world-photo-beyond-cityprint{left:29%;bottom:7%;width:36%;height:15%}
- .m01-world-beyond .world-paper-left{width:87%;height:28%}
- .m01-world-beyond .world-paper-top{left:21%;width:49%;height:22%}
- .m01-world-beyond .world-word-cut{left:1%;top:29%;font-size:21vw;letter-spacing:-.12em;
- transform:scaleX(.95) scaleY(1.54);z-index:12}
- .world-beyond-tag{left:53%;top:16%;z-index:31}
- .world-beyond-tag>span{font-size:11px}
- .world-beyond-tag strong{font-size:10px}
- .world-torn-black{left:-7%;width:100%;bottom:-4%;height:38%}
- .world-torn-white{left:28%;bottom:0%;width:65%;height:13%}
- .world-torn-bottom{right:-17%;width:65%;height:20%}
- .world-beyond-quote{left:6%;bottom:5%}
- .world-beyond-quote p{font-size:14px}
- .world-beyond-quote>span:not(.world-quote-line){font-size:8px}
- .m01-world-beyond .world-archive:nth-last-of-type(1){display:none}
-}
-@media(prefers-reduced-motion:reduce){
- .world-canvas *, .world-canvas *:before,.world-canvas *:after{animation:none!important;transition:none!important}
-}
-/* Visual correction: photographic observer and layered torn-caption paper.
-   The observer is a clipped photograph, not a vector character. */
-.m01-world-within .world-caption-paper{
-  position:absolute;z-index:18;left:-5%;bottom:-2%;width:49%;height:40%;
-  clip-path:polygon(0 7%,12% 5%,17% 0,28% 8%,36% 3%,49% 15%,57% 9%,72% 20%,81% 17%,100% 39%,91% 58%,89% 100%,0 100%);
-  background:linear-gradient(143deg,#f1ece2,#cbc6b8 77%,#a9a79c),var(--world-paper);
-  background-blend-mode:multiply;background-size:cover,340px 320px;
-  filter:grayscale(1) contrast(1.1);opacity:.97;
-}
-.m01-world-within .world-word-cut{
-  top:19.5%;left:14%;font-size:clamp(175px,18.5vw,390px);
-  transform:rotate(-7deg) scaleX(.93) scaleY(1.25);
-  z-index:13;opacity:.90;
-}
-.m01-world-within .world-beam{
-  left:62%;width:18%;filter:blur(24px);opacity:.53;
-  clip-path:polygon(28% 0,62% 0,100% 100%,0 100%);
-}
-.m01-world-within .world-observer{
- left:61%;bottom:-2%;width:auto;height:35%;z-index:23;
- object-fit:contain;filter:grayscale(1) contrast(1.4) brightness(.78)
- drop-shadow(-4px 5px 9px #0708078c);
-}
-.m01-world-within .world-quote{color:#1c1c1b;text-shadow:none}
-.m01-world-within .world-subtitle{color:#171715;text-shadow:none}
-.m01-world-within .world-photo-within-rock-rear{
- filter:grayscale(1) contrast(2.1) brightness(.32)}
-.m01-world-within .world-photo-within-rock-right{
- filter:grayscale(1) contrast(2.1) brightness(.24)}
-.m01-world-within .world-stone-one{z-index:20;opacity:.9}
-.m01-world-within .world-stone-two{z-index:20}
-.m01-world-beyond .world-photo-beyond-sky{
-  filter:grayscale(1) contrast(.8) brightness(2.2);
-  opacity:.67}
-.m01-world-beyond .world-photo-beyond-city{
- bottom:17%;height:36%;right:-4%;width:49%;z-index:10;opacity:.86;
- clip-path:polygon(0 32%,15% 14%,32% 23%,49% 8%,69% 18%,86% 0,100% 18%,100% 100%,0 100%);
- filter:grayscale(1) contrast(1.13) brightness(1.26)}
-.m01-world-beyond .world-photo-beyond-mountain{
- z-index:11;clip-path:polygon(0 9%,22% 15%,33% 5%,52% 20%,69% 11%,77% 3%,88% 27%,100% 46%,100% 100%,0 100%);
- filter:grayscale(1) contrast(1.52) brightness(.87)}
-.m01-world-beyond .world-photo-beyond-ridges{
- opacity:.55;z-index:10;filter:grayscale(1) contrast(1.4) brightness(.82)}
-.m01-world-beyond .world-photo-beyond-horizon{opacity:.88}
-.m01-world-beyond .world-word-cut{z-index:10;font-size:clamp(160px,19.7vw,420px)}
-@media(max-width:700px){
- .m01-world-within .world-caption-paper{left:-14%;bottom:-1%;width:83%;height:34%}
- .m01-world-within .world-word-cut{left:1%;top:32%;font-size:24vw;
- transform:rotate(-7deg) scaleX(.95) scaleY(1.7)}
- .m01-world-within .world-observer{left:54%;height:29%;bottom:3%}
- .m01-world-within .world-beam{left:45%;width:43%;top:9%;height:79%}
- .m01-world-within .world-within-subtitle{top:66%;color:#171715;text-shadow:none}
- .m01-world-within .world-within-quote{left:5%;bottom:4%;color:#21221e;text-shadow:none}
- .m01-world-beyond .world-photo-beyond-city{right:-22%;height:27%;bottom:18%;width:95%}
- .m01-world-beyond .world-word-cut{font-size:21vw}
+.m01-world-world {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
 }
 
-/* Screenshot review round 3: resolve text/ground collision and skyline seams. */
-.m01-world-within .world-caption-paper{
- height:51%;width:48%;bottom:-1%;left:-4%;
- clip-path:polygon(0 11%,12% 7%,21% 10%,29% 2%,39% 9%,48% 4%,58% 14%,72% 10%,82% 21%,100% 36%,88% 58%,84% 100%,0 100%);
- background:linear-gradient(138deg,#f0ece2e6,#d6d0c4eb),var(--world-paper);
- background-blend-mode:multiply;background-size:cover,250px 210px;
-}
-.m01-world-within .world-within-subtitle{z-index:35;left:9.6%;top:63%;color:#151513}
-.m01-world-within .world-within-quote{left:4%;bottom:8%;z-index:35;color:#25231f}
-.m01-world-within .world-word-cut{
- background-image:var(--world-ink),url("./world-assets/mountains.webp");
- background-size:830px 700px,100% 100%;
- background-blend-mode:screen;
- filter:grayscale(1) contrast(2.0);
-}
-.m01-world-beyond .world-word-cut{
- background-image:var(--world-ink),url("./world-assets/clouds.webp");
- background-size:990px 760px,100% 100%;
- background-blend-mode:multiply;
- filter:grayscale(1) contrast(1.9)
-}
-.m01-world-beyond .world-photo-beyond-city{
- bottom:15%;height:38%;right:-4%;width:50%;
- -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 19%,#000 96%),linear-gradient(to top,transparent 0%,#000 21%,#000 92%);
- mask-image:linear-gradient(to right,transparent 0%,#000 19%,#000 96%),linear-gradient(to top,transparent 0%,#000 21%,#000 92%);
- -webkit-mask-composite:source-in;mask-composite:intersect;
- filter:grayscale(1) contrast(.91) brightness(1.48);
- opacity:.81;
-}
-.m01-world-beyond .world-photo-beyond-horizon{z-index:8;opacity:.82}
-.m01-world-beyond .world-photo-beyond-mountain{z-index:11;opacity:.93}
-.m01-world-beyond .world-torn-white{
- opacity:.88;background-image:linear-gradient(137deg,#e9e6d9,#bab6ab),var(--world-paper);
- background-blend-mode:multiply;
-}
-.m01-world-beyond .world-torn-bottom{z-index:16;opacity:.77}
-@media(max-width:700px){
- .m01-world-within .world-caption-paper{width:88%;height:44%;bottom:-1%;left:-17%}
- .m01-world-within .world-within-subtitle{left:6%;top:66%}
- .m01-world-within .world-within-quote{left:5%;bottom:4%}
- .m01-world-beyond .world-photo-beyond-city{width:95%;height:30%;right:-24%;bottom:16%}
+.world-canvas {
+  position: relative;
+  width: min(100vw, 177.77777778svh);
+  height: min(100vh, 56.25vw);
+  height: min(100svh, 56.25vw);
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
 }
 
-/* Legibility correction from final screenshot: retain full live headline contours.
-   Grain belongs inside dark ink, never erases whole glyphs into the sky. */
-.m01-world-within .world-word-cut{
- background-image:var(--world-ink),linear-gradient(90deg,#11110f,#292925);
- background-size:990px auto,100% 100%;background-blend-mode:screen;
- filter:contrast(1.5);transform:rotate(-7deg) scaleX(.80) scaleY(1.22);
+.world-reference-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
 }
-.m01-world-beyond .world-word-cut{
- background-image:var(--world-ink),linear-gradient(90deg,#171816,#252521);
- background-size:1010px auto,100% 100%;background-blend-mode:screen;
- filter:contrast(1.55);z-index:13;opacity:.91;
+
+.world-route-nav {
+  position: absolute;
+  inset: 0;
 }
-.m01-world-beyond .world-photo-beyond-mountain{z-index:9}
-@media(max-width:700px){
- .m01-world-within .world-word-cut{transform:rotate(-7deg) scaleX(.95) scaleY(1.7)}
+
+.world-hotspot {
+  position: absolute;
+  display: block;
+  background: transparent;
+  cursor: pointer;
+}
+
+.world-home-hotspot {
+  top: 2%;
+  left: 3%;
+  width: 10.5%;
+  height: 12%;
+}
+
+.world-switch-within {
+  top: 24%;
+  left: 8%;
+  width: 48%;
+  height: 48%;
+}
+
+.world-switch-beyond {
+  top: 31%;
+  left: 25%;
+  width: 61%;
+  height: 43%;
+}
+
+.world-hotspot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
 }
