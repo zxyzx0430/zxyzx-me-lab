@@ -1,13 +1,19 @@
 import { M01Hero } from '../modules/m01/M01Hero';
 import { usePageNavigation } from '../shared/navigation/usePageNavigation';
 import { motion } from 'motion/react';
+import { WorldStatic, getWorldFromQuery, worldLink } from '../modules/m01/WorldStatic';
 export function App() {
+  const world = getWorldFromQuery();
+  return world ? <WorldStatic world={world}/> : <OriginalApp/>;
+}
+function OriginalApp() {
+  const staticPreview = new URLSearchParams(location.search).has('static');
   usePageNavigation(['top', 'world']);
   return <>
     <a className="skip" href="#world">跳过首页开场</a>
     <header className="nav" aria-label="站点导航">
       <a href="#top" className="brand" aria-label="忠心于中心，返回开场"><span className="brand-name">忠心于中心</span><span className="brand-small">ZXYZX.ME</span></a>
-      <nav className="navitems" aria-label="个人站导航"><span className="nav-note">PERSONAL DIGITAL SPACE / 2026</span><a href="#world">WORK</a><a href="#world-details">ABOUT</a></nav>
+      <nav className="navitems" aria-label="个人站导航"><span className="nav-note">PERSONAL DIGITAL SPACE / 2026</span>{staticPreview ? <><a href="#world">WORK</a><a href="#world-details">ABOUT</a></> : <><a href={worldLink('within')}>WITHIN</a><a href={worldLink('beyond')}>BEYOND</a></>}</nav>
     </header>
     <main>
       <M01Hero />
