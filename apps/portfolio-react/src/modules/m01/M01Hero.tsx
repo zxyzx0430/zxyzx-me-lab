@@ -4,6 +4,7 @@ import { Portrait } from './components/Portrait';
 import { PosterTypography } from './components/PosterTypography';
 import { PosterDetails } from './components/PosterDetails';
 import { TrackLines } from './components/TrackLines';
+import { worldLink, type WorldName } from './WorldStatic';
 import './m01.css';
 import './cinema.css';
 
@@ -13,7 +14,7 @@ export function artboardScale(width: number, height: number): number {
 }
 const isStaticPreview = () => new URLSearchParams(window.location.search).has('static');
 
-export function M01Hero() {
+export function M01Hero({ onWorldEnter }: { onWorldEnter?: (world: WorldName) => void }) {
   const root = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(() => artboardScale(window.innerWidth, window.innerHeight));
   const staticPreview = isStaticPreview();
@@ -179,6 +180,20 @@ export function M01Hero() {
           <PosterDetails/><Portrait/><PosterTypography/><TrackLines/>
         </div>
       </div>
+      {onWorldEnter && !staticPreview && (
+        <nav className="cinema-hotspot-artboard" style={{ '--art-scale': scale } as CSSProperties} aria-label="进入探索世界">
+          <a className="cinema-hotspot cinema-hotspot-within" href={worldLink('within')} data-testid="cinema-hotspot-within"
+            aria-label="向内进入 WITHIN 场景" onClick={(event) => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault(); onWorldEnter('within');
+            }} />
+          <a className="cinema-hotspot cinema-hotspot-beyond" href={worldLink('beyond')} data-testid="cinema-hotspot-beyond"
+            aria-label="向外进入 BEYOND 场景" onClick={(event) => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault(); onWorldEnter('beyond');
+            }} />
+        </nav>
+      )}
       <h1 className="sr-only">向内寻找中心，向外探寻世界。</h1>
       <div className="scene-count" aria-hidden="true"><i/><i/><i/><i/></div>
       <a href="#world" className="enter" aria-label="向下滚动，探索作品世界"><span>SCROLL TO EXPLORE</span><span className="arrow">↙</span></a>

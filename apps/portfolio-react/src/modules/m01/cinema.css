@@ -34,6 +34,12 @@
 @keyframes cinema-film-breath{from{opacity:.025}to{opacity:.052}}
 .cinema-track-dot{opacity:0;fill:#fff;stroke:none;pointer-events:none;
   r:3px;filter:drop-shadow(0 0 2px #ffffffaa)}
+.cinema-hotspot-artboard{position:absolute;z-index:9;left:50%;top:50%;width:1672px;height:941px;
+  transform:translate(-50%,-50%) scale(var(--art-scale));transform-origin:center;pointer-events:none}
+.cinema-hotspot{position:absolute;display:block;background:transparent;pointer-events:auto;cursor:pointer}
+.cinema-hotspot:focus-visible{outline:2px solid #3158ff;outline-offset:-5px}
+.cinema-hotspot-within{left:72px;top:119px;width:451px;height:297px}
+.cinema-hotspot-beyond{left:133px;top:422px;width:487px;height:316px}
 /* Unified left artwork motion: mountain and title are visually one layer.
    All offsets are zero at rest; no static poster geometry is modified. */
 @media(min-width:901px) and (pointer:fine){
@@ -50,6 +56,7 @@
 @media(max-width:900px){
   .cinema-stage{transform-origin:70% 46%}
   .m01-root.cinematic-motion .cinema-photo-light{opacity:.015}
+  .cinema-hotspot-artboard{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   .cinema-stage{will-change:auto}

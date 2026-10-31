@@ -97,6 +97,7 @@ function ImageLayer({
       data-scene-layer={node.id}
       data-layer-source-id={node.sourceId}
       data-layer-label={node.label}
+      data-layer-category={node.category}
       data-layer-parent={node.parentId}
       data-scene-groups={groupIds.join(' ')}
       data-layer-depth={node.depth}
@@ -148,7 +149,11 @@ function FillUnderLayer({
 const initialTransforms = (nodes: SceneNode[]): Record<string, SceneTransform> =>
   Object.fromEntries(flattenSceneNodes(nodes).map((node) => [node.id, { ...defaultSceneTransform }]));
 
-export function WorldLayered({ world }: { world: WorldName }) {
+export function WorldLayered({ world, cinemaHidden = false, cinemaInert = false }: {
+  world: WorldName;
+  cinemaHidden?: boolean;
+  cinemaInert?: boolean;
+}) {
   const manifest = worldSceneManifests[world];
   const canvasRef = useRef<HTMLElement>(null);
   const flatNodes = useMemo(() => flattenSceneNodes(manifest.nodes), [manifest]);
@@ -274,7 +279,14 @@ export function WorldLayered({ world }: { world: WorldName }) {
   } satisfies CSSProperties;
 
   return (
-    <main className={`m01-world-world m01-world-${world} m01-world-layered${alphaPreview && inspector ? ' is-alpha-preview' : ''}`} data-background-plate-status={manifest.backgroundPlateStatus}>
+    <main
+      className={`m01-world-world m01-world-${world} m01-world-layered${alphaPreview && inspector ? ' is-alpha-preview' : ''}`}
+      data-background-plate-status={manifest.backgroundPlateStatus}
+      data-cinema-stage={cinemaHidden ? 'preload' : 'visible'}
+      aria-hidden={cinemaHidden || cinemaInert || undefined}
+      inert={cinemaHidden || cinemaInert || undefined}
+      style={cinemaHidden ? { visibility: 'hidden', opacity: 0 } : undefined}
+    >
       <figure
         ref={canvasRef}
         className="world-canvas"
@@ -283,6 +295,7 @@ export function WorldLayered({ world }: { world: WorldName }) {
           ? 'WITHIN React 分层场景：按前后景和语义图层重组原始像素素材。'
           : 'BEYOND React 分层场景：按山脉、城市云层、纸张、标题和测绘图层重组原始像素素材。'}
         data-layered-scene={world}
+        data-testid={`world-canvas-${world}`}
         data-inspector={inspector ? 'true' : 'false'}
       >
         {visibleReference && <img className="world-reference-image" src={manifest.reference} alt="" aria-hidden="true" draggable={false} width="1536" height="864" />}

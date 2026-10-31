@@ -20,6 +20,10 @@ export function usePageNavigation(ids: readonly string[]) {
     let active: gsap.core.Timeline | null = null;
     let lockUntil = 0, wheelAccum = 0, lastWheel = 0;
     let touchStart: { x: number; y: number } | null = null;
+    // The film transition prevents native scrolling, but that does not stop
+    // this hook's own window listeners from receiving the same input events.
+    // Treat the presence of the transition route as a global navigation lock.
+    const cinemaTransitionActive = () => !!document.querySelector('[data-cinema-route]');
 
     const scrollExact = (target: HTMLElement) =>
       window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY, behavior: 'instant' });
@@ -85,6 +89,7 @@ export function usePageNavigation(ids: readonly string[]) {
       return true;
     };
     const wheel = (e: WheelEvent) => {
+      if (cinemaTransitionActive()) return;
       if (e.ctrlKey || e.metaKey || e.altKey || isEditable(e.target)) return;
       const delta = normalizedWheel(e.deltaY, e.deltaMode, innerHeight);
       if (!delta) return;
@@ -101,6 +106,11 @@ export function usePageNavigation(ids: readonly string[]) {
       }
     };
     const key = (e: KeyboardEvent) => {
+      if (cinemaTransitionActive()) {
+        if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(e.key) &&
+          !isEditable(e.target)) e.preventDefault();
+        return;
+      }
       if (e.repeat || e.altKey || e.ctrlKey || e.metaKey || isEditable(e.target) ||
         (e.target instanceof Element && e.target.closest('a,button'))) return;
       const dir = ['ArrowDown', 'PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey) ? 1 :
@@ -114,9 +124,11 @@ export function usePageNavigation(ids: readonly string[]) {
       }
     };
     const touchBegin = (e: TouchEvent) => {
+      if (cinemaTransitionActive()) { touchStart = null; return; }
       if (e.touches.length === 1) touchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
     };
     const touchMove = (e: TouchEvent) => {
+      if (cinemaTransitionActive()) { touchStart = null; return; }
       if (!touchStart || e.touches.length !== 1 || isEditable(e.target)) return;
       const t = e.touches[0], deltaY = touchStart.y - t.clientY;
       const index = current(), dir = Math.sign(deltaY);
@@ -124,6 +136,7 @@ export function usePageNavigation(ids: readonly string[]) {
         index + dir >= 0 && index + dir < ids.length) e.preventDefault();
     };
     const touchEnd = (e: TouchEvent) => {
+      if (cinemaTransitionActive()) { touchStart = null; return; }
       if (!touchStart || !e.changedTouches[0]) return;
       const t = e.changedTouches[0];
       const dir = swipeDirection(touchStart.y - t.clientY, t.clientX - touchStart.x);
@@ -131,6 +144,7 @@ export function usePageNavigation(ids: readonly string[]) {
       if (dir && !active && performance.now() >= lockUntil) go(current() + dir);
     };
     const click = (e: MouseEvent) => {
+      if (cinemaTransitionActive()) return;
       const anchor = (e.target instanceof Element ? e.target.closest('a[href^="#"]') : null) as HTMLAnchorElement | null;
       if (!anchor || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const id = decodeURIComponent(anchor.hash.slice(1));

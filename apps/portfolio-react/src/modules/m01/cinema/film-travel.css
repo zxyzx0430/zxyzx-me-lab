@@ -1,0 +1,92 @@
+.m01-cinema-transition {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: all;
+  touch-action: none;
+}
+
+.m01-cinema-curtain {
+  position: absolute;
+  top: -30vh;
+  left: -150vw;
+  width: 300vw;
+  height: 160vh;
+  overflow: hidden;
+  /* Organic fallback contour for engines without SVG mask support. */
+  clip-path: polygon(
+    0 0, 100% 0, 100% 7%, 99.4% 15%, 100% 23%, 99.1% 32%, 99.7% 41%,
+    98.9% 50%, 99.6% 59%, 99.2% 68%, 100% 77%, 99.1% 86%, 99.7% 94%, 98.9% 100%,
+    0 100%, 0.4% 93%, 0 84%, 0.7% 75%, 0.2% 66%, 0.8% 56%, 0.1% 47%,
+    0.6% 38%, 0 29%, 0.8% 20%, 0.2% 11%, 0.5% 4%
+  );
+  transform-origin: center;
+  will-change: transform;
+  background-repeat: no-repeat;
+}
+
+/* Low-frequency paper fibers disturb the perimeter into a torn contour,
+   without the repeated triangular teeth that read as a graphic saw blade. */
+@supports ((mask-image: url("data:image/svg+xml;base64,PHN2Zy8+")) or (-webkit-mask-image: url("data:image/svg+xml;base64,PHN2Zy8+"))) {
+  .m01-cinema-curtain {
+    clip-path: none;
+    mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjA4JyBoZWlnaHQ9JzEzODInIHZpZXdCb3g9JzAgMCA0NjA4IDEzODInPjxkZWZzPjxmaWx0ZXIgaWQ9J3RlYXInIHg9Jy01JScgeT0nLTUlJyB3aWR0aD0nMTEwJScgaGVpZ2h0PScxMTAlJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nLjAwOCAuMDEyJyBudW1PY3RhdmVzPScyJyBzZWVkPScxMycgcmVzdWx0PSdub2lzZScvPjxmZURpc3BsYWNlbWVudE1hcCBpbj0nU291cmNlR3JhcGhpYycgaW4yPSdub2lzZScgc2NhbGU9JzMyJyB4Q2hhbm5lbFNlbGVjdG9yPSdSJyB5Q2hhbm5lbFNlbGVjdG9yPSdHJy8+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSc0NjA4JyBoZWlnaHQ9JzEzODInIGZpbGw9J3doaXRlJyBmaWx0ZXI9J3VybCgjdGVhciknLz48L3N2Zz4=");
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjA4JyBoZWlnaHQ9JzEzODInIHZpZXdCb3g9JzAgMCA0NjA4IDEzODInPjxkZWZzPjxmaWx0ZXIgaWQ9J3RlYXInIHg9Jy01JScgeT0nLTUlJyB3aWR0aD0nMTEwJScgaGVpZ2h0PScxMTAlJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nLjAwOCAuMDEyJyBudW1PY3RhdmVzPScyJyBzZWVkPScxMycgcmVzdWx0PSdub2lzZScvPjxmZURpc3BsYWNlbWVudE1hcCBpbj0nU291cmNlR3JhcGhpYycgaW4yPSdub2lzZScgc2NhbGU9JzMyJyB4Q2hhbm5lbFNlbGVjdG9yPSdSJyB5Q2hhbm5lbFNlbGVjdG9yPSdHJy8+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSc0NjA4JyBoZWlnaHQ9JzEzODInIGZpbGw9J3doaXRlJyBmaWx0ZXI9J3VybCgjdGVhciknLz48L3N2Zz4=");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+  }
+}
+
+.m01-cinema-curtain::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.18'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  opacity: .28;
+}
+
+.m01-cinema-curtain-within {
+  background-color: #111211;
+  background-image:
+    url("../assets/ink-erosion.png"),
+    linear-gradient(105deg, rgb(5 6 6 / 84%), rgb(9 10 10 / 56%) 55%, rgb(5 6 6 / 84%)),
+    url("../assets/master-paper-tile.png");
+  background-size: 100% 100%, 100% 100%, 320px 160px;
+  background-position: center, center, left top;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+.m01-cinema-curtain-beyond {
+  background-color: #e8e3d8;
+  background-image:
+    linear-gradient(110deg, rgb(178 170 156 / 24%), rgb(180 171 156 / 31%) 53%, rgb(183 174 159 / 25%)),
+    url("../assets/master-paper-tile.png");
+  background-size: 100% 100%, 420px 420px;
+  background-position: center, left top;
+  background-repeat: no-repeat, repeat;
+}
+
+.m01-cinema-curtain-beyond::after { opacity: .45; mix-blend-mode: multiply; }
+
+.m01-cinema-transition-within .m01-cinema-curtain::before,
+.m01-cinema-transition-beyond .m01-cinema-curtain::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0 98.5%, rgb(0 0 0 / 30%) 99.5%, transparent 100%);
+}
+
+@media (max-width: 900px) {
+  .m01-cinema-curtain { top: -25vh; height: 150vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m01-cinema-transition { display: none !important; }
+}
