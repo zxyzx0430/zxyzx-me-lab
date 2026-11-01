@@ -1,0 +1,40 @@
+{
+  "baseCommit": "1274f70",
+  "strategy": "Non-destructive layer omission; small-region inpaint trial; original master unchanged",
+  "within": {
+    "removedLayers": [
+      "type-left-index",
+      "type-top-self",
+      "type-mid-thinking",
+      "type-bottom-meaning",
+      "type-top-right",
+      "type-right-quote",
+      "type-body-en",
+      "rail-upper-arc",
+      "rail-lower-path",
+      "rail-diagonal",
+      "survey-crosshairs"
+    ],
+    "removedCount": 11,
+    "remainingLayerCount": 29,
+    "patchedPixels": 41101,
+    "patchedPercent": 3.1,
+    "referenceSha256": "17a912b119d78e9466318f8d2138a4d4a0c1835e975d27aec5457fe24fdbf39a"
+  },
+  "beyond": {
+    "removedLayers": [
+      "copy-folio",
+      "rail-upper-diagonal",
+      "rail-right-curve",
+      "rail-city-line",
+      "rail-lower-diagonal",
+      "cross-folio",
+      "cross-bottom"
+    ],
+    "removedCount": 7,
+    "remainingLayerCount": 33,
+    "patchedPixels": 18536,
+    "patchedPercent": 1.4,
+    "referenceSha256": "e6ab22728fa5a4eeb2180990a591fbcaca11940b18c2b29e7910332f3742cd53"
+  }
+}

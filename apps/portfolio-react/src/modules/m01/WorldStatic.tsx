@@ -15,12 +15,12 @@ export const getWorldViewFromQuery = (): 'reference' | 'layers' =>
     : 'reference';
 
 export const worldLink = (world: WorldName) =>
-  window.location.pathname + '?world=' + world + '&view=layers';
+  window.location.pathname + '?world=' + world + '&view=layers' + (new URLSearchParams(window.location.search).get('composition') === 'quiet' ? '&composition=quiet' : '');
 
 export const worldReferenceLink = (world: WorldName) =>
   window.location.pathname + '?world=' + world;
 
-export const homeLink = () => window.location.pathname;
+export const homeLink = () => window.location.pathname + (new URLSearchParams(window.location.search).get('composition') === 'quiet' ? '?composition=quiet' : '');
 
 export function WorldStatic({ world }: { world: WorldName }) {
   const within = world === 'within';

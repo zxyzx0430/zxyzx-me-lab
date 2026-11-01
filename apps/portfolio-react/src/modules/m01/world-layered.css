@@ -357,3 +357,18 @@
   color: #111;
   background: #b8ca94;
 }
+
+/* Deliberate editorial reduction: replace only suppressed microcopy/survey pixels.
+   Original master and 40-layer composition remain fully intact on the default route. */
+.world-reduction-restoration {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 200;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}

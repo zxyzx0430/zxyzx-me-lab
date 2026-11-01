@@ -10,7 +10,22 @@ import {
   type SceneNode,
   type SceneTransform,
 } from './world-scene-manifest';
+import withinQuietPatch from './world-assets/reduction/within-quiet-restoration.png';
+import beyondQuietPatch from './world-assets/reduction/beyond-quiet-restoration.png';
 import './world-layered.css';
+
+const editorialOmissions: Record<WorldName, ReadonlySet<string>> = {
+  within: new Set([
+    'type-left-index', 'type-top-self', 'type-mid-thinking', 'type-bottom-meaning',
+    'type-top-right', 'type-right-quote', 'type-body-en',
+    'rail-upper-arc', 'rail-lower-path', 'rail-diagonal', 'survey-crosshairs',
+  ]),
+  beyond: new Set([
+    'copy-folio',
+    'rail-upper-diagonal', 'rail-right-curve', 'rail-city-line',
+    'rail-lower-diagonal', 'cross-folio', 'cross-bottom',
+  ]),
+};
 
 type Matrix2D = readonly [number, number, number, number, number, number];
 
@@ -155,6 +170,9 @@ export function WorldLayered({ world, cinemaHidden = false, cinemaInert = false 
   cinemaInert?: boolean;
 }) {
   const manifest = worldSceneManifests[world];
+  // Editorial reduction is opt-in; the original pixel-locked composition remains unchanged.
+  const quietComposition = new URLSearchParams(window.location.search).get('composition') === 'quiet';
+  const omissions = quietComposition ? editorialOmissions[world] : null;
   const canvasRef = useRef<HTMLElement>(null);
   const flatNodes = useMemo(() => flattenSceneNodes(manifest.nodes), [manifest]);
   const nodeById = useMemo(() => new Map(flatNodes.map((node) => [node.id, node])), [flatNodes]);
@@ -282,6 +300,7 @@ export function WorldLayered({ world, cinemaHidden = false, cinemaInert = false 
     <main
       className={`m01-world-world m01-world-${world} m01-world-layered${alphaPreview && inspector ? ' is-alpha-preview' : ''}`}
       data-background-plate-status={manifest.backgroundPlateStatus}
+      data-editorial-composition={quietComposition ? 'quiet' : 'original'}
       data-cinema-stage={cinemaHidden ? 'preload' : 'visible'}
       aria-hidden={cinemaHidden || cinemaInert || undefined}
       inert={cinemaHidden || cinemaInert || undefined}
@@ -316,6 +335,7 @@ export function WorldLayered({ world, cinemaHidden = false, cinemaInert = false 
               />
             )}
             {imageNodes.flatMap((node) => {
+              if (omissions?.has(node.sourceId)) return [];
               const presentation = presentationFor(node);
               const fillPresentation = presentationFor(node, false);
               const fillUnder = inspector && showSelectedFillUnder && selectedFillNode?.id === node.id && view === 'composite'
@@ -339,6 +359,18 @@ export function WorldLayered({ world, cinemaHidden = false, cinemaInert = false 
                 inspector={inspector}
               />];
             })}
+            {quietComposition && (
+              <img
+                className="world-reduction-restoration"
+                src={world === 'within' ? withinQuietPatch : beyondQuietPatch}
+                alt=""
+                aria-hidden="true"
+                draggable={false}
+                width="1536"
+                height="864"
+                data-reduction-overlay={world}
+              />
+            )}
           </div>
         )}
         {view === 'difference' && (
